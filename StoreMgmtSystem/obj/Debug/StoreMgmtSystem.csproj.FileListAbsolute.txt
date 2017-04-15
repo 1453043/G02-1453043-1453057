@@ -11,3 +11,4 @@ D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\bin\Debug\en\Stor
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Lang.langres.resources
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Lang.langres.en.resources
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\en\StoreMgmtSystem.resources.dll
+D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Login.resources
