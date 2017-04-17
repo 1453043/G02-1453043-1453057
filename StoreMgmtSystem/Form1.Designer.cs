@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitemLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.mitemAccDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mitemSignout = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,7 +118,6 @@
             // menuAccount
             // 
             this.menuAccount.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mitemLogin,
             this.mitemAccDetail,
             this.toolStripSeparator1,
             this.mitemSignout});
@@ -127,28 +125,24 @@
             this.menuAccount.Size = new System.Drawing.Size(70, 20);
             this.menuAccount.Text = "Tài khoản";
             // 
-            // mitemLogin
-            // 
-            this.mitemLogin.Name = "mitemLogin";
-            this.mitemLogin.Size = new System.Drawing.Size(132, 22);
-            this.mitemLogin.Text = "Đăng nhập";
-            // 
             // mitemAccDetail
             // 
             this.mitemAccDetail.Name = "mitemAccDetail";
-            this.mitemAccDetail.Size = new System.Drawing.Size(132, 22);
+            this.mitemAccDetail.Size = new System.Drawing.Size(127, 22);
             this.mitemAccDetail.Text = "Thông tin";
+            this.mitemAccDetail.Click += new System.EventHandler(this.mitemAccDetail_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
             // mitemSignout
             // 
             this.mitemSignout.Name = "mitemSignout";
-            this.mitemSignout.Size = new System.Drawing.Size(132, 22);
+            this.mitemSignout.Size = new System.Drawing.Size(127, 22);
             this.mitemSignout.Text = "Đăng xuất";
+            this.mitemSignout.Click += new System.EventHandler(this.mitemSignout_Click);
             // 
             // menuStat
             // 
@@ -385,6 +379,7 @@
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnAddInvoice.Text = "toolStripButton1";
+            this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
             // btnDelInvoice
             // 
@@ -708,7 +703,6 @@
         private System.Windows.Forms.ToolStripButton btnPrevPageBill;
         private System.Windows.Forms.ToolStripTextBox txtPageBill;
         private System.Windows.Forms.ToolStripButton btnNextPageBill;
-        private System.Windows.Forms.ToolStripMenuItem mitemLogin;
     }
 }
 

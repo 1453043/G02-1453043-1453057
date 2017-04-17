@@ -132,9 +132,6 @@
   <data name="lang" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="log_in" xml:space="preserve">
-    <value>Log in</value>
-  </data>
   <data name="sign_out" xml:space="preserve">
     <value>Sign out</value>
   </data>
@@ -149,5 +146,8 @@
   </data>
   <data name="tab_sell" xml:space="preserve">
     <value>Sell</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Store Management</value>
   </data>
 </root>

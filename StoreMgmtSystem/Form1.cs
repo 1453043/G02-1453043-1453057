@@ -38,8 +38,8 @@ namespace StoreMgmtSystem
         {
             Assembly a = Assembly.Load("StoreMgmtSystem");
             ResourceManager rm = new ResourceManager("StoreMgmtSystem.Lang.langres", a);
+            this.Text = rm.GetString("title", ci);
             menuAccount.Text = rm.GetString("account", ci);
-            mitemLogin.Text = rm.GetString("log_in", ci);
             mitemAccDetail.Text = rm.GetString("account_detail", ci);
             mitemSignout.Text = rm.GetString("sign_out", ci);
             menuStat.Text = rm.GetString("stat", ci);
@@ -49,6 +49,22 @@ namespace StoreMgmtSystem
             tabPageProduct.Text = rm.GetString("tab_product", ci);
             tabPageImport.Text = rm.GetString("tab_import", ci);
             tabPageSell.Text = rm.GetString("tab_sell", ci);
+        }
+
+        private void mitemAccDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mitemSignout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddInvoice_Click(object sender, EventArgs e)
+        {
+            AddInvoiceForm addInvoiceForm = new AddInvoiceForm();
+            addInvoiceForm.ShowDialog();
         }
     }
 }

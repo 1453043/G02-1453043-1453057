@@ -106,15 +106,6 @@ namespace StoreMgmtSystem.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Đăng nhập.
-        /// </summary>
-        internal static string log_in {
-            get {
-                return ResourceManager.GetString("log_in", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Đăng xuất.
         /// </summary>
         internal static string sign_out {
@@ -156,6 +147,15 @@ namespace StoreMgmtSystem.Lang {
         internal static string tab_sell {
             get {
                 return ResourceManager.GetString("tab_sell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quản lý cửa hàng.
+        /// </summary>
+        internal static string title {
+            get {
+                return ResourceManager.GetString("title", resourceCulture);
             }
         }
     }
