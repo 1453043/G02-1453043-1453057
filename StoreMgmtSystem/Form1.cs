@@ -172,5 +172,23 @@ namespace StoreMgmtSystem
             AddProduct addProductForm = new AddProduct();
             addProductForm.ShowDialog();
         }
+
+        private void btnEditProduct_Click(object sender, EventArgs e)
+        {
+            int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
+            List<string> product = new List<string>();
+            //int columnindex = dataGridViewProduct.CurrentCell.ColumnIndex;
+            //MessageBox.Show(dataGridViewProduct.Rows[rowindex].Cells[columnindex].Value.ToString());
+            foreach (DataGridViewCell cell in dataGridViewProduct.Rows[rowindex].Cells)
+            {
+                product.Add(cell.Value.ToString());
+            }
+            EditProduct editProductForm = new EditProduct(product);
+            if(editProductForm.ShowDialog() == DialogResult.OK)
+            {
+                loadDataGridViewProduct();
+            }
+
+        }
     }
 }

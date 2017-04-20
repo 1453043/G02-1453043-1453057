@@ -547,6 +547,7 @@
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(23, 22);
             this.btnEditProduct.Text = "toolStripButton1";
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
             // btnDelProduct
             // 
@@ -649,6 +650,7 @@
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Location = new System.Drawing.Point(4, 32);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProduct.Size = new System.Drawing.Size(976, 150);
             this.dataGridViewProduct.TabIndex = 1;
             // 

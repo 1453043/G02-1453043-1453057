@@ -45,6 +45,25 @@ namespace StoreMgmtSystem
             return bCheck;
         }
 
+        public bool Update(SanPham sp)
+        {
+            this.connect();
+            bool bCheck = true;
+            string query = "update SanPham set [TenSP]=@TEN, [idNSX]=@IDNSX, [Gia]=@GIA, " +
+                "[ThongTinBaoHanh]=@TT, [MoTa]=@MOTA where [id] = @ID";
+            this.cm = new SqlCommand(query, cnn);
+            this.cm.Parameters.Add(new SqlParameter("@TEN", sp.Ten.Trim()));
+            this.cm.Parameters.Add(new SqlParameter("@IDNSX", sp.IDNSX.Trim()));
+            this.cm.Parameters.Add(new SqlParameter("@GIA", sp.Gia));
+            this.cm.Parameters.Add(new SqlParameter("@TT", sp.BaoHanh.Trim()));
+            this.cm.Parameters.Add(new SqlParameter("@MOTA", sp.MoTa.Trim()));
+            this.cm.Parameters.Add(new SqlParameter("@ID", sp.ID.Trim()));
+            try
+            { this.cm.ExecuteNonQuery(); this.disconnect(); }
+            catch (Exception ex) { this.disconnect(); bCheck = false; throw ex; }
+            return bCheck;
+        }
+
         public DataTable Search()
         {
             try
