@@ -36,13 +36,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtGuarantee = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.numGia = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numGia)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,13 +114,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Giá";
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(120, 139);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(236, 20);
-            this.txtPrice.TabIndex = 5;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -154,15 +148,18 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAdd.Location = new System.Drawing.Point(340, 252);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 40);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Thêm sản phẩm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(239, 252);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 40);
@@ -170,18 +167,35 @@
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // numGia
+            // 
+            this.numGia.Increment = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numGia.Location = new System.Drawing.Point(120, 140);
+            this.numGia.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numGia.Name = "numGia";
+            this.numGia.Size = new System.Drawing.Size(236, 20);
+            this.numGia.TabIndex = 5;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 312);
+            this.Controls.Add(this.numGia);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtGuarantee);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label3);
@@ -193,6 +207,7 @@
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm sản phẩm";
+            ((System.ComponentModel.ISupportInitialize)(this.numGia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,12 +223,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtGuarantee;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.NumericUpDown numGia;
     }
 }

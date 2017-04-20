@@ -23,12 +23,14 @@ namespace StoreMgmtSystem
         {
             // kiểm tra tính hợp lệ của 3 field
             if(txtID.Text.Length == 0) {
-                MessageBox.Show("Lỗi", "Mã nhà sản xuất không được trống.");
+                MessageBox.Show("Mã nhà sản xuất không được trống.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (txtName.Text.Length == 0)
             {
-                MessageBox.Show("Lỗi", "Tên nhà sản xuất không được trống.");
+                MessageBox.Show("Tên nhà sản xuất không được trống.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
@@ -39,11 +41,13 @@ namespace StoreMgmtSystem
             bool status = _NSXData.Save(nsxObj);
             if (status)
             {
-                MessageBox.Show("Thêm thành công", "Thông báo");
+                MessageBox.Show("Thêm thành công", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Thêm thất bại", "Thông báo");
+                MessageBox.Show("Thêm thất bại", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -15,11 +15,16 @@ namespace StoreMgmtSystem
 {
     public partial class Form1 : Form
     {
+        private DAOSanPham _spData = new DAOSanPham();
         public Form1()
         {
             InitializeComponent();
             CultureInfo ci = new CultureInfo("vi-VN");
             loadLanguageResource(ci);
+
+            // load dữ liệu Hàng hóa
+            loadDataGridViewProduct();
+            
         }
 
         private void mitemVi_Click(object sender, EventArgs e)
@@ -50,7 +55,27 @@ namespace StoreMgmtSystem
             tabPageImport.Text = rm.GetString("tab_import", ci);
             tabPageSell.Text = rm.GetString("tab_sell", ci);
         }
-
+        private void loadDataGridViewProduct()
+        {
+            DataTable spData = _spData.Search();
+            dataGridViewProduct.DataSource = spData;
+            //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
+            //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
+            //dataGridViewProduct.Columns["idNSX"].HeaderText = "Nhà sản xuất";
+            //dataGridViewProduct.Columns["Gia"].HeaderText = "Giá";
+            //dataGridViewProduct.Columns["ThongTinBaoHanh"].HeaderText = "Bảo hành";
+            //dataGridViewProduct.Columns["MoTa"].HeaderText = "Mô tả";
+            
+            dataGridViewProduct.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
+        }
         private void mitemAccDetail_Click(object sender, EventArgs e)
         {
 
