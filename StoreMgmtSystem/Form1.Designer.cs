@@ -242,6 +242,7 @@
             this.btnAddBill.Name = "btnAddBill";
             this.btnAddBill.Size = new System.Drawing.Size(23, 22);
             this.btnAddBill.Text = "toolStripButton1";
+            this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
             // 
             // btnEditBill
             // 
@@ -251,6 +252,7 @@
             this.btnEditBill.Name = "btnEditBill";
             this.btnEditBill.Size = new System.Drawing.Size(23, 22);
             this.btnEditBill.Text = "toolStripButton1";
+            this.btnEditBill.Click += new System.EventHandler(this.btnEditBill_Click);
             // 
             // btnDelBill
             // 
@@ -260,6 +262,7 @@
             this.btnDelBill.Name = "btnDelBill";
             this.btnDelBill.Size = new System.Drawing.Size(23, 22);
             this.btnDelBill.Text = "toolStripButton1";
+            this.btnDelBill.Click += new System.EventHandler(this.btnDelBill_Click);
             // 
             // btnViewBill
             // 
@@ -269,6 +272,7 @@
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(23, 22);
             this.btnViewBill.Text = "toolStripButton1";
+            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
             // toolStripSeparator8
             // 
@@ -283,6 +287,7 @@
             this.btnRefreshBillList.Name = "btnRefreshBillList";
             this.btnRefreshBillList.Size = new System.Drawing.Size(23, 22);
             this.btnRefreshBillList.Text = "toolStripButton1";
+            this.btnRefreshBillList.Click += new System.EventHandler(this.btnRefreshBillList_Click);
             // 
             // toolStripSeparator9
             // 
@@ -307,6 +312,7 @@
             this.btnFindBill.Name = "btnFindBill";
             this.btnFindBill.Size = new System.Drawing.Size(23, 22);
             this.btnFindBill.Text = "toolStripButton1";
+            this.btnFindBill.Click += new System.EventHandler(this.btnFindBill_Click);
             // 
             // toolStripSeparator10
             // 
@@ -321,6 +327,7 @@
             this.btnPrevPageBill.Name = "btnPrevPageBill";
             this.btnPrevPageBill.Size = new System.Drawing.Size(23, 22);
             this.btnPrevPageBill.Text = "toolStripButton1";
+            this.btnPrevPageBill.Click += new System.EventHandler(this.btnPrevPageBill_Click);
             // 
             // txtPageBill
             // 
@@ -335,6 +342,7 @@
             this.btnNextPageBill.Name = "btnNextPageBill";
             this.btnNextPageBill.Size = new System.Drawing.Size(23, 22);
             this.btnNextPageBill.Text = "toolStripButton1";
+            this.btnNextPageBill.Click += new System.EventHandler(this.btnNextPageBill_Click);
             // 
             // tabPageImport
             // 
@@ -389,6 +397,7 @@
             this.btnDelInvoice.Name = "btnDelInvoice";
             this.btnDelInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnDelInvoice.Text = "toolStripButton1";
+            this.btnDelInvoice.Click += new System.EventHandler(this.btnDelInvoice_Click);
             // 
             // btnEditInvoice
             // 
@@ -398,6 +407,7 @@
             this.btnEditInvoice.Name = "btnEditInvoice";
             this.btnEditInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnEditInvoice.Text = "toolStripButton1";
+            this.btnEditInvoice.Click += new System.EventHandler(this.btnEditInvoice_Click);
             // 
             // btnViewInvoice
             // 
@@ -407,6 +417,7 @@
             this.btnViewInvoice.Name = "btnViewInvoice";
             this.btnViewInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnViewInvoice.Text = "toolStripButton1";
+            this.btnViewInvoice.Click += new System.EventHandler(this.btnViewInvoice_Click);
             // 
             // toolStripSeparator5
             // 
@@ -421,6 +432,7 @@
             this.btnRefreshInvoiceList.Name = "btnRefreshInvoiceList";
             this.btnRefreshInvoiceList.Size = new System.Drawing.Size(23, 22);
             this.btnRefreshInvoiceList.Text = "toolStripButton1";
+            this.btnRefreshInvoiceList.Click += new System.EventHandler(this.btnRefreshInvoiceList_Click);
             // 
             // toolStripSeparator6
             // 
@@ -445,6 +457,7 @@
             this.btnFindInvoice.Name = "btnFindInvoice";
             this.btnFindInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnFindInvoice.Text = "toolStripButton1";
+            this.btnFindInvoice.Click += new System.EventHandler(this.btnFindInvoice_Click);
             // 
             // toolStripSeparator7
             // 
@@ -459,6 +472,7 @@
             this.btnPrevPageInvoice.Name = "btnPrevPageInvoice";
             this.btnPrevPageInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnPrevPageInvoice.Text = "toolStripButton1";
+            this.btnPrevPageInvoice.Click += new System.EventHandler(this.btnPrevPageInvoice_Click);
             // 
             // txtPageInvoice
             // 
@@ -473,6 +487,7 @@
             this.btnNextPageInvoice.Name = "btnNextPageInvoice";
             this.btnNextPageInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnNextPageInvoice.Text = "toolStripButton1";
+            this.btnNextPageInvoice.Click += new System.EventHandler(this.btnNextPageInvoice_Click);
             // 
             // tabPageProduct
             // 
@@ -516,6 +531,7 @@
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(23, 22);
             this.btnAddProduct.Text = "toolStripButton1";
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnEditProduct
             // 

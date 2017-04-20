@@ -66,5 +66,86 @@ namespace StoreMgmtSystem
             AddInvoiceForm addInvoiceForm = new AddInvoiceForm();
             addInvoiceForm.ShowDialog();
         }
+
+        private void btnAddBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefreshBillList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFindBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrevPageBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNextPageBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefreshInvoiceList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFindInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPrevPageInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNextPageInvoice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct addProductForm = new AddProduct();
+            addProductForm.ShowDialog();
+        }
     }
 }

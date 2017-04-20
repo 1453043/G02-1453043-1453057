@@ -13,3 +13,5 @@ D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMg
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\en\StoreMgmtSystem.resources.dll
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Login.resources
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddInvoiceForm.resources
+D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddManufacturer.resources
+D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddProduct.resources
