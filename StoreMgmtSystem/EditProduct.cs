@@ -12,14 +12,14 @@ namespace StoreMgmtSystem
 {
     public partial class EditProduct : Form
     {
-        private DAONhaSanXuat _NSXData = new DAONhaSanXuat();
-        private DAOSanPham _spData = new DAOSanPham();
+        private CTLNhaSanXuat _NSXData = new CTLNhaSanXuat();
+        private CTLSanPham _spData = new CTLSanPham();
 
         public EditProduct(List<string> product)
         {
             InitializeComponent();
             // load data NSX cho combo box
-            DataTable nsxData = _NSXData.Search();
+            DataTable nsxData = _NSXData.search();
             cmbManu.DisplayMember = "TenNSX";
             cmbManu.ValueMember = "id";
             cmbManu.DataSource = nsxData.DefaultView;
@@ -41,7 +41,7 @@ namespace StoreMgmtSystem
             {
                 // thêm NSX mới thành công
                 // cho vào combobox NSX
-                DataTable nsxData = _NSXData.Search();
+                DataTable nsxData = _NSXData.search();
 
                 cmbManu.DisplayMember = "TenNSX";
                 cmbManu.ValueMember = "TenNSX";
@@ -52,38 +52,26 @@ namespace StoreMgmtSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // kiểm tra các fields
-            if (txtID.Text.Length == 0)
-            {
-                MessageBox.Show("Mã sản phẩm không được trống.", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtName.Text.Length == 0)
-            {
-                MessageBox.Show("Mã sản phẩm không được trống.", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtName.Text.Length == 0)
-            {
-                MessageBox.Show("Mã sản phẩm không được trống.", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // tạo object SanPham
-            SanPham spObj = new SanPham(txtID.Text, cmbManu.SelectedValue.ToString(), txtName.Text, 
+            // gọi save
+            int status = _spData.update(txtID.Text, cmbManu.SelectedValue.ToString(), txtName.Text,
                 txtGuarantee.Text, txtDesc.Text, (int)numGia.Value);
 
-            // gọi save xuống CSDL
-            bool status = _spData.Update(spObj);
-            if (status)
+            if (status == 1)
             {
                 MessageBox.Show("Sửa thành công", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            else if (status == 2)
+            {
+                MessageBox.Show("Mã sản phẩm không được trống.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (status == 3)
+            {
+                MessageBox.Show("Tên sản phẩm không được trống.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (status == 0)
             {
                 MessageBox.Show("Sửa thất bại", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

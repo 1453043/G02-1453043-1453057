@@ -12,7 +12,7 @@ namespace StoreMgmtSystem
 {
     public partial class AddManufacturer : Form
     {
-        private DAONhaSanXuat _NSXData = new DAONhaSanXuat();
+        private CTLNhaSanXuat _NSXData = new CTLNhaSanXuat();
 
         public AddManufacturer()
         {
@@ -21,28 +21,21 @@ namespace StoreMgmtSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // kiểm tra tính hợp lệ của 3 field
-            if(txtID.Text.Length == 0) {
-                MessageBox.Show("Mã nhà sản xuất không được trống.", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (txtName.Text.Length == 0)
-            {
-                MessageBox.Show("Tên nhà sản xuất không được trống.", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            
-            // tạo object NhaSanXuat
-            NhaSanXuat nsxObj = new NhaSanXuat(txtID.Text, txtName.Text, txtAddress.Text);
-
-            // gọi save xuống CSDL
-            bool status = _NSXData.Save(nsxObj);
-            if (status)
+            int status = _NSXData.save(txtID.Text, txtName.Text, txtAddress.Text);
+            if (status == 1)
             {
                 MessageBox.Show("Thêm thành công", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (status == 2)
+            {
+                MessageBox.Show("Mã nhà sản xuất không được trống.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (status == 3)
+            {
+                MessageBox.Show("Tên nhà sản xuất không được trống.", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

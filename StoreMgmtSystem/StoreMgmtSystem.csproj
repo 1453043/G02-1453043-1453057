@@ -58,6 +58,14 @@
     <Compile Include="AddManufacturer.Designer.cs">
       <DependentUpon>AddManufacturer.cs</DependentUpon>
     </Compile>
+    <Compile Include="CTLCT_HoaDonBanHang.cs" />
+    <Compile Include="CTLCT_HoaDonNhapHang.cs" />
+    <Compile Include="CTLHoaDonBanHang.cs" />
+    <Compile Include="CTLHoaDonNhapHang.cs" />
+    <Compile Include="CTLKhachHang.cs" />
+    <Compile Include="CTLNguoiDung.cs" />
+    <Compile Include="CTLNhaSanXuat.cs" />
+    <Compile Include="CTLSanPham.cs" />
     <Compile Include="EditProduct.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -15,7 +15,8 @@ namespace StoreMgmtSystem
 {
     public partial class Form1 : Form
     {
-        private DAOSanPham _spData = new DAOSanPham();
+        private CTLSanPham _spData = new CTLSanPham();
+
         public Form1()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace StoreMgmtSystem
         }
         private void loadDataGridViewProduct()
         {
-            DataTable spData = _spData.Search();
+            DataTable spData = _spData.search();
             dataGridViewProduct.DataSource = spData;
             //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
             //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
