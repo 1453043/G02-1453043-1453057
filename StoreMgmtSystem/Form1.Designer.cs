@@ -41,6 +41,7 @@
             this.mitemAboutUs = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageSell = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbCategoryBill = new System.Windows.Forms.ToolStrip();
             this.btnAddBill = new System.Windows.Forms.ToolStripButton();
             this.btnEditBill = new System.Windows.Forms.ToolStripButton();
@@ -73,6 +74,7 @@
             this.txtPageInvoice = new System.Windows.Forms.ToolStripTextBox();
             this.btnNextPageInvoice = new System.Windows.Forms.ToolStripButton();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddProduct = new System.Windows.Forms.ToolStripButton();
             this.btnEditProduct = new System.Windows.Forms.ToolStripButton();
@@ -88,18 +90,16 @@
             this.btnPrevPageProduct = new System.Windows.Forms.ToolStripButton();
             this.txtPageProduct = new System.Windows.Forms.ToolStripTextBox();
             this.btnNextPageProduct = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageSell.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.cmbCategoryBill.SuspendLayout();
             this.tabPageImport.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.tabPageProduct.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -215,6 +215,14 @@
             this.tabPageSell.TabIndex = 2;
             this.tabPageSell.Text = "Bán hàng";
             this.tabPageSell.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(976, 150);
+            this.dataGridView1.TabIndex = 3;
             // 
             // cmbCategoryBill
             // 
@@ -506,6 +514,19 @@
             this.tabPageProduct.Text = "Hàng hóa";
             this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewProduct
+            // 
+            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Location = new System.Drawing.Point(4, 32);
+            this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewProduct.Size = new System.Drawing.Size(976, 150);
+            this.dataGridViewProduct.TabIndex = 1;
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -557,6 +578,7 @@
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Size = new System.Drawing.Size(23, 22);
             this.btnDelProduct.Text = "toolStripButton1";
+            this.btnDelProduct.Click += new System.EventHandler(this.btnDelProduct_Click);
             // 
             // btnViewProduct
             // 
@@ -566,6 +588,7 @@
             this.btnViewProduct.Name = "btnViewProduct";
             this.btnViewProduct.Size = new System.Drawing.Size(23, 22);
             this.btnViewProduct.Text = "toolStripButton1";
+            this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
             // 
             // toolStripSeparator2
             // 
@@ -580,6 +603,7 @@
             this.btnRefreshProductList.Name = "btnRefreshProductList";
             this.btnRefreshProductList.Size = new System.Drawing.Size(23, 22);
             this.btnRefreshProductList.Text = "toolStripButton1";
+            this.btnRefreshProductList.Click += new System.EventHandler(this.btnRefreshProductList_Click);
             // 
             // toolStripSeparator3
             // 
@@ -595,6 +619,7 @@
             // 
             this.txtKeywordProduct.Name = "txtKeywordProduct";
             this.txtKeywordProduct.Size = new System.Drawing.Size(150, 25);
+            this.txtKeywordProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywordProduct_KeyDown);
             // 
             // btnFindProduct
             // 
@@ -604,6 +629,7 @@
             this.btnFindProduct.Name = "btnFindProduct";
             this.btnFindProduct.Size = new System.Drawing.Size(23, 22);
             this.btnFindProduct.Text = "toolStripButton1";
+            this.btnFindProduct.Click += new System.EventHandler(this.btnFindProduct_Click);
             // 
             // toolStripSeparator4
             // 
@@ -633,27 +659,6 @@
             this.btnNextPageProduct.Size = new System.Drawing.Size(23, 22);
             this.btnNextPageProduct.Text = "toolStripButton1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(976, 150);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // dataGridViewProduct
-            // 
-            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(4, 32);
-            this.dataGridViewProduct.Name = "dataGridViewProduct";
-            this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(976, 150);
-            this.dataGridViewProduct.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -670,6 +675,7 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabPageSell.ResumeLayout(false);
             this.tabPageSell.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.cmbCategoryBill.ResumeLayout(false);
             this.cmbCategoryBill.PerformLayout();
             this.tabPageImport.ResumeLayout(false);
@@ -678,10 +684,9 @@
             this.toolStrip2.PerformLayout();
             this.tabPageProduct.ResumeLayout(false);
             this.tabPageProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

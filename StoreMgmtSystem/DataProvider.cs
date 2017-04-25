@@ -30,7 +30,7 @@ namespace Main.DAO
             cm.CommandType = CommandType.Text;
             cm.ExecuteNonQuery();
         }
-        protected void ExecuteUpdateQuery(string sql) //Them, xoa, sua
+        protected void ExecuteUpdateQuery(string sql) //thêm, xóa, sửa
         {
             connect();
             ExecuteNonQuery(sql);
@@ -47,7 +47,7 @@ namespace Main.DAO
             { System.Windows.Forms.MessageBox.Show(ex.ToString()); }
             return dataset;
         }
-        public DataTable ExecuteQuery_DataTble(string strSelect)
+        public DataTable ExecuteQuery_DataTable(string strSelect)
         { return ExecuteQuery(strSelect).Tables[0]; }
         protected virtual object GetInfoFrom1Row(DataTable ddt, int i)
         {

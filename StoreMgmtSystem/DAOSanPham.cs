@@ -69,12 +69,59 @@ namespace StoreMgmtSystem
             try
             {
                 this.connect();
-                DataTable sqlDataTable = this.ExecuteQuery_DataTble("select * from SanPham");
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable("select * from SanPham");
                 this.disconnect();
                 return sqlDataTable;
             }
             catch (Exception ex) { throw ex; }
         }
+
+        public DataTable SearchWithKeyword(string keyword, string category)
+        {
+            string query = "";
+            if (category == "Tên sản phẩm")
+            {
+                query = "select * from SanPham where TenSP like '%" + keyword + "%'";
+            }
+            else if (category == "ID")
+            {
+                query = "select * from SanPham where id like '%" + keyword + "%'";
+            }
+            else if (category == "Mã nhà sản xuất")
+            {
+                query = "select * from SanPham where idNSX = '" + keyword + "'";
+            }
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(query);
+                this.disconnect();
+                return sqlDataTable;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public bool Delete(string idSP)
+        {
+            this.connect();
+            bool bCheck = true;
+            string query = "delete from SanPham where([id] = @ID)";
+            this.cm = new SqlCommand(query, cnn);
+            this.cm.Parameters.Add(new SqlParameter("@ID", idSP));
+            try
+            {
+                this.cm.ExecuteNonQuery();
+                this.disconnect();
+            }
+            catch (Exception ex)
+            {
+                this.disconnect();
+                bCheck = false;
+                throw ex;
+            }
+            return bCheck;
+        }
+
         #endregion
     }
 }

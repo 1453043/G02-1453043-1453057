@@ -46,7 +46,7 @@ namespace StoreMgmtSystem
             try
             {
                 this.connect();
-                DataTable sqlDataTable = this.ExecuteQuery_DataTble("select * from NSX");
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable("select * from NSX");
                 this.disconnect();
                 return sqlDataTable;
             }

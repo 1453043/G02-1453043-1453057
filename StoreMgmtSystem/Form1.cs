@@ -25,7 +25,12 @@ namespace StoreMgmtSystem
 
             // load dữ liệu Hàng hóa
             loadDataGridViewProduct();
-            
+
+            // khởi tạo giá trị trong combobox cmbCategoryProduct
+            cmbCategoryProduct.Items.Add("Tên sản phẩm");
+            cmbCategoryProduct.Items.Add("ID");
+            cmbCategoryProduct.Items.Add("Mã nhà sản xuất");
+            cmbCategoryProduct.SelectedItem = "Tên sản phẩm";
         }
 
         private void mitemVi_Click(object sender, EventArgs e)
@@ -171,11 +176,13 @@ namespace StoreMgmtSystem
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             AddProduct addProductForm = new AddProduct();
-            addProductForm.ShowDialog();
+            if (addProductForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewProduct();
         }
 
         private void btnEditProduct_Click(object sender, EventArgs e)
         {
+            // index row đang được chọn
             int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
             List<string> product = new List<string>();
             //int columnindex = dataGridViewProduct.CurrentCell.ColumnIndex;
@@ -190,6 +197,55 @@ namespace StoreMgmtSystem
                 loadDataGridViewProduct();
             }
 
+        }
+
+        private void btnDelProduct_Click(object sender, EventArgs e)
+        {
+            // index row đang được chọn
+            int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
+            _spData.delete(dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString());
+
+            // load lại danh sách hàng
+            loadDataGridViewProduct();
+        }
+
+        private void btnRefreshProductList_Click(object sender, EventArgs e)
+        {
+            // load lại danh sách hàng
+            loadDataGridViewProduct();
+        }
+
+        private void btnViewProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFindProduct_Click(object sender, EventArgs e)
+        {
+            string keyword = txtKeywordProduct.Text;
+            string category = cmbCategoryProduct.SelectedItem.ToString();
+            DataTable queryResult = _spData.searchKeyword(keyword, category);
+
+            dataGridViewProduct.DataSource = queryResult;
+
+            dataGridViewProduct.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
+        }
+
+        // xử lý tìm kiếm lúc nhấn Enter trong khung keyword
+        private void txtKeywordProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFindProduct_Click(this, new EventArgs());
+            }
         }
     }
 }

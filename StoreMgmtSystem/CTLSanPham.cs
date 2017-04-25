@@ -34,6 +34,11 @@ namespace StoreMgmtSystem
             return dataSanPham.Update(sp);
         }
 
+        public bool delete(string ID)
+        {
+            return dataSanPham.Delete(ID);
+        }
+
         public int update(string id, string NSX, string name, string bh, string desc, int gia)
         {
             if (id.Length == 0)
@@ -51,5 +56,10 @@ namespace StoreMgmtSystem
             return dataSanPham.Search();
         }
         
+        public DataTable searchKeyword(string keyword, string category)
+        {
+            return dataSanPham.SearchWithKeyword(keyword, category);
+        }
+
     }
 }
