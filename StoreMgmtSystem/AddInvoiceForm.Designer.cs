@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,18 +44,21 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtKeyword = new System.Windows.Forms.TextBox();
-            this.btnFind = new System.Windows.Forms.Button();
+            this.txtKeywordProduct = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbCategoryProduct = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -71,7 +70,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewProduct, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
@@ -86,42 +85,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(960, 499);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // dataGridView2
+            // dataGridViewProduct
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.NSX,
-            this.TenSP,
-            this.Loai});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 67);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(474, 400);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Mã sản phẩm";
-            this.id.Name = "id";
-            // 
-            // NSX
-            // 
-            this.NSX.HeaderText = "Tên NSX";
-            this.NSX.Name = "NSX";
-            // 
-            // TenSP
-            // 
-            this.TenSP.HeaderText = "Tên sản phẩm";
-            this.TenSP.Name = "TenSP";
-            // 
-            // Loai
-            // 
-            this.Loai.HeaderText = "Loại";
-            this.Loai.Name = "Loai";
+            this.dataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Location = new System.Drawing.Point(3, 67);
+            this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.Size = new System.Drawing.Size(474, 400);
+            this.dataGridViewProduct.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -232,7 +206,7 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(36, 23);
             this.btnInsert.TabIndex = 0;
-            this.btnInsert.Text = "button1";
+            this.btnInsert.Text = ">>";
             this.btnInsert.UseVisualStyleBackColor = true;
             // 
             // btnRemove
@@ -241,7 +215,7 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(36, 23);
             this.btnRemove.TabIndex = 1;
-            this.btnRemove.Text = "button1";
+            this.btnRemove.Text = "<<";
             this.btnRemove.UseVisualStyleBackColor = true;
             // 
             // btnAdd
@@ -260,9 +234,9 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.txtKeyword, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnFind, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtKeywordProduct, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 2, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -270,30 +244,21 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(474, 57);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
-            // txtKeyword
+            // txtKeywordProduct
             // 
-            this.txtKeyword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtKeywordProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKeyword.Location = new System.Drawing.Point(192, 34);
-            this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(183, 20);
-            this.txtKeyword.TabIndex = 1;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnFind.Location = new System.Drawing.Point(381, 31);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(88, 23);
-            this.btnFind.TabIndex = 2;
-            this.btnFind.Text = "Tìm kiếm";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.txtKeywordProduct.Location = new System.Drawing.Point(192, 34);
+            this.txtKeywordProduct.Name = "txtKeywordProduct";
+            this.txtKeywordProduct.Size = new System.Drawing.Size(183, 20);
+            this.txtKeywordProduct.TabIndex = 1;
+            this.txtKeywordProduct.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywordProduct_KeyDown);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.comboBox1, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cmbCategoryProduct, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -304,24 +269,64 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(189, 57);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "Danh sách sản phẩm";
+            // 
+            // cmbCategoryProduct
+            // 
+            this.cmbCategoryProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCategoryProduct.FormattingEnabled = true;
+            this.cmbCategoryProduct.Location = new System.Drawing.Point(3, 33);
+            this.cmbCategoryProduct.Name = "cmbCategoryProduct";
+            this.cmbCategoryProduct.Size = new System.Drawing.Size(183, 21);
+            this.cmbCategoryProduct.TabIndex = 0;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.btnFind, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.btnAddProduct, 0, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(381, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(90, 51);
+            this.tableLayoutPanel6.TabIndex = 4;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.Location = new System.Drawing.Point(3, 28);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(84, 20);
+            this.btnFind.TabIndex = 0;
+            this.btnFind.Text = "Tìm kiếm";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddProduct.Location = new System.Drawing.Point(3, 3);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(84, 19);
+            this.btnAddProduct.TabIndex = 1;
+            this.btnAddProduct.Text = "Thêm mới";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
             // 
             // AddInvoiceForm
             // 
@@ -333,7 +338,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm hóa đơn nhập hàng";
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -342,6 +347,7 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,7 +355,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewProduct;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
@@ -360,18 +366,16 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NSX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
-        private System.Windows.Forms.TextBox txtKeyword;
-        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.TextBox txtKeywordProduct;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbCategoryProduct;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnAddProduct;
     }
 }
