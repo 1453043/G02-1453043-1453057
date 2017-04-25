@@ -520,9 +520,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Location = new System.Drawing.Point(4, 32);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProduct.Size = new System.Drawing.Size(976, 150);
             this.dataGridViewProduct.TabIndex = 1;

@@ -203,6 +203,7 @@ namespace StoreMgmtSystem
         {
             // index row đang được chọn
             int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
+            // delete theo id 
             _spData.delete(dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString());
 
             // load lại danh sách hàng

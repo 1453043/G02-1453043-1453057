@@ -26,6 +26,9 @@ namespace StoreMgmtSystem
             cmbCategoryProduct.Items.Add("ID");
             cmbCategoryProduct.Items.Add("Mã nhà sản xuất");
             cmbCategoryProduct.SelectedItem = "Tên sản phẩm";
+
+            // khởi tạo giá trị ngày lập vào txtDate
+            txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void loadDataGridViewProduct()
@@ -76,6 +79,26 @@ namespace StoreMgmtSystem
             {
                 btnFind_Click(this, new EventArgs());
             }
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct addProductForm = new AddProduct();
+            if (addProductForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewProduct();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            // index row đang được chọn
+            int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
+            // lấy id
+            string id = dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString();
+            string name = dataGridViewProduct.Rows[rowindex].Cells[1].Value.ToString();
+            DataGridViewRow row = (DataGridViewRow)dataGridViewForm.RowTemplate.Clone();
+            row.CreateCells(dataGridViewForm, id, name, "1");
+
+            dataGridViewForm.Rows.Add(row);
         }
     }
 }

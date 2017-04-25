@@ -30,10 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewForm = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
@@ -46,14 +43,17 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtKeywordProduct = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.cmbCategoryProduct = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
+            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForm)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -71,7 +71,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewProduct, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridViewForm, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 2, 2);
@@ -90,43 +90,31 @@
             this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Location = new System.Drawing.Point(3, 67);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.ReadOnly = true;
+            this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProduct.Size = new System.Drawing.Size(474, 400);
             this.dataGridViewProduct.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridViewForm
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewForm.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewForm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idSanPham,
             this.TenSanPham,
             this.SoLuong});
-            this.dataGridView1.Location = new System.Drawing.Point(531, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(426, 400);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // idSanPham
-            // 
-            this.idSanPham.HeaderText = "Mã sản phẩm";
-            this.idSanPham.Name = "idSanPham";
-            // 
-            // TenSanPham
-            // 
-            this.TenSanPham.HeaderText = "Tên sản phẩm";
-            this.TenSanPham.Name = "TenSanPham";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
+            this.dataGridViewForm.Location = new System.Drawing.Point(531, 67);
+            this.dataGridViewForm.Name = "dataGridViewForm";
+            this.dataGridViewForm.Size = new System.Drawing.Size(426, 400);
+            this.dataGridViewForm.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -208,6 +196,7 @@
             this.btnInsert.TabIndex = 0;
             this.btnInsert.Text = ">>";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnRemove
             // 
@@ -269,16 +258,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(189, 57);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Danh sách sản phẩm";
-            // 
             // cmbCategoryProduct
             // 
             this.cmbCategoryProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -288,6 +267,16 @@
             this.cmbCategoryProduct.Name = "cmbCategoryProduct";
             this.cmbCategoryProduct.Size = new System.Drawing.Size(183, 21);
             this.cmbCategoryProduct.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Danh sách sản phẩm";
             // 
             // tableLayoutPanel6
             // 
@@ -327,6 +316,26 @@
             this.btnAddProduct.TabIndex = 1;
             this.btnAddProduct.Text = "Thêm mới";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // idSanPham
+            // 
+            this.idSanPham.HeaderText = "Mã sản phẩm";
+            this.idSanPham.Name = "idSanPham";
+            this.idSanPham.ReadOnly = true;
+            // 
+            // TenSanPham
+            // 
+            this.TenSanPham.HeaderText = "Tên sản phẩm";
+            this.TenSanPham.Name = "TenSanPham";
+            this.TenSanPham.ReadOnly = true;
+            this.TenSanPham.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
             // 
             // AddInvoiceForm
             // 
@@ -339,7 +348,7 @@
             this.Text = "Thêm hóa đơn nhập hàng";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForm)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -356,7 +365,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridViewProduct;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewForm;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAccount;
@@ -368,14 +377,14 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox txtKeywordProduct;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbCategoryProduct;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
     }
 }
