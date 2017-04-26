@@ -16,3 +16,21 @@ D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMg
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddManufacturer.resources
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddProduct.resources
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.EditProduct.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\bin\Debug\StoreMgmtSystem.exe.config
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\bin\Debug\StoreMgmtSystem.exe
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\bin\Debug\StoreMgmtSystem.pdb
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\bin\Debug\en\StoreMgmtSystem.resources.dll
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.csprojResolveAssemblyReference.cache
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddInvoiceForm.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddManufacturer.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.EditProduct.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddProduct.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Form1.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Lang.langres.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Login.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Properties.Resources.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.Lang.langres.en.resources
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.csproj.GenerateResource.Cache
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\en\StoreMgmtSystem.resources.dll
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.exe
+D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.pdb
