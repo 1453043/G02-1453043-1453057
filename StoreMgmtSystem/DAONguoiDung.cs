@@ -18,7 +18,7 @@ namespace StoreMgmtSystem
         #endregion
 
         #region Methods
-        public DataTable Search(NguoiDung user)
+        public bool Authenticate(NguoiDung user)
         {
             string s = "select * from NguoiDung where TenDangNhap = @user and MatKhau = @pass";
             SqlCommand cmd = new SqlCommand(s);
@@ -29,10 +29,10 @@ namespace StoreMgmtSystem
                 this.connect();
                 DataSet sqlDataTable = this.ExecuteQuery(cmd);
                 this.disconnect();
-                if (sqlDataTable.Tables == null)
-                    return null;
+                if (sqlDataTable.Tables[0].Rows.Count == 0)
+                    return false;
                 else
-                    return sqlDataTable.Tables[0];
+                    return true;
             }
             catch (Exception ex) { throw ex; }
         }

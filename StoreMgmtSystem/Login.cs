@@ -24,7 +24,7 @@ namespace StoreMgmtSystem
             if (_ndData.authenticate(user))
             {
                 DialogResult = DialogResult.OK;
-                Close();
+                //Close();
             }
             else
             {

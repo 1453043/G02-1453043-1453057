@@ -14,8 +14,8 @@ namespace StoreMgmtSystem
         public bool authenticate(NguoiDung nd)
         {
             //return true;
-            DataTable user = dataNguoiDung.Search(nd);
-            return (user.Rows.Count != 0);
+            //DataTable user = dataNguoiDung.Authenticate(nd);
+            return dataNguoiDung.Authenticate(nd);
         }
     }
 }
