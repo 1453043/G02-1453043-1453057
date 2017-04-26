@@ -13,8 +13,11 @@ namespace StoreMgmtSystem
     public partial class AddInvoiceForm : Form
     {
         private CTLSanPham _spData = new CTLSanPham();
+        private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
+        private CTLCT_HoaDonNhapHang _ct = new CTLCT_HoaDonNhapHang();
+        private string currentUserID;
 
-        public AddInvoiceForm()
+        public AddInvoiceForm(string username, string userid)
         {
             InitializeComponent();
 
@@ -27,6 +30,8 @@ namespace StoreMgmtSystem
             cmbCategoryProduct.Items.Add("Mã nhà sản xuất");
             cmbCategoryProduct.SelectedItem = "Tên sản phẩm";
 
+            currentUserID = userid;
+            txtAccount.Text = username;
             // khởi tạo giá trị ngày lập vào txtDate
             txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
@@ -104,6 +109,7 @@ namespace StoreMgmtSystem
                 if (gridrow.Cells[0].Value != null && gridrow.Cells[0].Value.ToString().Equals(id))
                 {
                     rowFound = gridrow.Index;
+                    dataGridViewForm.Rows[dataGridViewForm.SelectedRows[0].Index].Selected = false;
                     dataGridViewForm.Rows[rowFound].Selected = true;
                     int val;
                     int.TryParse(dataGridViewForm.Rows[rowFound].Cells[2].Value.ToString(), out val);
@@ -134,7 +140,36 @@ namespace StoreMgmtSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            DateTime datenow = DateTime.Now;
+            string idHD = datenow.ToString("ddMMyyhhmmss");
 
+            // save đơn hàng
+            _hdData.save(idHD, currentUserID, datenow);
+
+            // save bảng data đơn hàng
+            // tạo DataTable để lấy data trong grid view
+            DataTable table = new DataTable();
+            table.Columns.Add(new DataColumn("idNhapHang", typeof(string)));
+            table.Columns.Add(new DataColumn("idSanPham", typeof(string)));
+            table.Columns.Add(new DataColumn("SoLuong", typeof(int)));
+            
+            object[] cellValues = new object[3];
+            foreach (DataGridViewRow row in dataGridViewForm.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    cellValues[0] = idHD;
+                    cellValues[1] = row.Cells[0].Value;
+                    int val;
+                    Int32.TryParse(row.Cells[2].Value.ToString(), out val);
+                    cellValues[2] = val;
+                    table.Rows.Add(cellValues);
+                }
+            }
+            if (_ct.save(table))
+            {
+                Close();
+            }
         }
     }
 }

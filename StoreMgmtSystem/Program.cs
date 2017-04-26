@@ -20,7 +20,7 @@ namespace StoreMgmtSystem
             Login fLogin = new Login();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new Form1());
+                Application.Run(new Form1(fLogin.Username, fLogin.IDuser));
             }
             else
             {

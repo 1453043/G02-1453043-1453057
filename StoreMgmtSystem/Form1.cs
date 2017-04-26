@@ -16,13 +16,22 @@ namespace StoreMgmtSystem
     public partial class Form1 : Form
     {
         private CTLSanPham _spData = new CTLSanPham();
+        private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
+        private string currentUser;
+        private string currentUserID;
 
-        public Form1()
+        public Form1(string username, string iduser)
         {
             InitializeComponent();
             CultureInfo ci = new CultureInfo("vi-VN");
             loadLanguageResource(ci);
 
+            currentUser = username;
+            currentUserID = iduser;
+            lbUsername.Text = "Người dùng: " + username;
+
+            // load đơn nhập hàng
+            loadDataGridViewInvoice();
             // load dữ liệu Hàng hóa
             loadDataGridViewProduct();
 
@@ -82,6 +91,27 @@ namespace StoreMgmtSystem
                 }
             };
         }
+        private void loadDataGridViewInvoice()
+        {
+            DataTable hdnhData = _hdData.search();
+            dataGridViewInv.DataSource = hdnhData;
+            //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
+            //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
+            //dataGridViewProduct.Columns["idNSX"].HeaderText = "Nhà sản xuất";
+            //dataGridViewProduct.Columns["Gia"].HeaderText = "Giá";
+            //dataGridViewProduct.Columns["ThongTinBaoHanh"].HeaderText = "Bảo hành";
+            //dataGridViewProduct.Columns["MoTa"].HeaderText = "Mô tả";
+
+            dataGridViewInv.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
+        }
         private void mitemAccDetail_Click(object sender, EventArgs e)
         {
 
@@ -94,10 +124,11 @@ namespace StoreMgmtSystem
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
-            AddInvoiceForm addInvoiceForm = new AddInvoiceForm();
+            AddInvoiceForm addInvoiceForm = new AddInvoiceForm(currentUser, currentUserID);
             if (addInvoiceForm.ShowDialog() == DialogResult.OK)
             {
                 // load lại danh sách hóa đơn
+                loadDataGridViewInvoice();
             }
         }
 

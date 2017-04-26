@@ -11,11 +11,12 @@ namespace StoreMgmtSystem
     {
         DAONguoiDung dataNguoiDung = new DAONguoiDung();
 
-        public bool authenticate(NguoiDung nd)
+        // trả về ID người dùng
+        // 0 nếu không tồn tại người dùng
+        public string authenticate(NguoiDung nd)
         {
-            //return true;
-            //DataTable user = dataNguoiDung.Authenticate(nd);
             return dataNguoiDung.Authenticate(nd);
         }
+
     }
 }

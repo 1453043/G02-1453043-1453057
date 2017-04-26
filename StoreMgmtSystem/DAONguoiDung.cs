@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Main.DAO;
@@ -18,7 +14,9 @@ namespace StoreMgmtSystem
         #endregion
 
         #region Methods
-        public bool Authenticate(NguoiDung user)
+        // trả về ID người dùng
+        // 0 nếu không tồn tại người dùng
+        public string Authenticate(NguoiDung user)
         {
             string s = "select * from NguoiDung where TenDangNhap = @user and MatKhau = @pass";
             SqlCommand cmd = new SqlCommand(s);
@@ -30,9 +28,9 @@ namespace StoreMgmtSystem
                 DataSet sqlDataTable = this.ExecuteQuery(cmd);
                 this.disconnect();
                 if (sqlDataTable.Tables[0].Rows.Count == 0)
-                    return false;
+                    return "";
                 else
-                    return true;
+                    return sqlDataTable.Tables[0].Rows[0].ItemArray[0].ToString();
             }
             catch (Exception ex) { throw ex; }
         }

@@ -13,6 +13,8 @@ namespace StoreMgmtSystem
     public partial class Login : Form
     {
         private CTLNguoiDung _ndData = new CTLNguoiDung();
+        public string Username { get; set; }
+        public string IDuser { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -21,10 +23,14 @@ namespace StoreMgmtSystem
         private void button1_Click(object sender, EventArgs e)
         {
             NguoiDung user = new NguoiDung(txtUsername.Text, txtPassword.Text);
-            if (_ndData.authenticate(user))
+            string id = _ndData.authenticate(user);
+            if (id != "")
             {
                 DialogResult = DialogResult.OK;
-                //Close();
+                Username = txtUsername.Text;
+                IDuser = id;
+
+                Close();
             }
             else
             {
@@ -32,6 +38,14 @@ namespace StoreMgmtSystem
             }
             //DialogResult = DialogResult.OK;
             //Close();
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
     }
 }
