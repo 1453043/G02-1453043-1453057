@@ -58,6 +58,7 @@
             this.txtPageBill = new System.Windows.Forms.ToolStripTextBox();
             this.btnNextPageBill = new System.Windows.Forms.ToolStripButton();
             this.tabPageImport = new System.Windows.Forms.TabPage();
+            this.dataGridViewInv = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAddInvoice = new System.Windows.Forms.ToolStripButton();
             this.btnDelInvoice = new System.Windows.Forms.ToolStripButton();
@@ -96,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.cmbCategoryBill.SuspendLayout();
             this.tabPageImport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInv)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.tabPageProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -218,10 +220,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 29);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(976, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(976, 443);
             this.dataGridView1.TabIndex = 3;
             // 
             // cmbCategoryBill
@@ -359,6 +362,7 @@
             // 
             // tabPageImport
             // 
+            this.tabPageImport.Controls.Add(this.dataGridViewInv);
             this.tabPageImport.Controls.Add(this.toolStrip2);
             this.tabPageImport.Location = new System.Drawing.Point(4, 22);
             this.tabPageImport.Name = "tabPageImport";
@@ -367,6 +371,15 @@
             this.tabPageImport.TabIndex = 1;
             this.tabPageImport.Text = "Nhập hàng";
             this.tabPageImport.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewInv
+            // 
+            this.dataGridViewInv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewInv.Location = new System.Drawing.Point(8, 31);
+            this.dataGridViewInv.Name = "dataGridViewInv";
+            this.dataGridViewInv.Size = new System.Drawing.Size(967, 438);
+            this.dataGridViewInv.TabIndex = 2;
             // 
             // toolStrip2
             // 
@@ -526,7 +539,7 @@
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(976, 150);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(976, 437);
             this.dataGridViewProduct.TabIndex = 1;
             // 
             // toolStrip1
@@ -682,6 +695,7 @@
             this.cmbCategoryBill.PerformLayout();
             this.tabPageImport.ResumeLayout(false);
             this.tabPageImport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInv)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.tabPageProduct.ResumeLayout(false);
@@ -758,6 +772,7 @@
         private System.Windows.Forms.ToolStripButton btnNextPageBill;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridViewProduct;
+        private System.Windows.Forms.DataGridView dataGridViewInv;
     }
 }
 

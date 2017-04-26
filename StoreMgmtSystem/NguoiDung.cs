@@ -21,6 +21,13 @@ namespace StoreMgmtSystem
             _matKhau = matKhau;
             _hoTen = hoTen;
         }
+        public NguoiDung(string tenDangNhap, string matKhau)
+        {
+            _id = "";
+            _tenDangNhap = tenDangNhap;
+            _matKhau = matKhau;
+            _hoTen = "";
+        }
         #endregion
 
         #region Properties

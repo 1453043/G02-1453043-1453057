@@ -66,10 +66,12 @@ namespace StoreMgmtSystem
 
         public DataTable Search()
         {
+            SqlCommand cm = new SqlCommand();
+            cm.CommandText = "select * from SanPham";
             try
             {
                 this.connect();
-                DataTable sqlDataTable = this.ExecuteQuery_DataTable("select * from SanPham");
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
                 this.disconnect();
                 return sqlDataTable;
             }
@@ -78,23 +80,31 @@ namespace StoreMgmtSystem
 
         public DataTable SearchWithKeyword(string keyword, string category)
         {
+            SqlCommand cmd = new SqlCommand();            
             string query = "";
+
             if (category == "Tên sản phẩm")
             {
-                query = "select * from SanPham where TenSP like '%" + keyword + "%'";
+                query = "select * from SanPham where TenSP like '%' + @TenSp + '%'";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@TenSp", keyword);
             }
             else if (category == "ID")
             {
-                query = "select * from SanPham where id like '%" + keyword + "%'";
+                query = "select * from SanPham where id like '%' + @ID + '%'";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@ID", keyword);
             }
             else if (category == "Mã nhà sản xuất")
             {
-                query = "select * from SanPham where idNSX = '" + keyword + "'";
+                query = "select * from SanPham where idNSX = @idnsx";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@idnsx", keyword);
             }
             try
             {
                 this.connect();
-                DataTable sqlDataTable = this.ExecuteQuery_DataTable(query);
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cmd);
                 this.disconnect();
                 return sqlDataTable;
             }

@@ -31,6 +31,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.dataGridViewForm = new System.Windows.Forms.DataGridView();
+            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
@@ -48,9 +51,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
-            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForm)).BeginInit();
@@ -113,8 +113,28 @@
             this.SoLuong});
             this.dataGridViewForm.Location = new System.Drawing.Point(531, 67);
             this.dataGridViewForm.Name = "dataGridViewForm";
+            this.dataGridViewForm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewForm.Size = new System.Drawing.Size(426, 400);
             this.dataGridViewForm.TabIndex = 0;
+            // 
+            // idSanPham
+            // 
+            this.idSanPham.HeaderText = "Mã sản phẩm";
+            this.idSanPham.Name = "idSanPham";
+            this.idSanPham.ReadOnly = true;
+            // 
+            // TenSanPham
+            // 
+            this.TenSanPham.HeaderText = "Tên sản phẩm";
+            this.TenSanPham.Name = "TenSanPham";
+            this.TenSanPham.ReadOnly = true;
+            this.TenSanPham.Width = 200;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
             // 
             // tableLayoutPanel2
             // 
@@ -206,6 +226,7 @@
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "<<";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -216,6 +237,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thêm hóa đơn";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -317,25 +339,6 @@
             this.btnAddProduct.Text = "Thêm mới";
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // idSanPham
-            // 
-            this.idSanPham.HeaderText = "Mã sản phẩm";
-            this.idSanPham.Name = "idSanPham";
-            this.idSanPham.ReadOnly = true;
-            // 
-            // TenSanPham
-            // 
-            this.TenSanPham.HeaderText = "Tên sản phẩm";
-            this.TenSanPham.Name = "TenSanPham";
-            this.TenSanPham.ReadOnly = true;
-            this.TenSanPham.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
             // 
             // AddInvoiceForm
             // 

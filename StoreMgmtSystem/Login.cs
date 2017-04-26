@@ -12,6 +12,7 @@ namespace StoreMgmtSystem
 {
     public partial class Login : Form
     {
+        private CTLNguoiDung _ndData = new CTLNguoiDung();
         public Login()
         {
             InitializeComponent();
@@ -19,8 +20,18 @@ namespace StoreMgmtSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            NguoiDung user = new NguoiDung(txtUsername.Text, txtPassword.Text);
+            if (_ndData.authenticate(user))
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác.");
+            }
+            //DialogResult = DialogResult.OK;
+            //Close();
         }
     }
 }

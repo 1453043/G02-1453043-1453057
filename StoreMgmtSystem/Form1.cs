@@ -95,7 +95,10 @@ namespace StoreMgmtSystem
         private void btnAddInvoice_Click(object sender, EventArgs e)
         {
             AddInvoiceForm addInvoiceForm = new AddInvoiceForm();
-            if (addInvoiceForm.ShowDialog() == DialogResult.OK) ;
+            if (addInvoiceForm.ShowDialog() == DialogResult.OK)
+            {
+                // load lại danh sách hóa đơn
+            }
         }
 
         private void btnAddBill_Click(object sender, EventArgs e)
