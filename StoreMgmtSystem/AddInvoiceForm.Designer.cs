@@ -52,6 +52,8 @@
             this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForm)).BeginInit();
@@ -129,6 +131,8 @@
             this.tableLayoutPanel2.Controls.Add(this.txtAccount, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtDate, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtPrice, 2, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(531, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -187,13 +191,13 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(42, 390);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(42, 400);
             this.tableLayoutPanel3.TabIndex = 4;
             // 
             // btnInsert
             // 
             this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnInsert.Location = new System.Drawing.Point(3, 169);
+            this.btnInsert.Location = new System.Drawing.Point(3, 174);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(36, 23);
             this.btnInsert.TabIndex = 0;
@@ -203,7 +207,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(3, 198);
+            this.btnRemove.Location = new System.Drawing.Point(3, 203);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(36, 23);
             this.btnRemove.TabIndex = 1;
@@ -348,6 +352,26 @@
             this.GiaTien.HeaderText = "Giá đơn vị";
             this.GiaTien.Name = "GiaTien";
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(368, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Tổng tiền:";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPrice.AutoSize = true;
+            this.txtPrice.Location = new System.Drawing.Point(410, 28);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(13, 13);
+            this.txtPrice.TabIndex = 5;
+            this.txtPrice.Text = "0";
+            // 
             // AddInvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,5 +422,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaTien;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label txtPrice;
     }
 }

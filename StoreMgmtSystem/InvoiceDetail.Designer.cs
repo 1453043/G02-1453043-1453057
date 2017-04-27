@@ -32,9 +32,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCT = new System.Windows.Forms.DataGridView();
             this.btnOK = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCT)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,24 +61,24 @@
             // 
             this.txtAccount.Location = new System.Drawing.Point(72, 13);
             this.txtAccount.Name = "txtAccount";
-            this.txtAccount.Size = new System.Drawing.Size(100, 20);
+            this.txtAccount.Size = new System.Drawing.Size(165, 20);
             this.txtAccount.TabIndex = 1;
             // 
             // txtDate
             // 
             this.txtDate.Location = new System.Drawing.Point(72, 39);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(100, 20);
+            this.txtDate.Size = new System.Drawing.Size(165, 20);
             this.txtDate.TabIndex = 1;
             // 
-            // dataGridView1
+            // dataGridViewCT
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(547, 328);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridViewCT.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCT.Location = new System.Drawing.Point(15, 75);
+            this.dataGridViewCT.Name = "dataGridViewCT";
+            this.dataGridViewCT.Size = new System.Drawing.Size(547, 328);
+            this.dataGridViewCT.TabIndex = 2;
             // 
             // btnOK
             // 
@@ -87,20 +89,41 @@
             this.btnOK.Text = "Xác nhận";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(359, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Tổng tiền:";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.AutoSize = true;
+            this.txtPrice.Location = new System.Drawing.Point(431, 42);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(13, 13);
+            this.txtPrice.TabIndex = 5;
+            this.txtPrice.Text = "0";
+            // 
             // InvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 456);
+            this.ClientSize = new System.Drawing.Size(581, 456);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCT);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtAccount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "InvoiceDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết đơn hàng";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,7 +135,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCT;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtPrice;
     }
 }

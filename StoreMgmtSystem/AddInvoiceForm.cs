@@ -16,6 +16,7 @@ namespace StoreMgmtSystem
         private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
         private CTLCT_HoaDonNhapHang _ct = new CTLCT_HoaDonNhapHang();
         private string currentUserID;
+        private int currentPrice;
 
         public AddInvoiceForm(string username, string userid)
         {
@@ -32,6 +33,7 @@ namespace StoreMgmtSystem
 
             currentUserID = userid;
             txtAccount.Text = username;
+            currentPrice = 0;
             // khởi tạo giá trị ngày lập vào txtDate
             txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
@@ -52,8 +54,10 @@ namespace StoreMgmtSystem
                 var dataGridView = o as DataGridView;
                 if (dataGridView != null)
                 {
-                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    //dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[0].Width = 40;
+
+                    //dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
         }
@@ -71,8 +75,9 @@ namespace StoreMgmtSystem
                 var dataGridView = o as DataGridView;
                 if (dataGridView != null)
                 {
-                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    // dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    
+                    //dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
         }
@@ -100,7 +105,7 @@ namespace StoreMgmtSystem
             // lấy id
             string id = dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString();
             string name = dataGridViewProduct.Rows[rowindex].Cells[1].Value.ToString();
-            int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[3].Value.ToString());
+            int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString());
 
             // kiểm tra xem item này đã có bên gridview bên phải chưa
             // có rồi thì +1 số lượng
@@ -129,6 +134,10 @@ namespace StoreMgmtSystem
 
                 dataGridViewForm.Rows.Add(row);
             }
+
+            // cộng vào tổng tiền hiện tại
+            currentPrice += gia;
+            txtPrice.Text = currentPrice.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -145,7 +154,7 @@ namespace StoreMgmtSystem
             string idHD = datenow.ToString("ddMMyyhhmmss");
 
             // save đơn hàng
-            _hdData.save(idHD, currentUserID, datenow);
+            _hdData.save(idHD, currentUserID, datenow, currentPrice);
 
             // save bảng data đơn hàng
             // tạo DataTable để lấy data trong grid view
@@ -155,7 +164,7 @@ namespace StoreMgmtSystem
             table.Columns.Add(new DataColumn("SoLuong", typeof(int)));
             table.Columns.Add(new DataColumn("GiaTien", typeof(int)));
 
-            object[] cellValues = new object[3];
+            object[] cellValues = new object[4];
             foreach (DataGridViewRow row in dataGridViewForm.Rows)
             {
                 if (row.Cells[0].Value != null)
@@ -163,13 +172,16 @@ namespace StoreMgmtSystem
                     cellValues[0] = idHD;
                     cellValues[1] = row.Cells[0].Value;
                     int val;
-                    Int32.TryParse(row.Cells[2].Value.ToString(), out val);
+                    Int32.TryParse(row.Cells[2].Value.ToString(), out val); // so luong
                     cellValues[2] = val;
+                    Int32.TryParse(row.Cells[3].Value.ToString(), out val); // gia tien
+                    cellValues[3] = val;
                     table.Rows.Add(cellValues);
                 }
             }
             if (_ct.save(table))
             {
+                DialogResult = DialogResult.OK;
                 Close();
             }
         }

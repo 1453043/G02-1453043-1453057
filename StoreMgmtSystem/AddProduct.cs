@@ -46,7 +46,7 @@ namespace StoreMgmtSystem
         {
             // gọi save
             int status = _spData.save(txtID.Text, cmbManu.SelectedValue.ToString(), txtName.Text,
-                txtGuarantee.Text, txtDesc.Text, (int)numGia.Value);
+                txtGuarantee.Text, txtDesc.Text, (int)numGia.Value, (int)numGiaGoc.Value);
             if (status == 1)
             {
                 MessageBox.Show("Thêm thành công", "Thông báo",

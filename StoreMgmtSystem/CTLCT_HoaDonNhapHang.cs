@@ -15,5 +15,10 @@ namespace StoreMgmtSystem
         {
             return dataHDNH.Save(table);
         }
+
+        public DataTable search(string id)
+        {
+            return dataHDNH.Search(id);
+        }
     }
 }

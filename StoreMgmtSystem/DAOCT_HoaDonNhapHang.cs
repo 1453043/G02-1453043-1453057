@@ -35,6 +35,21 @@ namespace StoreMgmtSystem
                 }
             }
         }
+
+        public DataTable Search(string id)
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.CommandText = "select idSanPham,SoLuong,GiaTien from CT_HoaDonNhapHang where idNhapHang = @ID";
+            cm.Parameters.AddWithValue("@ID", id);
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                return sqlDataTable;
+            }
+            catch (Exception ex) { throw ex; }
+        }
         #endregion
     }
 }

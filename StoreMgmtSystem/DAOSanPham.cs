@@ -22,8 +22,8 @@ namespace StoreMgmtSystem
         {
             this.connect();
             bool bCheck = true;
-            string query = "insert into SanPham([id],[idNSX],[ThongTinBaoHanh],[TenSP],[MoTa],[Gia])"
-                + "values(@ID,@IDNSX,@BH,@TEN,@MOTA,@GIA)";
+            string query = "insert into SanPham([id],[idNSX],[ThongTinBaoHanh],[TenSP],[MoTa],[Gia],[GiaGoc])"
+                + "values(@ID,@IDNSX,@BH,@TEN,@MOTA,@GIA,@GIAGOC)";
             this.cm = new SqlCommand(query, cnn);
             this.cm.Parameters.Add(new SqlParameter("@ID", Sp.ID.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@IDNSX", Sp.IDNSX.Trim()));
@@ -31,6 +31,7 @@ namespace StoreMgmtSystem
             this.cm.Parameters.Add(new SqlParameter("@TEN", Sp.Ten.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@MOTA", Sp.MoTa.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@GIA", Sp.Gia));
+            this.cm.Parameters.Add(new SqlParameter("@GIAGOC", Sp.GiaGoc));
             try
             {
                 this.cm.ExecuteNonQuery();
@@ -49,12 +50,13 @@ namespace StoreMgmtSystem
         {
             this.connect();
             bool bCheck = true;
-            string query = "update SanPham set [TenSP]=@TEN, [idNSX]=@IDNSX, [Gia]=@GIA, " +
+            string query = "update SanPham set [TenSP]=@TEN, [idNSX]=@IDNSX, [Gia]=@GIA, [GiaGoc]=@GIAGOC," +
                 "[ThongTinBaoHanh]=@TT, [MoTa]=@MOTA where [id] = @ID";
             this.cm = new SqlCommand(query, cnn);
             this.cm.Parameters.Add(new SqlParameter("@TEN", sp.Ten.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@IDNSX", sp.IDNSX.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@GIA", sp.Gia));
+            this.cm.Parameters.Add(new SqlParameter("@GIAGOC", sp.GiaGoc));
             this.cm.Parameters.Add(new SqlParameter("@TT", sp.BaoHanh.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@MOTA", sp.MoTa.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@ID", sp.ID.Trim()));
@@ -81,7 +83,7 @@ namespace StoreMgmtSystem
         public DataTable SearchForHoaDon()
         {
             SqlCommand cm = new SqlCommand();
-            cm.CommandText = "select (id, TenSP, Gia) from SanPham";
+            cm.CommandText = "select id,TenSP,GiaGoc from SanPham";
             try
             {
                 this.connect();

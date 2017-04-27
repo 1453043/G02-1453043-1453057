@@ -16,14 +16,14 @@ namespace StoreMgmtSystem
             return dataSanPham.Save(sp);
         }
 
-        public int save(string id, string NSX, string name, string bh, string desc, int gia)
+        public int save(string id, string NSX, string name, string bh, string desc, int gia, int giaGoc)
         {
             // kiểm tra các fields
             if (id.Length == 0)
                 return 2;
             if (name.Length == 0)
                 return 3;
-            SanPham spObj = new SanPham(id, NSX, name, bh, desc, gia);
+            SanPham spObj = new SanPham(id, NSX, name, bh, desc, gia, giaGoc);
             if (dataSanPham.Save(spObj))
                 return 1;
             return 0;
@@ -39,13 +39,13 @@ namespace StoreMgmtSystem
             return dataSanPham.Delete(ID);
         }
 
-        public int update(string id, string NSX, string name, string bh, string desc, int gia)
+        public int update(string id, string NSX, string name, string bh, string desc, int gia, int giaGoc)
         {
             if (id.Length == 0)
                 return 2;
             if (name.Length == 0)
                 return 3;
-            SanPham spObj = new SanPham(id, NSX, name, bh, desc, gia);
+            SanPham spObj = new SanPham(id, NSX, name, bh, desc, gia, giaGoc);
             if (dataSanPham.Update(spObj))
                 return 1;
             return 0;

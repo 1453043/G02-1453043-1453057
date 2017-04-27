@@ -107,7 +107,7 @@ namespace StoreMgmtSystem
                 var dataGridView = o as DataGridView;
                 if (dataGridView != null)
                 {
-                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                   // dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
@@ -184,7 +184,15 @@ namespace StoreMgmtSystem
 
         private void btnViewInvoice_Click(object sender, EventArgs e)
         {
-
+            // index row đang được chọn
+            int rowindex = dataGridViewInv.CurrentCell.RowIndex;
+            List<string> item = new List<string>();
+            foreach (DataGridViewCell cell in dataGridViewInv.Rows[rowindex].Cells)
+            {
+                item.Add(cell.Value.ToString());
+            }
+            InvoiceDetail detailInvForm = new InvoiceDetail(item);
+            detailInvForm.ShowDialog();
         }
 
         private void btnRefreshInvoiceList_Click(object sender, EventArgs e)

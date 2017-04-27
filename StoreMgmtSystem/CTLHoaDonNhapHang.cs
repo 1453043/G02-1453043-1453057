@@ -11,9 +11,9 @@ namespace StoreMgmtSystem
     {
         DAOHoaDonNhapHang dataHDNH = new DAOHoaDonNhapHang();
 
-        public bool save(string idHD, string idNguoiLap, DateTime ngayLap)
+        public bool save(string idHD, string idNguoiLap, DateTime ngayLap, int tong)
         {
-            HoaDonNhapHang hd = new HoaDonNhapHang(idHD, idNguoiLap, ngayLap);
+            HoaDonNhapHang hd = new HoaDonNhapHang(idHD, idNguoiLap, ngayLap, tong);
             return dataHDNH.Save(hd);
         }
 

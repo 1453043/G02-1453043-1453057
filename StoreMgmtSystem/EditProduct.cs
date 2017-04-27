@@ -29,9 +29,10 @@ namespace StoreMgmtSystem
             txtID.Text = product[0];
             txtName.Text = product[1];
             cmbManu.Text = product[2];
-            numGia.Value = Int32.Parse(product[3]);
-            txtDesc.Text = product[4];
-            txtGuarantee.Text = product[5];
+            numGiaGoc.Value = Int32.Parse(product[3]);
+            numGia.Value = Int32.Parse(product[4]);
+            txtDesc.Text = product[5];
+            txtGuarantee.Text = product[6];
         }
 
         private void btnAddManu_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace StoreMgmtSystem
         {
             // gọi save
             int status = _spData.update(txtID.Text, cmbManu.SelectedValue.ToString(), txtName.Text,
-                txtGuarantee.Text, txtDesc.Text, (int)numGia.Value);
+                txtGuarantee.Text, txtDesc.Text, (int)numGia.Value,(int)numGiaGoc.Value);
 
             if (status == 1)
             {

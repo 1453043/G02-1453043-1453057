@@ -14,9 +14,10 @@ namespace StoreMgmtSystem
         private string _ten;
         private string _moTa;
         private int _gia;
+        private int _giaGoc;
 
         #region Contructor
-        public SanPham(string id, string idNSX, string ten, string baoHanh, string moTa, int gia)
+        public SanPham(string id, string idNSX, string ten, string baoHanh, string moTa, int gia, int giaGoc)
         {
             _id = id;
             _idNSX = idNSX;
@@ -24,6 +25,7 @@ namespace StoreMgmtSystem
             _ten = ten;
             _moTa = moTa;
             _gia = gia;
+            _giaGoc = giaGoc;
         }
         #endregion
 
@@ -34,6 +36,7 @@ namespace StoreMgmtSystem
         public string Ten { set { this._ten = value; } get { return this._ten; } }
         public string MoTa { set { this._moTa = value; } get { return this._moTa; } }
         public int Gia { set { this._gia = value; } get { return this._gia; } }
+        public int GiaGoc { set { this._giaGoc = value; } get { return this._giaGoc; } }
         #endregion
     }
 }

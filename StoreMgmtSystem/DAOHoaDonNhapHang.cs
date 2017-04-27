@@ -22,12 +22,13 @@ namespace StoreMgmtSystem
         {
             this.connect();
             bool bCheck = true;
-            string query = "insert into HoaDonNhapHang([id],[idNguoiLap],[NgayLap])"
-                + "values(@ID,@IDuser,@date)";
+            string query = "insert into HoaDonNhapHang([id],[idNguoiLap],[NgayLap],[TongGiaTien])"
+                + "values(@ID,@IDuser,@date,@tong)";
             this.cm = new SqlCommand(query, cnn);
             this.cm.Parameters.AddWithValue("ID", hd.ID.Trim());
             this.cm.Parameters.AddWithValue("IDuser", hd.IDNguoiLap.Trim());
             this.cm.Parameters.AddWithValue("date", hd.NgayLap.ToString("yyyy-MM-dd"));
+            this.cm.Parameters.AddWithValue("tong", hd.TongTien);
             try
             {
                 this.cm.ExecuteNonQuery();
