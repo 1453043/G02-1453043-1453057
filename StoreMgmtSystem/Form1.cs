@@ -19,6 +19,7 @@ namespace StoreMgmtSystem
         private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
         private string currentUser;
         private string currentUserID;
+        private bool mode = false;
 
         public Form1(string username, string iduser)
         {
@@ -27,9 +28,11 @@ namespace StoreMgmtSystem
             loadLanguageResource(ci);
 
             currentUser = username;
+            if (username == "admin")
+                mode = true;
             currentUserID = iduser;
             lbUsername.Text = "Người dùng: " + username;
-
+            
             // load đơn nhập hàng
             loadDataGridViewInvoice();
             // load dữ liệu Hàng hóa
@@ -186,7 +189,16 @@ namespace StoreMgmtSystem
 
         private void btnEditInvoice_Click(object sender, EventArgs e)
         {
-
+            // index row đang được chọn
+            int rowindex = dataGridViewInv.CurrentCell.RowIndex;
+            List<string> item = new List<string>();
+            foreach (DataGridViewCell cell in dataGridViewInv.Rows[rowindex].Cells)
+            {
+                item.Add(cell.Value.ToString());
+            }
+            InvoiceDetail detailInvForm = new InvoiceDetail(item, true);
+            if (detailInvForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewInvoice();
         }
 
         private void btnViewInvoice_Click(object sender, EventArgs e)
@@ -198,7 +210,7 @@ namespace StoreMgmtSystem
             {
                 item.Add(cell.Value.ToString());
             }
-            InvoiceDetail detailInvForm = new InvoiceDetail(item);
+            InvoiceDetail detailInvForm = new InvoiceDetail(item, false);
             detailInvForm.ShowDialog();
         }
 

@@ -73,12 +73,16 @@
             // 
             // dataGridViewCT
             // 
+            this.dataGridViewCT.AllowUserToAddRows = false;
+            this.dataGridViewCT.AllowUserToDeleteRows = false;
             this.dataGridViewCT.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCT.Location = new System.Drawing.Point(15, 75);
+            this.dataGridViewCT.MultiSelect = false;
             this.dataGridViewCT.Name = "dataGridViewCT";
             this.dataGridViewCT.Size = new System.Drawing.Size(547, 328);
             this.dataGridViewCT.TabIndex = 2;
+            this.dataGridViewCT.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCT_CellValueChanged);
             // 
             // btnOK
             // 
@@ -88,6 +92,7 @@
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "Xác nhận";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label3
             // 

@@ -18,6 +18,12 @@ namespace StoreMgmtSystem
             return dataHDNH.Save(hd);
         }
 
+        public bool update(string idHD, string idNguoiLap, DateTime ngayLap, int tong)
+        {
+            HoaDonNhapHang hd = new HoaDonNhapHang(idHD, idNguoiLap, ngayLap, tong);
+            return dataHDNH.Update(hd);
+        }
+
         public DataTable search()
         {
             return dataHDNH.Search();

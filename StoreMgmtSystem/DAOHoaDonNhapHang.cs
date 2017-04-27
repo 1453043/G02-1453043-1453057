@@ -43,6 +43,23 @@ namespace StoreMgmtSystem
             return bCheck;
         }
 
+        public bool Update(HoaDonNhapHang hd)
+        {
+            this.connect();
+            bool bCheck = true;
+            string query = "update HoaDonNhapHang set [idNguoiLap]=@IDuser, [NgayLap]=@date, [TongGiaTien]=@tong" +
+                " where [id] = @ID";
+            this.cm = new SqlCommand(query, cnn);
+            this.cm.Parameters.AddWithValue("ID", hd.ID.Trim());
+            this.cm.Parameters.AddWithValue("IDuser", hd.IDNguoiLap.Trim());
+            this.cm.Parameters.AddWithValue("date", hd.NgayLap.ToString("yyyy-MM-dd"));
+            this.cm.Parameters.AddWithValue("tong", hd.TongTien);
+            try
+            { this.cm.ExecuteNonQuery(); this.disconnect(); }
+            catch (Exception ex) { this.disconnect(); bCheck = false; throw ex; }
+            return bCheck;
+        }
+
         public DataTable Search()
         {
             SqlCommand cm = new SqlCommand();
