@@ -78,6 +78,20 @@ namespace StoreMgmtSystem
             catch (Exception ex) { throw ex; }
         }
 
+        public DataTable SearchForHoaDon()
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.CommandText = "select (id, TenSP, Gia) from SanPham";
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                return sqlDataTable;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
         public DataTable SearchWithKeyword(string keyword, string category)
         {
             SqlCommand cmd = new SqlCommand();            

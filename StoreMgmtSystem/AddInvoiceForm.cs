@@ -38,7 +38,7 @@ namespace StoreMgmtSystem
 
         private void loadDataGridViewProduct()
         {
-            DataTable spData = _spData.search();
+            DataTable spData = _spData.searchForHoaDon();
             dataGridViewProduct.DataSource = spData;
             //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
             //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
@@ -100,6 +100,7 @@ namespace StoreMgmtSystem
             // lấy id
             string id = dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString();
             string name = dataGridViewProduct.Rows[rowindex].Cells[1].Value.ToString();
+            int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[3].Value.ToString());
 
             // kiểm tra xem item này đã có bên gridview bên phải chưa
             // có rồi thì +1 số lượng
@@ -124,7 +125,7 @@ namespace StoreMgmtSystem
             if (rowFound == -1)
             {
                 DataGridViewRow row = (DataGridViewRow)dataGridViewForm.RowTemplate.Clone();
-                row.CreateCells(dataGridViewForm, id, name, "1");
+                row.CreateCells(dataGridViewForm, id, name, "1", gia);
 
                 dataGridViewForm.Rows.Add(row);
             }
@@ -152,7 +153,8 @@ namespace StoreMgmtSystem
             table.Columns.Add(new DataColumn("idNhapHang", typeof(string)));
             table.Columns.Add(new DataColumn("idSanPham", typeof(string)));
             table.Columns.Add(new DataColumn("SoLuong", typeof(int)));
-            
+            table.Columns.Add(new DataColumn("GiaTien", typeof(int)));
+
             object[] cellValues = new object[3];
             foreach (DataGridViewRow row in dataGridViewForm.Rows)
             {

@@ -55,7 +55,12 @@ namespace StoreMgmtSystem
         {
             return dataSanPham.Search();
         }
-        
+
+        public DataTable searchForHoaDon()
+        {
+            return dataSanPham.SearchForHoaDon();
+        }
+
         public DataTable searchKeyword(string keyword, string category)
         {
             return dataSanPham.SearchWithKeyword(keyword, category);

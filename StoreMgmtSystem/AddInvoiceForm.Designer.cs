@@ -31,9 +31,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.dataGridViewForm = new System.Windows.Forms.DataGridView();
-            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
@@ -51,6 +48,10 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
+            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForm)).BeginInit();
@@ -110,31 +111,13 @@
             this.dataGridViewForm.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idSanPham,
             this.TenSanPham,
-            this.SoLuong});
+            this.SoLuong,
+            this.GiaTien});
             this.dataGridViewForm.Location = new System.Drawing.Point(531, 67);
             this.dataGridViewForm.Name = "dataGridViewForm";
             this.dataGridViewForm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewForm.Size = new System.Drawing.Size(426, 400);
             this.dataGridViewForm.TabIndex = 0;
-            // 
-            // idSanPham
-            // 
-            this.idSanPham.HeaderText = "Mã sản phẩm";
-            this.idSanPham.Name = "idSanPham";
-            this.idSanPham.ReadOnly = true;
-            // 
-            // TenSanPham
-            // 
-            this.TenSanPham.HeaderText = "Tên sản phẩm";
-            this.TenSanPham.Name = "TenSanPham";
-            this.TenSanPham.ReadOnly = true;
-            this.TenSanPham.Width = 200;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
             // 
             // tableLayoutPanel2
             // 
@@ -340,6 +323,31 @@
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
+            // idSanPham
+            // 
+            this.idSanPham.HeaderText = "Mã sản phẩm";
+            this.idSanPham.Name = "idSanPham";
+            this.idSanPham.ReadOnly = true;
+            this.idSanPham.Width = 80;
+            // 
+            // TenSanPham
+            // 
+            this.TenSanPham.HeaderText = "Tên sản phẩm";
+            this.TenSanPham.Name = "TenSanPham";
+            this.TenSanPham.ReadOnly = true;
+            this.TenSanPham.Width = 150;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // GiaTien
+            // 
+            this.GiaTien.HeaderText = "Giá đơn vị";
+            this.GiaTien.Name = "GiaTien";
+            // 
             // AddInvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,5 +397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaTien;
     }
 }
