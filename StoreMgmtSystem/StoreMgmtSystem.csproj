@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="HoaDonBanHang.cs" />
     <Compile Include="HoaDonNhapHang.cs" />
+    <Compile Include="InvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceDetail.Designer.cs">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="KhachHang.cs" />
     <Compile Include="Lang\langres.en.Designer.cs">
       <DependentUpon>langres.en.resx</DependentUpon>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceDetail.resx">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lang\langres.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
