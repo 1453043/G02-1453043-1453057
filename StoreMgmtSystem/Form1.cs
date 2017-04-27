@@ -174,7 +174,14 @@ namespace StoreMgmtSystem
 
         private void btnDelInvoice_Click(object sender, EventArgs e)
         {
+            // index row đang được chọn
+            int rowindex = dataGridViewInv.CurrentCell.RowIndex;
+            
+            // delete đơn hàng theo id 
+            _hdData.delete(dataGridViewInv.Rows[rowindex].Cells[0].Value.ToString());
 
+            // load lại danh sách hàng
+            loadDataGridViewInvoice();
         }
 
         private void btnEditInvoice_Click(object sender, EventArgs e)
@@ -197,7 +204,7 @@ namespace StoreMgmtSystem
 
         private void btnRefreshInvoiceList_Click(object sender, EventArgs e)
         {
-
+            loadDataGridViewInvoice();
         }
 
         private void btnFindInvoice_Click(object sender, EventArgs e)

@@ -61,8 +61,8 @@
             this.dataGridViewInv = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAddInvoice = new System.Windows.Forms.ToolStripButton();
-            this.btnDelInvoice = new System.Windows.Forms.ToolStripButton();
             this.btnEditInvoice = new System.Windows.Forms.ToolStripButton();
+            this.btnDelInvoice = new System.Windows.Forms.ToolStripButton();
             this.btnViewInvoice = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnRefreshInvoiceList = new System.Windows.Forms.ToolStripButton();
@@ -392,8 +392,8 @@
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddInvoice,
-            this.btnDelInvoice,
             this.btnEditInvoice,
+            this.btnDelInvoice,
             this.btnViewInvoice,
             this.toolStripSeparator5,
             this.btnRefreshInvoiceList,
@@ -422,25 +422,25 @@
             this.btnAddInvoice.Text = "toolStripButton1";
             this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
-            // btnDelInvoice
-            // 
-            this.btnDelInvoice.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDelInvoice.Image = global::StoreMgmtSystem.Properties.Resources.edit;
-            this.btnDelInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDelInvoice.Name = "btnDelInvoice";
-            this.btnDelInvoice.Size = new System.Drawing.Size(23, 22);
-            this.btnDelInvoice.Text = "toolStripButton1";
-            this.btnDelInvoice.Click += new System.EventHandler(this.btnDelInvoice_Click);
-            // 
             // btnEditInvoice
             // 
             this.btnEditInvoice.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnEditInvoice.Image = global::StoreMgmtSystem.Properties.Resources.del;
+            this.btnEditInvoice.Image = global::StoreMgmtSystem.Properties.Resources.edit;
             this.btnEditInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditInvoice.Name = "btnEditInvoice";
             this.btnEditInvoice.Size = new System.Drawing.Size(23, 22);
             this.btnEditInvoice.Text = "toolStripButton1";
             this.btnEditInvoice.Click += new System.EventHandler(this.btnEditInvoice_Click);
+            // 
+            // btnDelInvoice
+            // 
+            this.btnDelInvoice.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDelInvoice.Image = global::StoreMgmtSystem.Properties.Resources.del;
+            this.btnDelInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDelInvoice.Name = "btnDelInvoice";
+            this.btnDelInvoice.Size = new System.Drawing.Size(23, 22);
+            this.btnDelInvoice.Text = "toolStripButton1";
+            this.btnDelInvoice.Click += new System.EventHandler(this.btnDelInvoice_Click); 
             // 
             // btnViewInvoice
             // 
@@ -760,8 +760,8 @@
         private System.Windows.Forms.ToolStripButton btnNextPageProduct;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton btnAddInvoice;
-        private System.Windows.Forms.ToolStripButton btnEditInvoice;
         private System.Windows.Forms.ToolStripButton btnDelInvoice;
+        private System.Windows.Forms.ToolStripButton btnEditInvoice;
         private System.Windows.Forms.ToolStripButton btnViewInvoice;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnRefreshInvoiceList;

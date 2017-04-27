@@ -20,5 +20,10 @@ namespace StoreMgmtSystem
         {
             return dataHDNH.Search(id);
         }
+
+        public bool delete(string ID)
+        {
+            return dataHDNH.Delete(ID);
+        }
     }
 }
