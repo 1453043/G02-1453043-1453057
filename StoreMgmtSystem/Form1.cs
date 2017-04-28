@@ -17,9 +17,12 @@ namespace StoreMgmtSystem
     {
         private CTLSanPham _spData = new CTLSanPham();
         private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
+        private CTLNguoiDung _accData = new CTLNguoiDung();
+
         private string currentUser;
         private string currentUserID;
-        private bool mode = false;
+        enum Mode { admin, warehouse, cashier };
+        private Mode mode = Mode.cashier;
 
         public Form1(string username, string iduser)
         {
@@ -29,14 +32,37 @@ namespace StoreMgmtSystem
 
             currentUser = username;
             if (username == "admin")
-                mode = true;
+                mode = Mode.admin;
+            else mode = Mode.warehouse;
+            
             currentUserID = iduser;
             lbUsername.Text = "Người dùng: " + username;
-            
-            // load đơn nhập hàng
-            loadDataGridViewInvoice();
-            // load dữ liệu Hàng hóa
-            loadDataGridViewProduct();
+            if(mode == Mode.admin)
+            {
+                foreach (Control ctl in tabControlMain.Controls) ctl.Enabled = true;
+
+                // load đơn nhập hàng
+                loadDataGridViewInvoice();
+                // load dữ liệu Hàng hóa
+                loadDataGridViewProduct();
+                // load dữ liệu tài khoản
+                loadDataGridViewAccount();
+            }
+            else if(mode == Mode.cashier)
+            {
+                tabControlMain.TabPages.Remove(tabPageImport);
+                tabControlMain.TabPages.Remove(tabPageProduct);
+                tabControlMain.TabPages.Remove(tabPageAccount);
+            }
+            else
+            {
+                tabControlMain.TabPages.Remove(tabPageSell);
+                tabControlMain.TabPages.Remove(tabPageAccount);
+                // load đơn nhập hàng
+                loadDataGridViewInvoice();
+                // load dữ liệu Hàng hóa
+                loadDataGridViewProduct();
+            }
 
             // khởi tạo giá trị trong combobox cmbCategoryProduct
             cmbCategoryProduct.Items.Add("Tên sản phẩm");
@@ -115,6 +141,23 @@ namespace StoreMgmtSystem
                 }
             };
         }
+
+        private void loadDataGridViewAccount()
+        {
+            DataTable accData = _accData.search();
+            dataGridViewAccount.DataSource = accData;
+
+            dataGridViewAccount.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
+        }
+
         private void mitemAccDetail_Click(object sender, EventArgs e)
         {
 
@@ -308,6 +351,13 @@ namespace StoreMgmtSystem
             {
                 btnFindProduct_Click(this, new EventArgs());
             }
+        }
+
+        private void btnAddAcc_Click(object sender, EventArgs e)
+        {
+            AddAccountForm addAccountForm = new AddAccountForm();
+            if (addAccountForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewAccount();
         }
     }
 }

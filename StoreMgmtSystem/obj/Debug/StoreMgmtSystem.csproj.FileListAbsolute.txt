@@ -35,3 +35,4 @@ D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinh
 D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.exe
 D:\Studying\Year 3\Term 2\Analysis and Design Software\Final Project\CuaHangLinhKienDienTu\Source\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.pdb
 D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.InvoiceDetail.resources
+D:\1453043\CTT504 - PTTKPM\G02-1453043-1453057\StoreMgmtSystem\obj\Debug\StoreMgmtSystem.AddAccountForm.resources

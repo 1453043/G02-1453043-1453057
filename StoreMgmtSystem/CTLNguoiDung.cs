@@ -18,5 +18,10 @@ namespace StoreMgmtSystem
             return dataNguoiDung.Authenticate(nd);
         }
 
+        public DataTable search()
+        {
+            return dataNguoiDung.Search();
+        }
+
     }
 }

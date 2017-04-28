@@ -34,6 +34,20 @@ namespace StoreMgmtSystem
             }
             catch (Exception ex) { throw ex; }
         }
+
+        public DataTable Search()
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.CommandText = "select id,TenDangNhap,HoTen from NguoiDung";
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                return sqlDataTable;
+            }
+            catch (Exception ex) { throw ex; }
+        }
         #endregion
     }
 }
