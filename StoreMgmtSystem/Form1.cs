@@ -69,6 +69,13 @@ namespace StoreMgmtSystem
             cmbCategoryProduct.Items.Add("ID");
             cmbCategoryProduct.Items.Add("Mã nhà sản xuất");
             cmbCategoryProduct.SelectedItem = "Tên sản phẩm";
+
+            // khởi tạo giá trị trong combobox cmbCategoryAccount
+            cmbCategoryAccount.Items.Add("Tên đăng nhập");
+            cmbCategoryAccount.Items.Add("Họ tên");
+            cmbCategoryAccount.Items.Add("Loại");
+            cmbCategoryAccount.Items.Add("ID");
+            cmbCategoryAccount.SelectedItem = "Tên đăng nhập";
         }
 
         private void mitemVi_Click(object sender, EventArgs e)
@@ -358,6 +365,60 @@ namespace StoreMgmtSystem
             AddAccountForm addAccountForm = new AddAccountForm();
             if (addAccountForm.ShowDialog() == DialogResult.OK)
                 loadDataGridViewAccount();
+        }
+
+        private void btnReloadAcc_Click(object sender, EventArgs e)
+        {
+            loadDataGridViewAccount();
+        }
+
+        private void btnEditAcc_Click(object sender, EventArgs e)
+        {
+            // index row đang được chọn
+            int rowindex = dataGridViewAccount.CurrentCell.RowIndex;
+            string id = dataGridViewAccount.Rows[rowindex].Cells[0].Value.ToString();
+
+            AddAccountForm editAccountForm = new AddAccountForm(id);
+            if (editAccountForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewAccount();
+        }
+
+        private void btnDelAcc_Click(object sender, EventArgs e)
+        {
+            int rowindex = dataGridViewAccount.CurrentCell.RowIndex;
+            string id = dataGridViewAccount.Rows[rowindex].Cells[0].Value.ToString();
+            _accData.delete(id);
+            loadDataGridViewAccount();
+        }
+
+        private void btnViewAcc_Click(object sender, EventArgs e)
+        {
+            // index row đang được chọn
+            int rowindex = dataGridViewAccount.CurrentCell.RowIndex;
+            string id = dataGridViewAccount.Rows[rowindex].Cells[0].Value.ToString();
+
+            AddAccountForm editAccountForm = new AddAccountForm(id);
+            if (editAccountForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewAccount();
+        }
+
+        private void btnFindAcc_Click(object sender, EventArgs e)
+        {
+            string keyword = txtKeywordAcc.Text;
+            string category = cmbCategoryAccount.SelectedItem.ToString();
+            DataTable queryResult = _accData.search(keyword, category);
+
+            dataGridViewAccount.DataSource = queryResult;
+
+            dataGridViewAccount.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
         }
     }
 }

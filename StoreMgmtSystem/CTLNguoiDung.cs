@@ -23,5 +23,44 @@ namespace StoreMgmtSystem
             return dataNguoiDung.Search();
         }
 
+        public NguoiDung search(string id)
+        {
+            DataTable result =  dataNguoiDung.Search(id, "ID");
+            return new NguoiDung(result.Rows[0]["id"].ToString(), result.Rows[0]["TenDangNhap"].ToString(),
+                result.Rows[0]["MatKhau"].ToString(), result.Rows[0]["HoTen"].ToString(),
+                int.Parse(result.Rows[0]["Loai"].ToString()));
+        }
+
+        public DataTable search(string keyword, string category)
+        {
+            return dataNguoiDung.Search(keyword, category);
+        }
+
+        public int save(NguoiDung nd)
+        {
+            // kiem tra ten dang nhap
+            DataTable queryresult =  dataNguoiDung.Search(nd.TenDangNhap, "Tên đăng nhập");
+            if (queryresult.Rows.Count != 0)
+                return 2;
+            if(dataNguoiDung.Save(nd))
+                return 1;
+            return 0;
+        }
+
+        public int update(NguoiDung nd)
+        {
+            // kiem tra ten dang nhap
+            DataTable queryresult = dataNguoiDung.Search(nd.TenDangNhap, "Tên đăng nhập");
+            if (queryresult.Rows.Count != 0)
+                return 2;
+            if (dataNguoiDung.Update(nd))
+                return 1;
+            return 0;
+        }
+
+        public bool delete(string id)
+        {
+            return dataNguoiDung.Delete(id);
+        }
     }
 }

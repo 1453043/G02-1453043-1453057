@@ -91,8 +91,8 @@
             this.btnPrevPageProduct = new System.Windows.Forms.ToolStripButton();
             this.txtPageProduct = new System.Windows.Forms.ToolStripTextBox();
             this.btnNextPageProduct = new System.Windows.Forms.ToolStripButton();
-            this.lbUsername = new System.Windows.Forms.Label();
             this.tabPageAccount = new System.Windows.Forms.TabPage();
+            this.dataGridViewAccount = new System.Windows.Forms.DataGridView();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.btnAddAcc = new System.Windows.Forms.ToolStripButton();
             this.btnEditAcc = new System.Windows.Forms.ToolStripButton();
@@ -101,14 +101,14 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.btnReloadAcc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.cmbCategoryAccount = new System.Windows.Forms.ToolStripComboBox();
+            this.txtKeywordAcc = new System.Windows.Forms.ToolStripTextBox();
             this.btnFindAcc = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPrevAcc = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.btnNextAcc = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewAccount = new System.Windows.Forms.DataGridView();
+            this.lbUsername = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageSell.SuspendLayout();
@@ -121,8 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabPageAccount.SuspendLayout();
-            this.toolStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).BeginInit();
+            this.toolStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -155,19 +155,19 @@
             // mitemAccDetail
             // 
             this.mitemAccDetail.Name = "mitemAccDetail";
-            this.mitemAccDetail.Size = new System.Drawing.Size(152, 22);
+            this.mitemAccDetail.Size = new System.Drawing.Size(127, 22);
             this.mitemAccDetail.Text = "Thông tin";
             this.mitemAccDetail.Click += new System.EventHandler(this.mitemAccDetail_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
             // 
             // mitemSignout
             // 
             this.mitemSignout.Name = "mitemSignout";
-            this.mitemSignout.Size = new System.Drawing.Size(152, 22);
+            this.mitemSignout.Size = new System.Drawing.Size(127, 22);
             this.mitemSignout.Text = "Đăng xuất";
             this.mitemSignout.Click += new System.EventHandler(this.mitemSignout_Click);
             // 
@@ -702,16 +702,6 @@
             this.btnNextPageProduct.Size = new System.Drawing.Size(23, 22);
             this.btnNextPageProduct.Text = "toolStripButton1";
             // 
-            // lbUsername
-            // 
-            this.lbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(876, 9);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(35, 13);
-            this.lbUsername.TabIndex = 2;
-            this.lbUsername.Text = "label1";
-            // 
             // tabPageAccount
             // 
             this.tabPageAccount.Controls.Add(this.dataGridViewAccount);
@@ -724,6 +714,19 @@
             this.tabPageAccount.Text = "Tài khoản";
             this.tabPageAccount.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewAccount
+            // 
+            this.dataGridViewAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewAccount.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAccount.Location = new System.Drawing.Point(4, 32);
+            this.dataGridViewAccount.Name = "dataGridViewAccount";
+            this.dataGridViewAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAccount.Size = new System.Drawing.Size(973, 437);
+            this.dataGridViewAccount.TabIndex = 1;
+            // 
             // toolStrip3
             // 
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -734,8 +737,8 @@
             this.toolStripSeparator11,
             this.btnReloadAcc,
             this.toolStripSeparator12,
-            this.toolStripComboBox2,
-            this.toolStripTextBox1,
+            this.cmbCategoryAccount,
+            this.txtKeywordAcc,
             this.btnFindAcc,
             this.toolStripSeparator13,
             this.btnPrevAcc,
@@ -765,6 +768,7 @@
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Size = new System.Drawing.Size(23, 22);
             this.btnEditAcc.Text = "toolStripButton2";
+            this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
             // 
             // btnDelAcc
             // 
@@ -774,6 +778,7 @@
             this.btnDelAcc.Name = "btnDelAcc";
             this.btnDelAcc.Size = new System.Drawing.Size(23, 22);
             this.btnDelAcc.Text = "toolStripButton3";
+            this.btnDelAcc.Click += new System.EventHandler(this.btnDelAcc_Click);
             // 
             // btnViewAcc
             // 
@@ -783,6 +788,7 @@
             this.btnViewAcc.Name = "btnViewAcc";
             this.btnViewAcc.Size = new System.Drawing.Size(23, 22);
             this.btnViewAcc.Text = "toolStripButton4";
+            this.btnViewAcc.Click += new System.EventHandler(this.btnViewAcc_Click);
             // 
             // toolStripSeparator11
             // 
@@ -797,21 +803,22 @@
             this.btnReloadAcc.Name = "btnReloadAcc";
             this.btnReloadAcc.Size = new System.Drawing.Size(23, 22);
             this.btnReloadAcc.Text = "toolStripButton5";
+            this.btnReloadAcc.Click += new System.EventHandler(this.btnReloadAcc_Click);
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripComboBox2
+            // cmbCategoryAccount
             // 
-            this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 25);
+            this.cmbCategoryAccount.Name = "cmbCategoryAccount";
+            this.cmbCategoryAccount.Size = new System.Drawing.Size(121, 25);
             // 
-            // toolStripTextBox1
+            // txtKeywordAcc
             // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(150, 25);
+            this.txtKeywordAcc.Name = "txtKeywordAcc";
+            this.txtKeywordAcc.Size = new System.Drawing.Size(150, 25);
             // 
             // btnFindAcc
             // 
@@ -821,6 +828,7 @@
             this.btnFindAcc.Name = "btnFindAcc";
             this.btnFindAcc.Size = new System.Drawing.Size(23, 22);
             this.btnFindAcc.Text = "toolStripButton6";
+            this.btnFindAcc.Click += new System.EventHandler(this.btnFindAcc_Click);
             // 
             // toolStripSeparator13
             // 
@@ -850,18 +858,15 @@
             this.btnNextAcc.Size = new System.Drawing.Size(23, 22);
             this.btnNextAcc.Text = "toolStripButton8";
             // 
-            // dataGridViewAccount
+            // lbUsername
             // 
-            this.dataGridViewAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewAccount.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridViewAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAccount.Location = new System.Drawing.Point(4, 32);
-            this.dataGridViewAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewAccount.Name = "dataGridViewAccount";
-            this.dataGridViewAccount.Size = new System.Drawing.Size(973, 437);
-            this.dataGridViewAccount.TabIndex = 1;
+            this.lbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Location = new System.Drawing.Point(876, 9);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(35, 13);
+            this.lbUsername.TabIndex = 2;
+            this.lbUsername.Text = "label1";
             // 
             // Form1
             // 
@@ -895,9 +900,9 @@
             this.toolStrip1.PerformLayout();
             this.tabPageAccount.ResumeLayout(false);
             this.tabPageAccount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).EndInit();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAccount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -978,8 +983,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
         private System.Windows.Forms.ToolStripButton btnReloadAcc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripComboBox cmbCategoryAccount;
+        private System.Windows.Forms.ToolStripTextBox txtKeywordAcc;
         private System.Windows.Forms.ToolStripButton btnFindAcc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripButton btnPrevAcc;
