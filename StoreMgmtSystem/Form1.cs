@@ -105,6 +105,7 @@ namespace StoreMgmtSystem
             tabPageProduct.Text = rm.GetString("tab_product", ci);
             tabPageImport.Text = rm.GetString("tab_import", ci);
             tabPageSell.Text = rm.GetString("tab_sell", ci);
+            tabPageAccount.Text = rm.GetString("tab_account", ci);
         }
         private void loadDataGridViewProduct()
         {
@@ -171,7 +172,7 @@ namespace StoreMgmtSystem
         }
 
         private void mitemSignout_Click(object sender, EventArgs e)
-        {
+        {   
 
         }
 

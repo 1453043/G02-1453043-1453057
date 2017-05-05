@@ -124,6 +124,15 @@ namespace StoreMgmtSystem.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tài khoản.
+        /// </summary>
+        internal static string tab_account {
+            get {
+                return ResourceManager.GetString("tab_account", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nhập hàng.
         /// </summary>
         internal static string tab_import {

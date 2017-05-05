@@ -138,6 +138,9 @@
   <data name="stat" xml:space="preserve">
     <value>Statistics</value>
   </data>
+  <data name="tab_account" xml:space="preserve">
+    <value>Account</value>
+  </data>
   <data name="tab_import" xml:space="preserve">
     <value>Import</value>
   </data>
