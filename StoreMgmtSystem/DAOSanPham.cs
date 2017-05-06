@@ -101,19 +101,19 @@ namespace StoreMgmtSystem
 
             if (category == "Tên sản phẩm")
             {
-                query = "select * from SanPham where TenSP like '%' + @TenSp + '%'";
+                query = "select id,TenSP,GiaGoc from SanPham where TenSP like '%' + @TenSp + '%'";
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@TenSp", keyword);
             }
             else if (category == "ID")
             {
-                query = "select * from SanPham where id like '%' + @ID + '%'";
+                query = "select id,TenSP,GiaGoc from SanPham where id like '%' + @ID + '%'";
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@ID", keyword);
             }
             else if (category == "Mã nhà sản xuất")
             {
-                query = "select * from SanPham where idNSX = @idnsx";
+                query = "select id,TenSP,GiaGoc from SanPham where idNSX = @idnsx";
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@idnsx", keyword);
             }
