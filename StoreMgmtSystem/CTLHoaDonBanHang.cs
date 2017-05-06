@@ -12,15 +12,15 @@ namespace StoreMgmtSystem
         DAOHoaDonBanHang dataHDBH = new DAOHoaDonBanHang();
         DAOCT_HoaDonBanHang dataCT = new DAOCT_HoaDonBanHang();
 
-        public bool save(string idHD, string idNguoiLap, string idNguoiMua, DateTime ngayLap, int tong)
+        public bool save(string idHD, string idNguoiBan, string idNguoiMua, DateTime ngayLap, int tong)
         {
-            HoaDonBanHang hd = new HoaDonBanHang(idHD, idNguoiLap, idNguoiMua, ngayLap, tong);
+            HoaDonBanHang hd = new HoaDonBanHang(idHD, idNguoiBan, idNguoiMua, ngayLap, tong);
             return dataHDBH.Save(hd);
         }
 
-        public bool update(string idHD, string idNguoiLap, DateTime ngayLap, int tong)
+        public bool update(string idHD, string idNguoiBan, string idNguoiMua, DateTime ngayLap, int tong)
         {
-            HoaDonBanHang hd = new HoaDonBanHang(idHD, idNguoiLap, ngayLap, tong);
+            HoaDonBanHang hd = new HoaDonBanHang(idHD, idNguoiBan, idNguoiMua, ngayLap, tong);
             return dataHDBH.Update(hd);
         }
 
