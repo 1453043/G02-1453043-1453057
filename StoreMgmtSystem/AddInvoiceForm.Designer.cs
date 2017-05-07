@@ -323,6 +323,7 @@
             this.cmbCategoryProduct.Name = "cmbCategoryProduct";
             this.cmbCategoryProduct.Size = new System.Drawing.Size(183, 21);
             this.cmbCategoryProduct.TabIndex = 0;
+            this.cmbCategoryProduct.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryProduct_SelectedIndexChanged);
             // 
             // label3
             // 

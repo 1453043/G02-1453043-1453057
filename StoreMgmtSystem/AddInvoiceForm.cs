@@ -185,5 +185,10 @@ namespace StoreMgmtSystem
                 Close();
             }
         }
+
+        private void cmbCategoryProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
