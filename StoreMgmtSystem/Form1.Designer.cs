@@ -226,7 +226,7 @@
             this.tabControlMain.Controls.Add(this.tabPageProduct);
             this.tabControlMain.Controls.Add(this.tabPageAccount);
             this.tabControlMain.Location = new System.Drawing.Point(0, 33);
-            this.tabControlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControlMain.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(991, 527);
@@ -237,10 +237,10 @@
             this.tabPageSell.Controls.Add(this.dataGridView1);
             this.tabPageSell.Controls.Add(this.cmbCategoryBill);
             this.tabPageSell.Location = new System.Drawing.Point(4, 25);
-            this.tabPageSell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageSell.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageSell.Name = "tabPageSell";
             this.tabPageSell.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSell.Size = new System.Drawing.Size(983, 475);
+            this.tabPageSell.Size = new System.Drawing.Size(983, 498);
             this.tabPageSell.TabIndex = 2;
             this.tabPageSell.Text = "Bán hàng";
             this.tabPageSell.UseVisualStyleBackColor = true;
@@ -277,8 +277,7 @@
             this.btnNextPageBill});
             this.cmbCategoryBill.Location = new System.Drawing.Point(3, 3);
             this.cmbCategoryBill.Name = "cmbCategoryBill";
-            this.cmbCategoryBill.Size = new System.Drawing.Size(1313, 28);
-            this.cmbCategoryBill.Size = new System.Drawing.Size(977, 25);
+            this.cmbCategoryBill.Size = new System.Drawing.Size(977, 28);
             this.cmbCategoryBill.TabIndex = 2;
             this.cmbCategoryBill.Text = "toolStrip3";
             // 
@@ -397,10 +396,10 @@
             this.tabPageImport.Controls.Add(this.dataGridViewInv);
             this.tabPageImport.Controls.Add(this.toolStrip2);
             this.tabPageImport.Location = new System.Drawing.Point(4, 25);
-            this.tabPageImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageImport.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageImport.Name = "tabPageImport";
             this.tabPageImport.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageImport.Size = new System.Drawing.Size(983, 501);
+            this.tabPageImport.Size = new System.Drawing.Size(983, 498);
             this.tabPageImport.TabIndex = 1;
             this.tabPageImport.Text = "Nhập hàng";
             this.tabPageImport.UseVisualStyleBackColor = true;
@@ -414,6 +413,7 @@
             this.dataGridViewInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInv.Location = new System.Drawing.Point(4, 32);
             this.dataGridViewInv.Name = "dataGridViewInv";
+            this.dataGridViewInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInv.Size = new System.Drawing.Size(976, 464);
             this.dataGridViewInv.TabIndex = 2;
             // 
@@ -436,9 +436,9 @@
             this.txtPageInvoice,
             this.btnNextPageInvoice});
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip2.Location = new System.Drawing.Point(4, 4);
+            this.toolStrip2.Location = new System.Drawing.Point(3, 3);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1305, 28);
+            this.toolStrip2.Size = new System.Drawing.Size(977, 28);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -557,10 +557,10 @@
             this.tabPageProduct.Controls.Add(this.dataGridViewProduct);
             this.tabPageProduct.Controls.Add(this.toolStrip1);
             this.tabPageProduct.Location = new System.Drawing.Point(4, 25);
-            this.tabPageProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageProduct.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageProduct.Size = new System.Drawing.Size(1313, 588);
+            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageProduct.Size = new System.Drawing.Size(983, 498);
             this.tabPageProduct.TabIndex = 0;
             this.tabPageProduct.Text = "Hàng hóa";
             this.tabPageProduct.UseVisualStyleBackColor = true;
@@ -574,7 +574,7 @@
             this.dataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Location = new System.Drawing.Point(5, 39);
-            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -601,7 +601,7 @@
             this.btnNextPageProduct});
             this.toolStrip1.Location = new System.Drawing.Point(4, 4);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1305, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(975, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -721,10 +721,10 @@
             this.tabPageAccount.Controls.Add(this.dataGridViewAccount);
             this.tabPageAccount.Controls.Add(this.toolStrip3);
             this.tabPageAccount.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageAccount.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAccount.Name = "tabPageAccount";
             this.tabPageAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAccount.Size = new System.Drawing.Size(983, 501);
+            this.tabPageAccount.Size = new System.Drawing.Size(983, 498);
             this.tabPageAccount.TabIndex = 3;
             this.tabPageAccount.Text = "Tài khoản";
             this.tabPageAccount.UseVisualStyleBackColor = true;
@@ -737,7 +737,7 @@
             this.dataGridViewAccount.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAccount.Location = new System.Drawing.Point(5, 39);
-            this.dataGridViewAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewAccount.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewAccount.Name = "dataGridViewAccount";
             this.dataGridViewAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAccount.Size = new System.Drawing.Size(973, 464);
@@ -761,9 +761,9 @@
             this.btnPrevAcc,
             this.toolStripTextBox2,
             this.btnNextAcc});
-            this.toolStrip3.Location = new System.Drawing.Point(4, 4);
+            this.toolStrip3.Location = new System.Drawing.Point(3, 3);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(1305, 28);
+            this.toolStrip3.Size = new System.Drawing.Size(977, 28);
             this.toolStrip3.TabIndex = 0;
             this.toolStrip3.Text = "toolStrip3";
             // 
@@ -895,7 +895,7 @@
             this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Quản lý cửa hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
