@@ -257,17 +257,42 @@ namespace StoreMgmtSystem
 
         private void btnEditBill_Click(object sender, EventArgs e)
         {
+            // index row đang được chọn
+            int rowindex = dataGridViewReceipt.CurrentCell.RowIndex;
 
+            List<string> item = new List<string>();
+            foreach (DataGridViewCell cell in dataGridViewReceipt.Rows[rowindex].Cells)
+            {
+                item.Add(cell.Value.ToString());
+            }
+            ReceiptDetail detailRecForm = new ReceiptDetail(item, true);
+            if (detailRecForm.ShowDialog() == DialogResult.OK)
+                loadDataGridViewReceipt();
         }
 
         private void btnDelBill_Click(object sender, EventArgs e)
         {
+            // index row đang được chọn
+            int rowindex = dataGridViewReceipt.CurrentCell.RowIndex;
 
+            // delete đơn hàng theo id 
+            _reData.delete(dataGridViewReceipt.Rows[rowindex].Cells[0].Value.ToString());
+
+            // load lại danh sách hàng
+            loadDataGridViewReceipt();
         }
 
         private void btnViewBill_Click(object sender, EventArgs e)
         {
-
+            // index row đang được chọn
+            int rowindex = dataGridViewReceipt.CurrentCell.RowIndex;
+            List<string> item = new List<string>();
+            foreach (DataGridViewCell cell in dataGridViewReceipt.Rows[rowindex].Cells)
+            {
+                item.Add(cell.Value.ToString());
+            }
+            ReceiptDetail detailRecForm = new ReceiptDetail(item, false);
+            detailRecForm.ShowDialog();
         }
 
         private void btnRefreshBillList_Click(object sender, EventArgs e)
