@@ -83,6 +83,15 @@ namespace StoreMgmtSystem
             };
         }
 
+        // xử lý tìm kiếm lúc nhấn Enter trong khung keyword
+        private void txtKeywordProduct_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFind_Click(this, new EventArgs());
+            }
+        }
+
         private void btnInsert_Click(object sender, EventArgs e)
         {
             //index row đang được chọn
@@ -139,12 +148,13 @@ namespace StoreMgmtSystem
             string idHD = datenow.ToString("ddMMyyhhmmss");
 
             // save đơn hàng
+            currentGuestID = txtGuest.Text;
             _hdData.save(idHD, currentUserID, currentGuestID, datenow, currentPrice);
 
             // save bảng data đơn hàng
             // tạo DataTable để lấy data trong grid view
             DataTable table = new DataTable();
-            table.Columns.Add(new DataColumn("idNhapHang", typeof(string)));
+            table.Columns.Add(new DataColumn("idBanHang", typeof(string)));
             table.Columns.Add(new DataColumn("idSanPham", typeof(string)));
             table.Columns.Add(new DataColumn("SoLuong", typeof(int)));
             table.Columns.Add(new DataColumn("GiaTien", typeof(int)));
@@ -171,14 +181,17 @@ namespace StoreMgmtSystem
             }
         }
 
-        // xử lý tìm kiếm lúc nhấn Enter trong khung keyword
-        private void txtKeywordProduct_KeyDown(object sender, KeyEventArgs e)
+        private void btnThemKhach_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnFind_Click(this, new EventArgs());
-            }
+            AddCustomerForm addCusForm = new AddCustomerForm();
+            addCusForm.ShowDialog();
         }
 
+        private void btnTimKhach_Click(object sender, EventArgs e)
+        {
+            FindCustomerForm findCusForm = new FindCustomerForm();
+            findCusForm.ShowDialog();
+            txtGuest.Text = findCusForm.currentID;
+        }
     }
 }

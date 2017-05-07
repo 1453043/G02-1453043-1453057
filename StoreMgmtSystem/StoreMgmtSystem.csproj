@@ -52,6 +52,12 @@
     <Compile Include="AddAccountForm.Designer.cs">
       <DependentUpon>AddAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomerForm.Designer.cs">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddInvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="DAONhaSanXuat.cs" />
     <Compile Include="DAOSanPham.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="FindCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindCustomerForm.Designer.cs">
+      <DependentUpon>FindCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +152,9 @@
     <EmbeddedResource Include="AddAccountForm.resx">
       <DependentUpon>AddAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddCustomerForm.resx">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddInvoiceForm.resx">
       <DependentUpon>AddInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindCustomerForm.resx">
+      <DependentUpon>FindCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

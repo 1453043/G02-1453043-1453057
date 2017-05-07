@@ -82,15 +82,14 @@
             // 
             // btnFind
             // 
-            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnFind.Location = new System.Drawing.Point(3, 28);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(84, 20);
             this.btnFind.TabIndex = 0;
             this.btnFind.Text = "Tìm kiếm";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // cmbCategoryProduct
             // 
@@ -114,8 +113,7 @@
             // 
             // txtKeywordProduct
             // 
-            this.txtKeywordProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKeywordProduct.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtKeywordProduct.Location = new System.Drawing.Point(192, 34);
             this.txtKeywordProduct.Name = "txtKeywordProduct";
             this.txtKeywordProduct.Size = new System.Drawing.Size(183, 20);
@@ -265,11 +263,11 @@
             this.tableLayoutPanel2.Controls.Add(this.txtPrice, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtGuest, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnThemKhach, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnTimKhach, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnThemKhach, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnTimKhach, 3, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(531, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -296,21 +294,23 @@
             // 
             // btnThemKhach
             // 
-            this.btnThemKhach.Location = new System.Drawing.Point(300, 30);
+            this.btnThemKhach.Location = new System.Drawing.Point(300, 57);
             this.btnThemKhach.Name = "btnThemKhach";
             this.btnThemKhach.Size = new System.Drawing.Size(123, 21);
             this.btnThemKhach.TabIndex = 8;
             this.btnThemKhach.Text = "Thêm khách hàng";
             this.btnThemKhach.UseVisualStyleBackColor = true;
+            this.btnThemKhach.Click += new System.EventHandler(this.btnThemKhach_Click);
             // 
             // btnTimKhach
             // 
-            this.btnTimKhach.Location = new System.Drawing.Point(300, 57);
+            this.btnTimKhach.Location = new System.Drawing.Point(300, 30);
             this.btnTimKhach.Name = "btnTimKhach";
-            this.btnTimKhach.Size = new System.Drawing.Size(123, 22);
+            this.btnTimKhach.Size = new System.Drawing.Size(123, 21);
             this.btnTimKhach.TabIndex = 9;
             this.btnTimKhach.Text = "Tìm khách hàng";
             this.btnTimKhach.UseVisualStyleBackColor = true;
+            this.btnTimKhach.Click += new System.EventHandler(this.btnTimKhach_Click);
             // 
             // GiaTien
             // 

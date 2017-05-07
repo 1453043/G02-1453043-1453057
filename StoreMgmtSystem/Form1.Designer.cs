@@ -41,7 +41,7 @@
             this.mitemAboutUs = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageSell = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewReceipt = new System.Windows.Forms.DataGridView();
             this.cmbCategoryBill = new System.Windows.Forms.ToolStrip();
             this.btnAddBill = new System.Windows.Forms.ToolStripButton();
             this.btnEditBill = new System.Windows.Forms.ToolStripButton();
@@ -112,7 +112,7 @@
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageSell.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).BeginInit();
             this.cmbCategoryBill.SuspendLayout();
             this.tabPageImport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInv)).BeginInit();
@@ -232,28 +232,28 @@
             // 
             // tabPageSell
             // 
-            this.tabPageSell.Controls.Add(this.dataGridView1);
+            this.tabPageSell.Controls.Add(this.dataGridViewReceipt);
             this.tabPageSell.Controls.Add(this.cmbCategoryBill);
             this.tabPageSell.Location = new System.Drawing.Point(4, 22);
             this.tabPageSell.Name = "tabPageSell";
-            this.tabPageSell.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageSell.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageSell.Size = new System.Drawing.Size(982, 502);
             this.tabPageSell.TabIndex = 2;
             this.tabPageSell.Text = "Bán hàng";
             this.tabPageSell.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewReceipt
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 31);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(979, 467);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewReceipt.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridViewReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReceipt.Location = new System.Drawing.Point(3, 31);
+            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewReceipt.Name = "dataGridViewReceipt";
+            this.dataGridViewReceipt.Size = new System.Drawing.Size(979, 467);
+            this.dataGridViewReceipt.TabIndex = 3;
             // 
             // cmbCategoryBill
             // 
@@ -395,7 +395,7 @@
             this.tabPageImport.Controls.Add(this.toolStrip2);
             this.tabPageImport.Location = new System.Drawing.Point(4, 22);
             this.tabPageImport.Name = "tabPageImport";
-            this.tabPageImport.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageImport.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageImport.Size = new System.Drawing.Size(982, 502);
             this.tabPageImport.TabIndex = 1;
             this.tabPageImport.Text = "Nhập hàng";
@@ -409,7 +409,7 @@
             this.dataGridViewInv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInv.Location = new System.Drawing.Point(3, 31);
-            this.dataGridViewInv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewInv.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewInv.Name = "dataGridViewInv";
             this.dataGridViewInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInv.Size = new System.Drawing.Size(979, 467);
@@ -719,7 +719,7 @@
             this.tabPageAccount.Controls.Add(this.toolStrip3);
             this.tabPageAccount.Location = new System.Drawing.Point(4, 22);
             this.tabPageAccount.Name = "tabPageAccount";
-            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageAccount.Size = new System.Drawing.Size(982, 502);
             this.tabPageAccount.TabIndex = 3;
             this.tabPageAccount.Text = "Tài khoản";
@@ -897,7 +897,7 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabPageSell.ResumeLayout(false);
             this.tabPageSell.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).EndInit();
             this.cmbCategoryBill.ResumeLayout(false);
             this.cmbCategoryBill.PerformLayout();
             this.tabPageImport.ResumeLayout(false);
@@ -982,7 +982,7 @@
         private System.Windows.Forms.ToolStripButton btnPrevPageBill;
         private System.Windows.Forms.ToolStripTextBox txtPageBill;
         private System.Windows.Forms.ToolStripButton btnNextPageBill;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewReceipt;
         private System.Windows.Forms.DataGridView dataGridViewProduct;
         private System.Windows.Forms.DataGridView dataGridViewInv;
         private System.Windows.Forms.Label lbUsername;

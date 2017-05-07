@@ -17,6 +17,7 @@ namespace StoreMgmtSystem
     {
         private CTLSanPham _spData = new CTLSanPham();
         private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
+        private CTLHoaDonBanHang _reData = new CTLHoaDonBanHang();
         private CTLNguoiDung _accData = new CTLNguoiDung();
 
         private int PgSize = 20;
@@ -50,6 +51,8 @@ namespace StoreMgmtSystem
                 btnPrevPageProduct.Enabled = false;
                 if (CurrentProductPageIndex == TotalProductPage)
                     btnNextPageProduct.Enabled = false;
+                // load đơn bán hàng
+                loadDataGridViewReceipt();
                 // load đơn nhập hàng
                 loadDataGridViewInvoice();
                 // load dữ liệu Hàng hóa
@@ -137,6 +140,22 @@ namespace StoreMgmtSystem
         //        }
         //    };
         //}
+        private void loadDataGridViewReceipt()
+        {
+            DataTable reData = _reData.search();
+            dataGridViewReceipt.DataSource = reData;
+
+            dataGridViewReceipt.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
+        }
+
         private void loadDataGridViewProduct()
         {
             DataTable spData = _spData.search(CurrentProductPageIndex, PgSize);
@@ -228,7 +247,12 @@ namespace StoreMgmtSystem
 
         private void btnAddBill_Click(object sender, EventArgs e)
         {
-
+            AddReceiptForm addReceiptForm = new AddReceiptForm(currentUser, currentUserID);
+            if (addReceiptForm.ShowDialog() == DialogResult.OK)
+            {
+                // load lại danh sách hóa đơn
+                loadDataGridViewReceipt();
+            }
         }
 
         private void btnEditBill_Click(object sender, EventArgs e)

@@ -27,7 +27,7 @@ namespace StoreMgmtSystem
             this.cm = new SqlCommand(query, cnn);
             this.cm.Parameters.AddWithValue("ID", hd.ID.Trim());
             this.cm.Parameters.AddWithValue("IDuser", hd.IDNguoiBan.Trim());
-            this.cm.Parameters.AddWithValue("IDguest", hd.IDNguoiBan.Trim());
+            this.cm.Parameters.AddWithValue("IDguest", hd.IDNguoiMua.Trim());
             this.cm.Parameters.AddWithValue("date", hd.NgayLap.ToString("yyyy-MM-dd"));
             this.cm.Parameters.AddWithValue("tong", hd.TongTien);
             try
@@ -53,7 +53,7 @@ namespace StoreMgmtSystem
             this.cm = new SqlCommand(query, cnn);
             this.cm.Parameters.AddWithValue("ID", hd.ID.Trim());
             this.cm.Parameters.AddWithValue("IDuser", hd.IDNguoiBan.Trim());
-            this.cm.Parameters.AddWithValue("IDuser", hd.IDNguoiMua.Trim());
+            this.cm.Parameters.AddWithValue("IDguest", hd.IDNguoiMua.Trim());
             this.cm.Parameters.AddWithValue("date", hd.NgayLap.ToString("yyyy-MM-dd"));
             this.cm.Parameters.AddWithValue("tong", hd.TongTien);
             try
