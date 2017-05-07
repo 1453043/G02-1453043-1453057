@@ -80,6 +80,28 @@ namespace StoreMgmtSystem
             catch (Exception ex) { throw ex; }
         }
 
+        public DataTable Search(int iPage, int pgSize)
+        {
+            SqlCommand cm = new SqlCommand();
+            if(iPage == 1)
+                cm.CommandText = "select top " + pgSize.ToString() + " * from SanPham order by id";
+            else
+            {
+                int PreviousPageOffSet = (iPage - 1) * pgSize;
+
+                cm.CommandText = "Select TOP " + pgSize.ToString() + " * from SanPham WHERE id NOT IN " +
+                    "(Select TOP " + PreviousPageOffSet.ToString() + " id from SanPham ORDER BY id) ";
+            }
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                return sqlDataTable;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
         public DataTable SearchForHoaDon()
         {
             SqlCommand cm = new SqlCommand();
@@ -146,6 +168,23 @@ namespace StoreMgmtSystem
                 throw ex;
             }
             return bCheck;
+        }
+
+        public int GetTotalCount()
+        {
+            int page = 0;
+            connect();
+            SqlCommand cmd = new SqlCommand("select count(*) from SanPham", cnn);
+            try {
+                page = (int)cmd.ExecuteScalar();
+                disconnect();
+            }
+            catch (Exception ex)
+            {
+                this.disconnect();
+                throw ex;
+            }
+            return page;
         }
 
         #endregion

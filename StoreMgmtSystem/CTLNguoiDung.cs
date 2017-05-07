@@ -18,6 +18,11 @@ namespace StoreMgmtSystem
             return dataNguoiDung.Authenticate(nd);
         }
 
+        public int getTotalPage()
+        {
+            return dataNguoiDung.GetTotalPage();
+        }
+
         public DataTable search()
         {
             return dataNguoiDung.Search();
@@ -25,10 +30,11 @@ namespace StoreMgmtSystem
 
         public NguoiDung search(string id)
         {
-            DataTable result =  dataNguoiDung.Search(id, "ID");
-            return new NguoiDung(result.Rows[0]["id"].ToString(), result.Rows[0]["TenDangNhap"].ToString(),
-                result.Rows[0]["MatKhau"].ToString(), result.Rows[0]["HoTen"].ToString(),
-                int.Parse(result.Rows[0]["Loai"].ToString()));
+            //DataTable result =  dataNguoiDung.Search(id, "ID");
+            //return new NguoiDung(result.Rows[0]["id"].ToString(), result.Rows[0]["TenDangNhap"].ToString(),
+            //    result.Rows[0]["MatKhau"].ToString(), result.Rows[0]["HoTen"].ToString(),
+            //    int.Parse(result.Rows[0]["Loai"].ToString()));
+            return dataNguoiDung.Search(id);
         }
 
         public DataTable search(string keyword, string category)
@@ -50,12 +56,16 @@ namespace StoreMgmtSystem
         public int update(NguoiDung nd)
         {
             // kiem tra ten dang nhap
-            DataTable queryresult = dataNguoiDung.Search(nd.TenDangNhap, "Tên đăng nhập");
-            if (queryresult.Rows.Count != 0)
-                return 2;
-            if (dataNguoiDung.Update(nd))
+            //DataTable queryresult = dataNguoiDung.Search(nd.TenDangNhap, "Tên đăng nhập");
+            //if (queryresult.Rows.Count != 0)
+            //    return 2;
+            try
+            {
+                if (dataNguoiDung.Update(nd) == 2)
+                    return 2;
                 return 1;
-            return 0;
+            }
+            catch (Exception ex) { return 0; }
         }
 
         public bool delete(string id)

@@ -20,7 +20,7 @@ namespace StoreMgmtSystem
         {
             InitializeComponent();
         }
-        public AddAccountForm(string id)
+        public AddAccountForm(string id, bool isAdmin = true)
         {
             InitializeComponent();
             mode = true;
@@ -37,6 +37,12 @@ namespace StoreMgmtSystem
                 radNVKho.Checked = true;
             else
                 radNVBanHang.Checked = true;
+            if(isAdmin == false)
+            {
+                radAdmin.Enabled = false;
+                radNVKho.Enabled = false;
+                radNVBanHang.Enabled = false;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

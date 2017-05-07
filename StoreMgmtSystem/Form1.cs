@@ -19,6 +19,10 @@ namespace StoreMgmtSystem
         private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
         private CTLNguoiDung _accData = new CTLNguoiDung();
 
+        private int PgSize = 20;
+        private int CurrentProductPageIndex = 1;
+        private int TotalProductPage = 0;
+
         private string currentUser;
         private string currentUserID;
         enum Mode { admin, warehouse, cashier };
@@ -41,6 +45,11 @@ namespace StoreMgmtSystem
             {
                 foreach (Control ctl in tabControlMain.Controls) ctl.Enabled = true;
 
+                getTotalProductPage();
+                txtPageProduct.Text = CurrentProductPageIndex.ToString();
+                btnPrevPageProduct.Enabled = false;
+                if (CurrentProductPageIndex == TotalProductPage)
+                    btnNextPageProduct.Enabled = false;
                 // load đơn nhập hàng
                 loadDataGridViewInvoice();
                 // load dữ liệu Hàng hóa
@@ -107,9 +116,30 @@ namespace StoreMgmtSystem
             tabPageSell.Text = rm.GetString("tab_sell", ci);
             tabPageAccount.Text = rm.GetString("tab_account", ci);
         }
+        //private void loadDataGridViewProduct()
+        //{
+        //    DataTable spData = _spData.search();
+        //    dataGridViewProduct.DataSource = spData;
+        //    //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
+        //    //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
+        //    //dataGridViewProduct.Columns["idNSX"].HeaderText = "Nhà sản xuất";
+        //    //dataGridViewProduct.Columns["Gia"].HeaderText = "Giá";
+        //    //dataGridViewProduct.Columns["ThongTinBaoHanh"].HeaderText = "Bảo hành";
+        //    //dataGridViewProduct.Columns["MoTa"].HeaderText = "Mô tả";
+
+        //    dataGridViewProduct.DataBindingComplete += (o, _) =>
+        //    {
+        //        var dataGridView = o as DataGridView;
+        //        if (dataGridView != null)
+        //        {
+        //            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        //            dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        //        }
+        //    };
+        //}
         private void loadDataGridViewProduct()
         {
-            DataTable spData = _spData.search();
+            DataTable spData = _spData.search(CurrentProductPageIndex, PgSize);
             dataGridViewProduct.DataSource = spData;
             //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
             //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
@@ -117,7 +147,7 @@ namespace StoreMgmtSystem
             //dataGridViewProduct.Columns["Gia"].HeaderText = "Giá";
             //dataGridViewProduct.Columns["ThongTinBaoHanh"].HeaderText = "Bảo hành";
             //dataGridViewProduct.Columns["MoTa"].HeaderText = "Mô tả";
-            
+
             dataGridViewProduct.DataBindingComplete += (o, _) =>
             {
                 var dataGridView = o as DataGridView;
@@ -128,6 +158,7 @@ namespace StoreMgmtSystem
                 }
             };
         }
+
         private void loadDataGridViewInvoice()
         {
             DataTable hdnhData = _hdData.search();
@@ -166,9 +197,18 @@ namespace StoreMgmtSystem
             };
         }
 
+        private void getTotalProductPage()
+        {
+            int count = _spData.getTotalCount();
+            TotalProductPage = count / PgSize;
+            if (count % PgSize > 0)
+                TotalProductPage++;
+        }
+
         private void mitemAccDetail_Click(object sender, EventArgs e)
         {
-
+            AddAccountForm addAccountForm = new AddAccountForm(currentUserID, false);
+            addAccountForm.ShowDialog();
         }
 
         private void mitemSignout_Click(object sender, EventArgs e)
@@ -420,6 +460,28 @@ namespace StoreMgmtSystem
                     dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
+        }
+
+        private void btnNextPageProduct_Click(object sender, EventArgs e)
+        {
+            CurrentProductPageIndex++;
+            txtPageProduct.Text = CurrentProductPageIndex.ToString();
+            if(CurrentProductPageIndex != 1)
+                btnPrevPageProduct.Enabled = true;
+            if (CurrentProductPageIndex == TotalProductPage)
+                btnNextPageProduct.Enabled = false;
+            loadDataGridViewProduct();
+        }
+
+        private void btnPrevPageProduct_Click(object sender, EventArgs e)
+        {
+            CurrentProductPageIndex--;
+            txtPageProduct.Text = CurrentProductPageIndex.ToString();
+            if (CurrentProductPageIndex != TotalProductPage)
+                btnNextPageProduct.Enabled = true;
+            if (CurrentProductPageIndex == 1)
+                btnPrevPageProduct.Enabled = false;
+            loadDataGridViewProduct();
         }
     }
 }

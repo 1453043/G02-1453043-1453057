@@ -56,6 +56,11 @@ namespace StoreMgmtSystem
             return dataSanPham.Search();
         }
 
+        public DataTable search(int CurrentProductPageIndex, int PgSize)
+        {
+            return dataSanPham.Search(CurrentProductPageIndex, PgSize);
+        }
+
         public DataTable searchForHoaDon()
         {
             return dataSanPham.SearchForHoaDon();
@@ -66,5 +71,9 @@ namespace StoreMgmtSystem
             return dataSanPham.SearchWithKeyword(keyword, category);
         }
 
+        public int getTotalCount()
+        {
+            return dataSanPham.GetTotalCount();
+        }
     }
 }

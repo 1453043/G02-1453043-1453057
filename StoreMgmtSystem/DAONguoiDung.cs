@@ -35,6 +35,12 @@ namespace StoreMgmtSystem
             catch (Exception ex) { throw ex; }
         }
 
+        public int GetTotalPage()
+        {
+            SqlCommand cmd = new SqlCommand("select count(*) from NguoiDung");
+            return (int)cmd.ExecuteScalar();
+        }
+
         public DataTable Search()
         {
             SqlCommand cm = new SqlCommand();
@@ -87,6 +93,22 @@ namespace StoreMgmtSystem
             catch (Exception ex) { throw ex; }
         }
 
+        public NguoiDung Search(string id)
+        {
+            SqlCommand cm = new SqlCommand();
+            cm.CommandText = "select * from NguoiDung";
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                return new NguoiDung(sqlDataTable.Rows[0]["id"].ToString(), sqlDataTable.Rows[0]["TenDangNhap"].ToString(),
+                sqlDataTable.Rows[0]["MatKhau"].ToString(), sqlDataTable.Rows[0]["HoTen"].ToString(),
+                int.Parse(sqlDataTable.Rows[0]["Loai"].ToString()));
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
         public bool Save(NguoiDung nd)
         {
             this.connect();
@@ -113,10 +135,23 @@ namespace StoreMgmtSystem
             return bCheck;
         }
 
-        public bool Update(NguoiDung nd)
+        public int Update(NguoiDung nd)
         {
+            // kiểm tra xem tên người dùng có bị trùng không
+            SqlCommand validateCm = new SqlCommand("select id from NguoiDung where [TenDangNhap] = @ten", cnn);
+            validateCm.Parameters.Add(new SqlParameter("@ten", nd.TenDangNhap.Trim()));
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                if(sqlDataTable.Rows.Count == 1 && sqlDataTable.Rows[0]["id"].ToString() != nd.ID)
+                {
+                    return 2;
+                }
+            }
+            catch (Exception ex) { throw ex; }
             this.connect();
-            bool bCheck = true;
             string query = "update NguoiDung set [TenDangNhap]=@username, [MatKhau]=@password, [HoTen]=@name, [Loai]=@type" +
                 " where [id] = @ID";
             this.cm = new SqlCommand(query, cnn);
@@ -126,9 +161,8 @@ namespace StoreMgmtSystem
             this.cm.Parameters.Add(new SqlParameter("@name", nd.HoTen.Trim()));
             this.cm.Parameters.Add(new SqlParameter("@type", nd.Loai));
             try
-            { this.cm.ExecuteNonQuery(); this.disconnect(); }
-            catch (Exception ex) { this.disconnect(); bCheck = false; throw ex; }
-            return bCheck;
+            { this.cm.ExecuteNonQuery(); this.disconnect(); return 1; }
+            catch (Exception ex) { this.disconnect(); throw ex; }
         }
 
         public bool Delete(string id)

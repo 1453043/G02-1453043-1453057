@@ -36,19 +36,7 @@ namespace Main.DAO
             ExecuteNonQuery(sql);
             disconnect();
         }
-        //public DataSet ExecuteQuery(string strSelect)
-        //{
-        //    DataSet dataset = new DataSet();
-        //    cm = new SqlCommand();
-        //    cm.Connection = this.cnn;
-        //    dt = new SqlDataAdapter(strSelect, cnn);
-        //    try { dt.Fill(dataset); }
-        //    catch (SqlException ex)
-        //    { System.Windows.Forms.MessageBox.Show(ex.ToString()); }
-        //    return dataset;
-        //}
-        //public DataTable ExecuteQuery_DataTable(string strSelect)
-        //{ return ExecuteQuery(strSelect).Tables[0]; }
+         
         public DataSet ExecuteQuery(SqlCommand command)
         {
             DataSet dataset = new DataSet();
