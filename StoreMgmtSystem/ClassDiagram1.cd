@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StoreMgmtSystem.AddAccountForm" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAAAAAACAAABGIAICAQAACAAAAgAAAADAAAAAACAY=</HashCode>
+      <FileName>AddAccountForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.AddCustomerForm" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoAAAICAAABAAMACAQAACAAAAAAAAAABAAAAAQiA=</HashCode>
+      <FileName>AddCustomerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.AddInvoiceForm" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAARACABABIwAAGAQgAKgACAgCBQsFEkAAgVAiI=</HashCode>
+      <FileName>AddInvoiceForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.AddManufacturer" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAICAAABEAAACAAAACAAAAgAAgAAAAAAAAAAY=</HashCode>
+      <FileName>AddManufacturer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.AddProduct" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAABAAICAAABEAAAKAAIACAEAAwAAAAAAEAAAAACY=</HashCode>
+      <FileName>AddProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.AddProductToInvoiceConfirmForm" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABEAAAKABMACAAAAAEAAABAAAAgAAAA=</HashCode>
+      <FileName>AddProductToInvoiceConfirmForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.AddReceiptForm" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAQCAARACAAABIwAAGAQgAikACAgCBYsFUkAAgVAiI=</HashCode>
+      <FileName>AddReceiptForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CT_HoaDonBanHang" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAQEAAAAgAAAAQAAAAAAAAAAAAAAAAAAgIAgA=</HashCode>
+      <FileName>CT_HoaDonBanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CT_HoaDonNhapHang" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAQAAAAAgAAAAQAAAAAAAAAAAAAAAAAAgIAkA=</HashCode>
+      <FileName>CT_HoaDonNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLCT_HoaDonBanHang" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAQAAAAAAAAAAACAAAAAEAAA=</HashCode>
+      <FileName>CTLCT_HoaDonBanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLCT_HoaDonNhapHang" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAQAAAAAAAAAAACAAQAAAAAA=</HashCode>
+      <FileName>CTLCT_HoaDonNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLHoaDonBanHang" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACIAAAAAAAAAQAAAAAAAAAAACAAAAAEAAA=</HashCode>
+      <FileName>CTLHoaDonBanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLHoaDonNhapHang" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACIAAAAAAAAAQAAAAAAAAAAACAAQAAEAAA=</HashCode>
+      <FileName>CTLHoaDonNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLKhachHang" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAIAAAAAAAACAAAAACAAA=</HashCode>
+      <FileName>CTLKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLNguoiDung" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAACAAAAAAAQAAQAAAAACAAAAACAAAAAEAAA=</HashCode>
+      <FileName>CTLNguoiDung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLNhaSanXuat" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAACQAAAAAAAA=</HashCode>
+      <FileName>CTLNhaSanXuat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.CTLSanPham" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAQAAQAQAAAAAACAAgAAGAAA=</HashCode>
+      <FileName>CTLSanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAOCT_HoaDonBanHang">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAOCT_HoaDonBanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAOCT_HoaDonNhapHang">
+    <Position X="11.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAOCT_HoaDonNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAOHoaDonBanHang">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAOHoaDonBanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAOHoaDonNhapHang">
+    <Position X="16.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAOHoaDonNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAOKhachHang">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="Main.DAO.DataProvider" FixedFromPoint="true">
+      <Path>
+        <Point X="8.5" Y="4.75" />
+        <Point X="8.5" Y="4.375" />
+        <Point X="1.25" Y="4.375" />
+        <Point X="1.25" Y="3.06" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAOKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAONguoiDung">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAAAAAAAAAAIEAAEAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAONguoiDung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAONhaSanXuat">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAONhaSanXuat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DAOSanPham">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAAAAAAAAAAABABAAAAAEAAEAAAAAAAAAgAAA=</HashCode>
+      <FileName>DAOSanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.DatePickerForm" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAgBEAACCAAIACAAAAAEAAAAAAACAAAAA=</HashCode>
+      <FileName>DatePickerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.EditProduct" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABgAABAAICAAABEAAAKAAIACAEAAwAAAAAAEAAAAACY=</HashCode>
+      <FileName>EditProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.FindCustomerForm" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAACEBAAAAIACAACQGIAIABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FindCustomerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.Form1" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qxNRK/8BQ+ZFAVb0JnKg1AIbQpzRuCDaonn9ARYQsOg=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.HoaDonBanHang" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAAEAAAEAgAAAAABAAAgAQAAAAAAAAAAAEAAAAAQ=</HashCode>
+      <FileName>HoaDonBanHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.HoaDonNhapHang" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAQAEAgAAAAABAAAgAAAAAAAAAAAAAEAAAEAA=</HashCode>
+      <FileName>HoaDonNhapHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.InvoiceDetail" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACABAACAAABCAAACAAIACAAAAgEBAEAAACAAQAAA=</HashCode>
+      <FileName>InvoiceDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.KhachHang" Collapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAgAAQgAAAAABAAAAEAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.Login" Collapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAEAAACAAABAAAYCAAAACCAAAAAAAAFAAAABAAAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.NguoiDung" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAABAAAAAgAAQAARAAAAAACAAAAAAAAAACACAAAA=</HashCode>
+      <FileName>NguoiDung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.NhaSanXuat" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAgAAAAABAAAAEAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>NhaSanXuat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.Program" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.ReceiptDetail" Collapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACABAACAAABCAAACAAIACAAAAgEBAEAAACAAQEBA=</HashCode>
+      <FileName>ReceiptDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.ReportViewer" Collapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAEADAAACCACAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportViewer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.SanPham" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAgAgAgABQAABAAACAAAABgAAAABAAACCAAAA=</HashCode>
+      <FileName>SanPham.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Main.DAO.DataProvider">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAQgAACAAAAQAgAAAAFAAIAAAAAAAAAQAAAAEAAA=</HashCode>
+      <FileName>DataProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.Lang.langres" Collapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAggAQAAAAAEAEAABEAACEQAAAgAAAAAAQAQAgIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.Properties.Resources" Collapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABkAAAAQAIAAAACQBAAgICAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreMgmtSystem.Properties.Settings" Collapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
