@@ -158,6 +158,7 @@
             this.ClientSize = new System.Drawing.Size(284, 160);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddCustomerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm khách hàng";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
