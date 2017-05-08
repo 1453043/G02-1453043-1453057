@@ -33,9 +33,6 @@
             this.mitemAccDetail = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mitemSignout = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStat = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitemThongKeBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitemThongKeNhap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLang = new System.Windows.Forms.ToolStripMenuItem();
             this.mitemEn = new System.Windows.Forms.ToolStripMenuItem();
             this.mitemVi = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,12 +134,11 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAccount,
-            this.menuStat,
             this.menuLang,
             this.menuHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(223, 23);
+            this.menuStrip1.Size = new System.Drawing.Size(212, 23);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,29 +171,6 @@
             this.mitemSignout.Text = "Đăng xuất";
             this.mitemSignout.Click += new System.EventHandler(this.mitemSignout_Click);
             // 
-            // menuStat
-            // 
-            this.menuStat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mitemThongKeBan,
-            this.mitemThongKeNhap});
-            this.menuStat.Name = "menuStat";
-            this.menuStat.Size = new System.Drawing.Size(69, 19);
-            this.menuStat.Text = "Thống kê";
-            // 
-            // mitemThongKeBan
-            // 
-            this.mitemThongKeBan.Name = "mitemThongKeBan";
-            this.mitemThongKeBan.Size = new System.Drawing.Size(133, 22);
-            this.mitemThongKeBan.Text = "Bán hàng";
-            this.mitemThongKeBan.Click += new System.EventHandler(this.mitemThongKeBan_Click);
-            // 
-            // mitemThongKeNhap
-            // 
-            this.mitemThongKeNhap.Name = "mitemThongKeNhap";
-            this.mitemThongKeNhap.Size = new System.Drawing.Size(133, 22);
-            this.mitemThongKeNhap.Text = "Nhập hàng";
-            this.mitemThongKeNhap.Click += new System.EventHandler(this.mitemThongKeNhap_Click);
-            // 
             // menuLang
             // 
             this.menuLang.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -210,14 +183,14 @@
             // mitemEn
             // 
             this.mitemEn.Name = "mitemEn";
-            this.mitemEn.Size = new System.Drawing.Size(127, 22);
+            this.mitemEn.Size = new System.Drawing.Size(152, 22);
             this.mitemEn.Text = "English";
             this.mitemEn.Click += new System.EventHandler(this.mitemEn_Click);
             // 
             // mitemVi
             // 
             this.mitemVi.Name = "mitemVi";
-            this.mitemVi.Size = new System.Drawing.Size(127, 22);
+            this.mitemVi.Size = new System.Drawing.Size(152, 22);
             this.mitemVi.Text = "Tiếng Việt";
             this.mitemVi.Click += new System.EventHandler(this.mitemVi_Click);
             // 
@@ -966,7 +939,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuAccount;
         private System.Windows.Forms.ToolStripMenuItem mitemAccDetail;
         private System.Windows.Forms.ToolStripMenuItem mitemSignout;
-        private System.Windows.Forms.ToolStripMenuItem menuStat;
         private System.Windows.Forms.ToolStripMenuItem menuLang;
         private System.Windows.Forms.ToolStripMenuItem menuHelp;
         private System.Windows.Forms.ToolStripMenuItem mitemAboutUs;
@@ -1042,8 +1014,6 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.ToolStripButton btnNextAcc;
         private System.Windows.Forms.DataGridView dataGridViewAccount;
-        private System.Windows.Forms.ToolStripMenuItem mitemThongKeBan;
-        private System.Windows.Forms.ToolStripMenuItem mitemThongKeNhap;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripMenuItem mitemTut;
     }
