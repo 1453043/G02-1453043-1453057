@@ -62,11 +62,41 @@ namespace StoreMgmtSystem
         public DataTable Search()
         {
             SqlCommand cm = new SqlCommand();
-            cm.CommandText = "select HoaDonNhapHang.id,HoTen,NgayLap,TongGiaTien from HoaDonNhapHang join NguoiDung on idNguoiLap = NguoiDung.id";
+            cm.CommandText = "select HoaDonNhapHang.id,HoTen as NguoiLapHoaDon,NgayLap,TongGiaTien "
+                +"from HoaDonNhapHang join NguoiDung on idNguoiLap = NguoiDung.id";
             try
             {
                 this.connect();
                 DataTable sqlDataTable = this.ExecuteQuery_DataTable(cm);
+                this.disconnect();
+                return sqlDataTable;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public DataTable SearchWithKeyword(string keyword, string category)
+        {
+            SqlCommand cmd = new SqlCommand();
+            string query = "";
+
+            if (category == "Tên người lập")
+            {
+                query = "select HoaDonNhapHang.id,HoTen as NguoiLapHoaDon,NgayLap,TongGiaTien "
+                + "from HoaDonNhapHang join NguoiDung on idNguoiLap = NguoiDung.id where HoTen like '%' + @Ten + '%'";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@Ten", keyword);
+            }
+            else if (category == "Mã hóa đơn")
+            {
+                query = "select HoaDonNhapHang.id,HoTen as NguoiLapHoaDon,NgayLap,TongGiaTien "
+                + "from HoaDonNhapHang join NguoiDung on idNguoiLap = NguoiDung.id where HoaDonNhapHang.id like '%' + @ID + '%'";
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@ID", keyword);
+            }
+            try
+            {
+                this.connect();
+                DataTable sqlDataTable = this.ExecuteQuery_DataTable(cmd);
                 this.disconnect();
                 return sqlDataTable;
             }

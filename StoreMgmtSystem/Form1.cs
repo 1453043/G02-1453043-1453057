@@ -76,6 +76,18 @@ namespace StoreMgmtSystem
                 loadDataGridViewProduct();
             }
 
+
+            // khởi tạo giá trị trong combobox toolStripComboBox1
+            toolStripComboBox1.Items.Add("Tên người lập");
+            toolStripComboBox1.Items.Add("Mã khách hàng");
+            toolStripComboBox1.Items.Add("Mã hóa đơn");
+            toolStripComboBox1.SelectedItem = "Tên người lập";
+
+            // khởi tạo giá trị trong combobox cmbCategoryInvoice
+            cmbCategoryInvoice.Items.Add("Tên người lập");
+            cmbCategoryInvoice.Items.Add("Mã hóa đơn");
+            cmbCategoryInvoice.SelectedItem = "Tên người lập";
+
             // khởi tạo giá trị trong combobox cmbCategoryProduct
             cmbCategoryProduct.Items.Add("Tên sản phẩm");
             cmbCategoryProduct.Items.Add("ID");
@@ -88,6 +100,7 @@ namespace StoreMgmtSystem
             cmbCategoryAccount.Items.Add("Loại");
             cmbCategoryAccount.Items.Add("ID");
             cmbCategoryAccount.SelectedItem = "Tên đăng nhập";
+            
         }
 
         private void mitemVi_Click(object sender, EventArgs e)
@@ -119,27 +132,6 @@ namespace StoreMgmtSystem
             tabPageSell.Text = rm.GetString("tab_sell", ci);
             tabPageAccount.Text = rm.GetString("tab_account", ci);
         }
-        //private void loadDataGridViewProduct()
-        //{
-        //    DataTable spData = _spData.search();
-        //    dataGridViewProduct.DataSource = spData;
-        //    //dataGridViewProduct.Columns["id"].HeaderText = "Mã sản phẩm";
-        //    //dataGridViewProduct.Columns["Ten"].HeaderText = "Tên sản phẩm";
-        //    //dataGridViewProduct.Columns["idNSX"].HeaderText = "Nhà sản xuất";
-        //    //dataGridViewProduct.Columns["Gia"].HeaderText = "Giá";
-        //    //dataGridViewProduct.Columns["ThongTinBaoHanh"].HeaderText = "Bảo hành";
-        //    //dataGridViewProduct.Columns["MoTa"].HeaderText = "Mô tả";
-
-        //    dataGridViewProduct.DataBindingComplete += (o, _) =>
-        //    {
-        //        var dataGridView = o as DataGridView;
-        //        if (dataGridView != null)
-        //        {
-        //            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-        //            dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        //        }
-        //    };
-        //}
         private void loadDataGridViewReceipt()
         {
             DataTable reData = _reData.search();
@@ -194,7 +186,7 @@ namespace StoreMgmtSystem
                 var dataGridView = o as DataGridView;
                 if (dataGridView != null)
                 {
-                   // dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                     dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
@@ -233,6 +225,18 @@ namespace StoreMgmtSystem
         private void mitemSignout_Click(object sender, EventArgs e)
         {   
 
+        }
+
+        private void mitemAboutUs_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.Show();
+        }
+
+        private void mitemTut_Click(object sender, EventArgs e)
+        {
+            Guide guide = new Guide();
+            guide.Show();
         }
 
         private void btnAddInvoice_Click(object sender, EventArgs e)
@@ -297,12 +301,27 @@ namespace StoreMgmtSystem
 
         private void btnRefreshBillList_Click(object sender, EventArgs e)
         {
-
+            // load lại danh sách hàng
+            loadDataGridViewReceipt();
         }
 
         private void btnFindBill_Click(object sender, EventArgs e)
         {
+            string keyword = txtKeywordBill.Text;
+            string category = toolStripComboBox1.SelectedItem.ToString();
+            DataTable queryResult = _reData.searchKeyword(keyword, category);
 
+            dataGridViewReceipt.DataSource = queryResult;
+
+            dataGridViewReceipt.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
         }
 
         private void btnPrevPageBill_Click(object sender, EventArgs e)
@@ -361,7 +380,21 @@ namespace StoreMgmtSystem
 
         private void btnFindInvoice_Click(object sender, EventArgs e)
         {
+            string keyword = txtKeywordInvoice.Text;
+            string category = cmbCategoryInvoice.SelectedItem.ToString();
+            DataTable queryResult = _hdData.searchKeyword(keyword, category);
 
+            dataGridViewInv.DataSource = queryResult;
+
+            dataGridViewInv.DataBindingComplete += (o, _) =>
+            {
+                var dataGridView = o as DataGridView;
+                if (dataGridView != null)
+                {
+                    dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            };
         }
 
         private void btnPrevPageInvoice_Click(object sender, EventArgs e)
@@ -392,7 +425,7 @@ namespace StoreMgmtSystem
             {
                 product.Add(cell.Value.ToString());
             }
-            EditProduct editProductForm = new EditProduct(product);
+            EditProduct editProductForm = new EditProduct(product, true);
             if(editProductForm.ShowDialog() == DialogResult.OK)
             {
                 loadDataGridViewProduct();
@@ -419,7 +452,15 @@ namespace StoreMgmtSystem
 
         private void btnViewProduct_Click(object sender, EventArgs e)
         {
-
+            // index row đang được chọn
+            int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
+            List<string> product = new List<string>();
+            foreach (DataGridViewCell cell in dataGridViewProduct.Rows[rowindex].Cells)
+            {
+                product.Add(cell.Value.ToString());
+            }
+            EditProduct editProductForm = new EditProduct(product, false);
+            editProductForm.ShowDialog();
         }
 
         private void btnFindProduct_Click(object sender, EventArgs e)
@@ -447,6 +488,31 @@ namespace StoreMgmtSystem
             if (e.KeyCode == Keys.Enter)
             {
                 btnFindProduct_Click(this, new EventArgs());
+            }
+        }
+
+        // xử lý tìm kiếm lúc nhấn Enter trong khung keyword
+        private void txtKeywordInvoice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFindInvoice_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtKeywordBill_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFindBill_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtKeywordAcc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFindAcc_Click(this, new EventArgs());
             }
         }
 
@@ -544,6 +610,26 @@ namespace StoreMgmtSystem
             {
 
             }
+        }
+
+        private void dataGridViewReceipt_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnViewBill_Click(sender, e);
+        }
+
+        private void dataGridViewInv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnViewInvoice_Click(sender, e);
+        }
+
+        private void dataGridViewProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnViewProduct_Click(sender, e);
+        }
+
+        private void dataGridViewAccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnViewAcc_Click(sender, e);
         }
     }
 }

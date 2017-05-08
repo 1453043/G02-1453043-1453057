@@ -39,23 +39,26 @@
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(13, 13);
+            this.cmbCategory.Location = new System.Drawing.Point(17, 16);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(166, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(220, 24);
             this.cmbCategory.TabIndex = 0;
             // 
             // txtSearh
             // 
-            this.txtSearh.Location = new System.Drawing.Point(185, 13);
+            this.txtSearh.Location = new System.Drawing.Point(247, 16);
+            this.txtSearh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearh.Name = "txtSearh";
-            this.txtSearh.Size = new System.Drawing.Size(148, 20);
+            this.txtSearh.Size = new System.Drawing.Size(196, 22);
             this.txtSearh.TabIndex = 1;
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(339, 11);
+            this.btnTimKiem.Location = new System.Drawing.Point(452, 14);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
             this.btnTimKiem.TabIndex = 2;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -64,16 +67,18 @@
             // dataGridViewKhachHang
             // 
             this.dataGridViewKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewKhachHang.Location = new System.Drawing.Point(13, 41);
+            this.dataGridViewKhachHang.Location = new System.Drawing.Point(17, 50);
+            this.dataGridViewKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewKhachHang.Name = "dataGridViewKhachHang";
-            this.dataGridViewKhachHang.Size = new System.Drawing.Size(401, 303);
+            this.dataGridViewKhachHang.Size = new System.Drawing.Size(535, 373);
             this.dataGridViewKhachHang.TabIndex = 3;
             // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(339, 350);
+            this.btnChon.Location = new System.Drawing.Point(452, 431);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(75, 30);
+            this.btnChon.Size = new System.Drawing.Size(100, 37);
             this.btnChon.TabIndex = 4;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
@@ -81,15 +86,17 @@
             // 
             // FindCustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 385);
+            this.ClientSize = new System.Drawing.Size(568, 474);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.dataGridViewKhachHang);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtSearh);
             this.Controls.Add(this.cmbCategory);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FindCustomerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tìm khách hàng";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKhachHang)).EndInit();
             this.ResumeLayout(false);

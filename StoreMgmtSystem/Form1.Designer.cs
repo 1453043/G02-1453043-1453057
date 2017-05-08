@@ -34,11 +34,14 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mitemSignout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mitemThongKeBan = new System.Windows.Forms.ToolStripMenuItem();
+            this.mitemThongKeNhap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLang = new System.Windows.Forms.ToolStripMenuItem();
             this.mitemEn = new System.Windows.Forms.ToolStripMenuItem();
             this.mitemVi = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mitemAboutUs = new System.Windows.Forms.ToolStripMenuItem();
+            this.mitemTut = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageSell = new System.Windows.Forms.TabPage();
             this.dataGridViewReceipt = new System.Windows.Forms.DataGridView();
@@ -109,8 +112,6 @@
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.btnNextAcc = new System.Windows.Forms.ToolStripButton();
             this.lbUsername = new System.Windows.Forms.Label();
-            this.mitemThongKeBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.mitemThongKeNhap = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageSell.SuspendLayout();
@@ -158,19 +159,19 @@
             // mitemAccDetail
             // 
             this.mitemAccDetail.Name = "mitemAccDetail";
-            this.mitemAccDetail.Size = new System.Drawing.Size(127, 22);
+            this.mitemAccDetail.Size = new System.Drawing.Size(152, 22);
             this.mitemAccDetail.Text = "Thông tin";
             this.mitemAccDetail.Click += new System.EventHandler(this.mitemAccDetail_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(124, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // mitemSignout
             // 
             this.mitemSignout.Name = "mitemSignout";
-            this.mitemSignout.Size = new System.Drawing.Size(127, 22);
+            this.mitemSignout.Size = new System.Drawing.Size(152, 22);
             this.mitemSignout.Text = "Đăng xuất";
             this.mitemSignout.Click += new System.EventHandler(this.mitemSignout_Click);
             // 
@@ -182,6 +183,20 @@
             this.menuStat.Name = "menuStat";
             this.menuStat.Size = new System.Drawing.Size(69, 19);
             this.menuStat.Text = "Thống kê";
+            // 
+            // mitemThongKeBan
+            // 
+            this.mitemThongKeBan.Name = "mitemThongKeBan";
+            this.mitemThongKeBan.Size = new System.Drawing.Size(133, 22);
+            this.mitemThongKeBan.Text = "Bán hàng";
+            this.mitemThongKeBan.Click += new System.EventHandler(this.mitemThongKeBan_Click);
+            // 
+            // mitemThongKeNhap
+            // 
+            this.mitemThongKeNhap.Name = "mitemThongKeNhap";
+            this.mitemThongKeNhap.Size = new System.Drawing.Size(133, 22);
+            this.mitemThongKeNhap.Text = "Nhập hàng";
+            this.mitemThongKeNhap.Click += new System.EventHandler(this.mitemThongKeNhap_Click);
             // 
             // menuLang
             // 
@@ -209,7 +224,8 @@
             // menuHelp
             // 
             this.menuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mitemAboutUs});
+            this.mitemAboutUs,
+            this.mitemTut});
             this.menuHelp.Name = "menuHelp";
             this.menuHelp.Size = new System.Drawing.Size(61, 19);
             this.menuHelp.Text = "Giúp đỡ";
@@ -219,6 +235,14 @@
             this.mitemAboutUs.Name = "mitemAboutUs";
             this.mitemAboutUs.Size = new System.Drawing.Size(141, 22);
             this.mitemAboutUs.Text = "Về chúng tôi";
+            this.mitemAboutUs.Click += new System.EventHandler(this.mitemAboutUs_Click);
+            // 
+            // mitemTut
+            // 
+            this.mitemTut.Name = "mitemTut";
+            this.mitemTut.Size = new System.Drawing.Size(141, 22);
+            this.mitemTut.Text = "Hướng dẫn";
+            this.mitemTut.Click += new System.EventHandler(this.mitemTut_Click);
             // 
             // tabControlMain
             // 
@@ -241,7 +265,7 @@
             this.tabPageSell.Controls.Add(this.cmbCategoryBill);
             this.tabPageSell.Location = new System.Drawing.Point(4, 22);
             this.tabPageSell.Name = "tabPageSell";
-            this.tabPageSell.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageSell.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageSell.Size = new System.Drawing.Size(982, 502);
             this.tabPageSell.TabIndex = 2;
             this.tabPageSell.Text = "Bán hàng";
@@ -255,10 +279,11 @@
             this.dataGridViewReceipt.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReceipt.Location = new System.Drawing.Point(3, 31);
-            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewReceipt.Name = "dataGridViewReceipt";
             this.dataGridViewReceipt.Size = new System.Drawing.Size(979, 467);
             this.dataGridViewReceipt.TabIndex = 3;
+            this.dataGridViewReceipt.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReceipt_CellDoubleClick);
             // 
             // cmbCategoryBill
             // 
@@ -291,7 +316,7 @@
             this.btnAddBill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddBill.Name = "btnAddBill";
             this.btnAddBill.Size = new System.Drawing.Size(24, 24);
-            this.btnAddBill.Text = "toolStripButton1";
+            this.btnAddBill.Text = "Thêm";
             this.btnAddBill.Click += new System.EventHandler(this.btnAddBill_Click);
             // 
             // btnEditBill
@@ -301,7 +326,7 @@
             this.btnEditBill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditBill.Name = "btnEditBill";
             this.btnEditBill.Size = new System.Drawing.Size(24, 24);
-            this.btnEditBill.Text = "toolStripButton1";
+            this.btnEditBill.Text = "Sửa";
             this.btnEditBill.Click += new System.EventHandler(this.btnEditBill_Click);
             // 
             // btnDelBill
@@ -311,7 +336,7 @@
             this.btnDelBill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelBill.Name = "btnDelBill";
             this.btnDelBill.Size = new System.Drawing.Size(24, 24);
-            this.btnDelBill.Text = "toolStripButton1";
+            this.btnDelBill.Text = "Xóa";
             this.btnDelBill.Click += new System.EventHandler(this.btnDelBill_Click);
             // 
             // btnViewBill
@@ -321,7 +346,7 @@
             this.btnViewBill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(24, 24);
-            this.btnViewBill.Text = "toolStripButton1";
+            this.btnViewBill.Text = "Xem";
             this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
             // toolStripSeparator8
@@ -336,7 +361,7 @@
             this.btnRefreshBillList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefreshBillList.Name = "btnRefreshBillList";
             this.btnRefreshBillList.Size = new System.Drawing.Size(24, 24);
-            this.btnRefreshBillList.Text = "toolStripButton1";
+            this.btnRefreshBillList.Text = "Tải lại";
             this.btnRefreshBillList.Click += new System.EventHandler(this.btnRefreshBillList_Click);
             // 
             // toolStripSeparator9
@@ -353,6 +378,7 @@
             // 
             this.txtKeywordBill.Name = "txtKeywordBill";
             this.txtKeywordBill.Size = new System.Drawing.Size(150, 27);
+            this.txtKeywordBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywordBill_KeyDown);
             // 
             // btnFindBill
             // 
@@ -361,7 +387,7 @@
             this.btnFindBill.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFindBill.Name = "btnFindBill";
             this.btnFindBill.Size = new System.Drawing.Size(24, 24);
-            this.btnFindBill.Text = "toolStripButton1";
+            this.btnFindBill.Text = "Tìm kiếm";
             this.btnFindBill.Click += new System.EventHandler(this.btnFindBill_Click);
             // 
             // toolStripSeparator10
@@ -377,6 +403,7 @@
             this.btnPrevPageBill.Name = "btnPrevPageBill";
             this.btnPrevPageBill.Size = new System.Drawing.Size(24, 24);
             this.btnPrevPageBill.Text = "toolStripButton1";
+            this.btnPrevPageBill.ToolTipText = "Trang trước";
             this.btnPrevPageBill.Click += new System.EventHandler(this.btnPrevPageBill_Click);
             // 
             // txtPageBill
@@ -392,6 +419,7 @@
             this.btnNextPageBill.Name = "btnNextPageBill";
             this.btnNextPageBill.Size = new System.Drawing.Size(24, 24);
             this.btnNextPageBill.Text = "toolStripButton1";
+            this.btnNextPageBill.ToolTipText = "Trang sau";
             this.btnNextPageBill.Click += new System.EventHandler(this.btnNextPageBill_Click);
             // 
             // tabPageImport
@@ -400,7 +428,7 @@
             this.tabPageImport.Controls.Add(this.toolStrip2);
             this.tabPageImport.Location = new System.Drawing.Point(4, 22);
             this.tabPageImport.Name = "tabPageImport";
-            this.tabPageImport.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageImport.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageImport.Size = new System.Drawing.Size(982, 502);
             this.tabPageImport.TabIndex = 1;
             this.tabPageImport.Text = "Nhập hàng";
@@ -414,11 +442,12 @@
             this.dataGridViewInv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewInv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewInv.Location = new System.Drawing.Point(3, 31);
-            this.dataGridViewInv.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewInv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewInv.Name = "dataGridViewInv";
             this.dataGridViewInv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewInv.Size = new System.Drawing.Size(979, 467);
             this.dataGridViewInv.TabIndex = 2;
+            this.dataGridViewInv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInv_CellDoubleClick);
             // 
             // toolStrip2
             // 
@@ -452,7 +481,7 @@
             this.btnAddInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddInvoice.Name = "btnAddInvoice";
             this.btnAddInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnAddInvoice.Text = "toolStripButton1";
+            this.btnAddInvoice.Text = "Thêm";
             this.btnAddInvoice.Click += new System.EventHandler(this.btnAddInvoice_Click);
             // 
             // btnEditInvoice
@@ -462,7 +491,7 @@
             this.btnEditInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditInvoice.Name = "btnEditInvoice";
             this.btnEditInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnEditInvoice.Text = "toolStripButton1";
+            this.btnEditInvoice.Text = "Sửa";
             this.btnEditInvoice.Click += new System.EventHandler(this.btnEditInvoice_Click);
             // 
             // btnDelInvoice
@@ -472,7 +501,7 @@
             this.btnDelInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelInvoice.Name = "btnDelInvoice";
             this.btnDelInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnDelInvoice.Text = "toolStripButton1";
+            this.btnDelInvoice.Text = "Xóa";
             this.btnDelInvoice.Click += new System.EventHandler(this.btnDelInvoice_Click);
             // 
             // btnViewInvoice
@@ -482,7 +511,7 @@
             this.btnViewInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnViewInvoice.Name = "btnViewInvoice";
             this.btnViewInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnViewInvoice.Text = "toolStripButton1";
+            this.btnViewInvoice.Text = "Xem";
             this.btnViewInvoice.Click += new System.EventHandler(this.btnViewInvoice_Click);
             // 
             // toolStripSeparator5
@@ -497,7 +526,7 @@
             this.btnRefreshInvoiceList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefreshInvoiceList.Name = "btnRefreshInvoiceList";
             this.btnRefreshInvoiceList.Size = new System.Drawing.Size(24, 24);
-            this.btnRefreshInvoiceList.Text = "toolStripButton1";
+            this.btnRefreshInvoiceList.Text = "Tải lại";
             this.btnRefreshInvoiceList.Click += new System.EventHandler(this.btnRefreshInvoiceList_Click);
             // 
             // toolStripSeparator6
@@ -514,6 +543,7 @@
             // 
             this.txtKeywordInvoice.Name = "txtKeywordInvoice";
             this.txtKeywordInvoice.Size = new System.Drawing.Size(150, 27);
+            this.txtKeywordInvoice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywordInvoice_KeyDown);
             // 
             // btnFindInvoice
             // 
@@ -522,7 +552,7 @@
             this.btnFindInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFindInvoice.Name = "btnFindInvoice";
             this.btnFindInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnFindInvoice.Text = "toolStripButton1";
+            this.btnFindInvoice.Text = "Tìm kiếm";
             this.btnFindInvoice.Click += new System.EventHandler(this.btnFindInvoice_Click);
             // 
             // toolStripSeparator7
@@ -537,7 +567,7 @@
             this.btnPrevPageInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevPageInvoice.Name = "btnPrevPageInvoice";
             this.btnPrevPageInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnPrevPageInvoice.Text = "toolStripButton1";
+            this.btnPrevPageInvoice.Text = "Trang trước";
             this.btnPrevPageInvoice.Click += new System.EventHandler(this.btnPrevPageInvoice_Click);
             // 
             // txtPageInvoice
@@ -552,7 +582,7 @@
             this.btnNextPageInvoice.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNextPageInvoice.Name = "btnNextPageInvoice";
             this.btnNextPageInvoice.Size = new System.Drawing.Size(24, 24);
-            this.btnNextPageInvoice.Text = "toolStripButton1";
+            this.btnNextPageInvoice.Text = "Trang sau";
             this.btnNextPageInvoice.Click += new System.EventHandler(this.btnNextPageInvoice_Click);
             // 
             // tabPageProduct
@@ -561,7 +591,7 @@
             this.tabPageProduct.Controls.Add(this.toolStrip1);
             this.tabPageProduct.Location = new System.Drawing.Point(4, 22);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageProduct.Size = new System.Drawing.Size(982, 502);
             this.tabPageProduct.TabIndex = 0;
             this.tabPageProduct.Text = "Hàng hóa";
@@ -576,12 +606,13 @@
             this.dataGridViewProduct.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Location = new System.Drawing.Point(3, 31);
-            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProduct.Size = new System.Drawing.Size(977, 466);
             this.dataGridViewProduct.TabIndex = 1;
+            this.dataGridViewProduct.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellDoubleClick);
             // 
             // toolStrip1
             // 
@@ -614,7 +645,7 @@
             this.btnAddProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnAddProduct.Text = "toolStripButton1";
+            this.btnAddProduct.Text = "Thêm";
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnEditProduct
@@ -624,7 +655,7 @@
             this.btnEditProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnEditProduct.Text = "toolStripButton1";
+            this.btnEditProduct.Text = "Sửa";
             this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
             // btnDelProduct
@@ -634,7 +665,7 @@
             this.btnDelProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelProduct.Name = "btnDelProduct";
             this.btnDelProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnDelProduct.Text = "toolStripButton1";
+            this.btnDelProduct.Text = "Xóa";
             this.btnDelProduct.Click += new System.EventHandler(this.btnDelProduct_Click);
             // 
             // btnViewProduct
@@ -644,7 +675,7 @@
             this.btnViewProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnViewProduct.Name = "btnViewProduct";
             this.btnViewProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnViewProduct.Text = "toolStripButton1";
+            this.btnViewProduct.Text = "Xem";
             this.btnViewProduct.Click += new System.EventHandler(this.btnViewProduct_Click);
             // 
             // toolStripSeparator2
@@ -659,7 +690,7 @@
             this.btnRefreshProductList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRefreshProductList.Name = "btnRefreshProductList";
             this.btnRefreshProductList.Size = new System.Drawing.Size(24, 24);
-            this.btnRefreshProductList.Text = "toolStripButton1";
+            this.btnRefreshProductList.Text = "Tải lại";
             this.btnRefreshProductList.Click += new System.EventHandler(this.btnRefreshProductList_Click);
             // 
             // toolStripSeparator3
@@ -685,7 +716,7 @@
             this.btnFindProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFindProduct.Name = "btnFindProduct";
             this.btnFindProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnFindProduct.Text = "toolStripButton1";
+            this.btnFindProduct.Text = "Tìm kiếm";
             this.btnFindProduct.Click += new System.EventHandler(this.btnFindProduct_Click);
             // 
             // toolStripSeparator4
@@ -700,7 +731,7 @@
             this.btnPrevPageProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevPageProduct.Name = "btnPrevPageProduct";
             this.btnPrevPageProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnPrevPageProduct.Text = "toolStripButton1";
+            this.btnPrevPageProduct.Text = "Trang trước";
             this.btnPrevPageProduct.Click += new System.EventHandler(this.btnPrevPageProduct_Click);
             // 
             // txtPageProduct
@@ -715,7 +746,7 @@
             this.btnNextPageProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNextPageProduct.Name = "btnNextPageProduct";
             this.btnNextPageProduct.Size = new System.Drawing.Size(24, 24);
-            this.btnNextPageProduct.Text = "toolStripButton1";
+            this.btnNextPageProduct.Text = "Trang sau";
             this.btnNextPageProduct.Click += new System.EventHandler(this.btnNextPageProduct_Click);
             // 
             // tabPageAccount
@@ -724,7 +755,7 @@
             this.tabPageAccount.Controls.Add(this.toolStrip3);
             this.tabPageAccount.Location = new System.Drawing.Point(4, 22);
             this.tabPageAccount.Name = "tabPageAccount";
-            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageAccount.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageAccount.Size = new System.Drawing.Size(982, 502);
             this.tabPageAccount.TabIndex = 3;
             this.tabPageAccount.Text = "Tài khoản";
@@ -742,6 +773,7 @@
             this.dataGridViewAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAccount.Size = new System.Drawing.Size(975, 467);
             this.dataGridViewAccount.TabIndex = 1;
+            this.dataGridViewAccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAccount_CellDoubleClick);
             // 
             // toolStrip3
             // 
@@ -774,7 +806,7 @@
             this.btnAddAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddAcc.Name = "btnAddAcc";
             this.btnAddAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnAddAcc.Text = "toolStripButton1";
+            this.btnAddAcc.Text = "Thêm";
             this.btnAddAcc.Click += new System.EventHandler(this.btnAddAcc_Click);
             // 
             // btnEditAcc
@@ -784,7 +816,7 @@
             this.btnEditAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEditAcc.Name = "btnEditAcc";
             this.btnEditAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnEditAcc.Text = "toolStripButton2";
+            this.btnEditAcc.Text = "Sửa";
             this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
             // 
             // btnDelAcc
@@ -794,7 +826,7 @@
             this.btnDelAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelAcc.Name = "btnDelAcc";
             this.btnDelAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnDelAcc.Text = "toolStripButton3";
+            this.btnDelAcc.Text = "Xóa";
             this.btnDelAcc.Click += new System.EventHandler(this.btnDelAcc_Click);
             // 
             // btnViewAcc
@@ -804,7 +836,7 @@
             this.btnViewAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnViewAcc.Name = "btnViewAcc";
             this.btnViewAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnViewAcc.Text = "toolStripButton4";
+            this.btnViewAcc.Text = "Xem";
             this.btnViewAcc.Click += new System.EventHandler(this.btnViewAcc_Click);
             // 
             // toolStripSeparator11
@@ -819,7 +851,7 @@
             this.btnReloadAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReloadAcc.Name = "btnReloadAcc";
             this.btnReloadAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnReloadAcc.Text = "toolStripButton5";
+            this.btnReloadAcc.Text = "Tải lại";
             this.btnReloadAcc.Click += new System.EventHandler(this.btnReloadAcc_Click);
             // 
             // toolStripSeparator12
@@ -836,6 +868,7 @@
             // 
             this.txtKeywordAcc.Name = "txtKeywordAcc";
             this.txtKeywordAcc.Size = new System.Drawing.Size(150, 27);
+            this.txtKeywordAcc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKeywordAcc_KeyDown);
             // 
             // btnFindAcc
             // 
@@ -844,7 +877,7 @@
             this.btnFindAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnFindAcc.Name = "btnFindAcc";
             this.btnFindAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnFindAcc.Text = "toolStripButton6";
+            this.btnFindAcc.Text = "Tìm kiếm";
             this.btnFindAcc.Click += new System.EventHandler(this.btnFindAcc_Click);
             // 
             // toolStripSeparator13
@@ -859,7 +892,7 @@
             this.btnPrevAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrevAcc.Name = "btnPrevAcc";
             this.btnPrevAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnPrevAcc.Text = "toolStripButton7";
+            this.btnPrevAcc.Text = "Trang trước";
             // 
             // toolStripTextBox2
             // 
@@ -873,7 +906,7 @@
             this.btnNextAcc.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNextAcc.Name = "btnNextAcc";
             this.btnNextAcc.Size = new System.Drawing.Size(24, 24);
-            this.btnNextAcc.Text = "toolStripButton8";
+            this.btnNextAcc.Text = "Trang sau";
             // 
             // lbUsername
             // 
@@ -884,20 +917,6 @@
             this.lbUsername.Size = new System.Drawing.Size(35, 13);
             this.lbUsername.TabIndex = 2;
             this.lbUsername.Text = "label1";
-            // 
-            // mitemThongKeBan
-            // 
-            this.mitemThongKeBan.Name = "mitemThongKeBan";
-            this.mitemThongKeBan.Size = new System.Drawing.Size(152, 22);
-            this.mitemThongKeBan.Text = "Bán hàng";
-            this.mitemThongKeBan.Click += new System.EventHandler(this.mitemThongKeBan_Click);
-            // 
-            // mitemThongKeNhap
-            // 
-            this.mitemThongKeNhap.Name = "mitemThongKeNhap";
-            this.mitemThongKeNhap.Size = new System.Drawing.Size(152, 22);
-            this.mitemThongKeNhap.Text = "Nhập hàng";
-            this.mitemThongKeNhap.Click += new System.EventHandler(this.mitemThongKeNhap_Click);
             // 
             // Form1
             // 
@@ -994,7 +1013,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton btnRefreshBillList;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripTextBox txtKeywordBill;
         private System.Windows.Forms.ToolStripButton btnFindBill;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
@@ -1024,6 +1042,8 @@
         private System.Windows.Forms.DataGridView dataGridViewAccount;
         private System.Windows.Forms.ToolStripMenuItem mitemThongKeBan;
         private System.Windows.Forms.ToolStripMenuItem mitemThongKeNhap;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripMenuItem mitemTut;
     }
 }
 

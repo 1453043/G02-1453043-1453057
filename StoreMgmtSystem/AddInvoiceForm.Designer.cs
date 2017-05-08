@@ -337,7 +337,7 @@
             this.cmbCategoryProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCategoryProduct.FormattingEnabled = true;
-            this.cmbCategoryProduct.Location = new System.Drawing.Point(4, 41);
+            this.cmbCategoryProduct.Location = new System.Drawing.Point(4, 42);
             this.cmbCategoryProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategoryProduct.Name = "cmbCategoryProduct";
             this.cmbCategoryProduct.Size = new System.Drawing.Size(244, 24);

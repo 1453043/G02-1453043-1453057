@@ -46,27 +46,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Location = new System.Drawing.Point(17, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên tài khoản";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 56);
+            this.label2.Location = new System.Drawing.Point(17, 69);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mật khẩu";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 89);
+            this.label3.Location = new System.Drawing.Point(17, 110);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.Size = new System.Drawing.Size(50, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Họ tên";
             // 
@@ -75,9 +78,11 @@
             this.groupBox1.Controls.Add(this.radNVBanHang);
             this.groupBox1.Controls.Add(this.radNVKho);
             this.groupBox1.Controls.Add(this.radAdmin);
-            this.groupBox1.Location = new System.Drawing.Point(16, 125);
+            this.groupBox1.Location = new System.Drawing.Point(21, 154);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 100);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(369, 123);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Loại tài khoản";
@@ -85,9 +90,10 @@
             // radNVBanHang
             // 
             this.radNVBanHang.AutoSize = true;
-            this.radNVBanHang.Location = new System.Drawing.Point(7, 67);
+            this.radNVBanHang.Location = new System.Drawing.Point(9, 82);
+            this.radNVBanHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radNVBanHang.Name = "radNVBanHang";
-            this.radNVBanHang.Size = new System.Drawing.Size(122, 17);
+            this.radNVBanHang.Size = new System.Drawing.Size(157, 21);
             this.radNVBanHang.TabIndex = 2;
             this.radNVBanHang.TabStop = true;
             this.radNVBanHang.Text = "Nhân viên bán hàng";
@@ -96,9 +102,10 @@
             // radNVKho
             // 
             this.radNVKho.AutoSize = true;
-            this.radNVKho.Location = new System.Drawing.Point(7, 43);
+            this.radNVKho.Location = new System.Drawing.Point(9, 53);
+            this.radNVKho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radNVKho.Name = "radNVKho";
-            this.radNVKho.Size = new System.Drawing.Size(95, 17);
+            this.radNVKho.Size = new System.Drawing.Size(120, 21);
             this.radNVKho.TabIndex = 1;
             this.radNVKho.TabStop = true;
             this.radNVKho.Text = "Nhân viên kho";
@@ -107,9 +114,10 @@
             // radAdmin
             // 
             this.radAdmin.AutoSize = true;
-            this.radAdmin.Location = new System.Drawing.Point(6, 19);
+            this.radAdmin.Location = new System.Drawing.Point(8, 23);
+            this.radAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radAdmin.Name = "radAdmin";
-            this.radAdmin.Size = new System.Drawing.Size(54, 17);
+            this.radAdmin.Size = new System.Drawing.Size(68, 21);
             this.radAdmin.TabIndex = 0;
             this.radAdmin.TabStop = true;
             this.radAdmin.Text = "Admin";
@@ -117,31 +125,35 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(92, 19);
+            this.txtUsername.Location = new System.Drawing.Point(123, 23);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(201, 20);
+            this.txtUsername.Size = new System.Drawing.Size(267, 22);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(92, 52);
+            this.txtPassword.Location = new System.Drawing.Point(123, 64);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(201, 20);
+            this.txtPassword.Size = new System.Drawing.Size(267, 22);
             this.txtPassword.TabIndex = 2;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(92, 85);
+            this.txtName.Location = new System.Drawing.Point(123, 105);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(201, 20);
+            this.txtName.Size = new System.Drawing.Size(267, 22);
             this.txtName.TabIndex = 3;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(209, 231);
+            this.btnAdd.Location = new System.Drawing.Point(279, 284);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 38);
+            this.btnAdd.Size = new System.Drawing.Size(112, 47);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Xác nhận";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -149,18 +161,20 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(118, 231);
+            this.btnCancel.Location = new System.Drawing.Point(157, 284);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 38);
+            this.btnCancel.Size = new System.Drawing.Size(112, 47);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddAccountForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 279);
+            this.ClientSize = new System.Drawing.Size(412, 343);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtName);
@@ -170,6 +184,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm tài khoản";

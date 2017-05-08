@@ -96,7 +96,8 @@ namespace StoreMgmtSystem
         public NguoiDung Search(string id)
         {
             SqlCommand cm = new SqlCommand();
-            cm.CommandText = "select * from NguoiDung";
+            cm.CommandText = "select * from NguoiDung where id = @ID";
+            cm.Parameters.AddWithValue("@ID", id);
             try
             {
                 this.connect();

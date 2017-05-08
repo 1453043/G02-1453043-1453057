@@ -29,6 +29,11 @@ namespace StoreMgmtSystem
             return dataHDNH.Search();
         }
 
+        public DataTable searchKeyword(string keyword, string category)
+        {
+            return dataHDNH.SearchWithKeyword(keyword, category);
+        }
+
         public bool delete(string ID)
         {
             // delete CT_HoaDonNhapHang trước

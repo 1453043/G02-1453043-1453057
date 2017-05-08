@@ -154,6 +154,13 @@ namespace StoreMgmtSystem
             // index row đang được chọn
             int rowindex = dataGridViewForm.CurrentCell.RowIndex;
 
+            int gia;
+            int.TryParse(dataGridViewForm.Rows[rowindex].Cells[2].Value.ToString(), out gia);
+            int soLuong;
+            int.TryParse(dataGridViewForm.Rows[rowindex].Cells[3].Value.ToString(), out soLuong);
+            currentPrice -= (gia * soLuong);
+            txtPrice.Text = currentPrice.ToString();
+
             dataGridViewForm.Rows.RemoveAt(rowindex);
         }
 

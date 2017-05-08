@@ -17,14 +17,16 @@ namespace StoreMgmtSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Login fLogin = new Login();
-            if (fLogin.ShowDialog() == DialogResult.OK)
+            using (Login fLogin = new Login())
             {
-                Application.Run(new Form1(fLogin.Username, fLogin.IDuser));
-            }
-            else
-            {
-                Application.Exit();
+                if (fLogin.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new Form1(fLogin.Username, fLogin.IDuser));
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
             //Application.Run(new Form1());
             //Application.Run(new Login());

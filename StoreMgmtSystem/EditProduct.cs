@@ -14,8 +14,9 @@ namespace StoreMgmtSystem
     {
         private CTLNhaSanXuat _NSXData = new CTLNhaSanXuat();
         private CTLSanPham _spData = new CTLSanPham();
+        bool mode = false;
 
-        public EditProduct(List<string> product)
+        public EditProduct(List<string> product, bool mode)
         {
             InitializeComponent();
             // load data NSX cho combo box
@@ -33,6 +34,17 @@ namespace StoreMgmtSystem
             numGia.Value = Int32.Parse(product[4]);
             txtDesc.Text = product[5];
             txtGuarantee.Text = product[6];
+
+            this.mode = mode;
+            if (this.mode == false)
+            {
+                foreach (TextBox tb in this.Controls.OfType<TextBox>())
+                {
+                    tb.ReadOnly = true;
+                }
+                numGiaGoc.ReadOnly = true;
+                numGia.ReadOnly = true;
+            }
         }
 
         private void btnAddManu_Click(object sender, EventArgs e)
@@ -53,6 +65,8 @@ namespace StoreMgmtSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (mode == false)
+                return;
             // gọi save
             int status = _spData.update(txtID.Text, cmbManu.SelectedValue.ToString(), txtName.Text,
                 txtGuarantee.Text, txtDesc.Text, (int)numGia.Value,(int)numGiaGoc.Value);

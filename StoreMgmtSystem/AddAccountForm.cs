@@ -24,6 +24,7 @@ namespace StoreMgmtSystem
         {
             InitializeComponent();
             mode = true;
+            this.Text = "Thông tin tài khoản";
             currentID = id;
 
             NguoiDung userInfo = _ngData.search(id);
@@ -93,6 +94,12 @@ namespace StoreMgmtSystem
                 }
                 else MessageBox.Show("Sửa người dùng thất bại");
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }
