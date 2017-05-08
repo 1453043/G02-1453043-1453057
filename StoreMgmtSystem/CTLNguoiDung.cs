@@ -65,7 +65,7 @@ namespace StoreMgmtSystem
                     return 2;
                 return 1;
             }
-            catch (Exception ex) { return 0; }
+            catch (Exception ex) { throw ex; }
         }
 
         public bool delete(string id)

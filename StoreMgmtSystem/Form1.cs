@@ -23,6 +23,10 @@ namespace StoreMgmtSystem
         private int PgSize = 20;
         private int CurrentProductPageIndex = 1;
         private int TotalProductPage = 0;
+        private int CurrentInvPageIndex = 1;
+        private int TotalInvoicePage = 1;
+        private int CurrentReceiptPageIndex = 1;
+        private int TotalReceiptPage = 1;
 
         private string currentUser;
         private string currentUserID;
@@ -45,12 +49,7 @@ namespace StoreMgmtSystem
             if(mode == Mode.admin)
             {
                 foreach (Control ctl in tabControlMain.Controls) ctl.Enabled = true;
-
-                getTotalProductPage();
-                txtPageProduct.Text = CurrentProductPageIndex.ToString();
-                btnPrevPageProduct.Enabled = false;
-                if (CurrentProductPageIndex == TotalProductPage)
-                    btnNextPageProduct.Enabled = false;
+                
                 // load đơn bán hàng
                 loadDataGridViewReceipt();
                 // load đơn nhập hàng
@@ -76,6 +75,21 @@ namespace StoreMgmtSystem
                 loadDataGridViewProduct();
             }
 
+            getTotalProductPage();
+            txtPageProduct.Text = CurrentProductPageIndex.ToString();
+            btnPrevPageProduct.Enabled = false;
+            if (CurrentProductPageIndex == TotalProductPage)
+                btnNextPageProduct.Enabled = false;
+
+            txtPageBill.Text = CurrentReceiptPageIndex.ToString();
+            btnPrevPageBill.Enabled = false;
+            if (CurrentReceiptPageIndex == TotalReceiptPage)
+                btnNextPageBill.Enabled = false;
+
+            txtPageInvoice.Text = CurrentInvPageIndex.ToString();
+            btnPrevPageInvoice.Enabled = false;
+            if (CurrentInvPageIndex == TotalInvoicePage)
+                btnNextPageInvoice.Enabled = false;
 
             // khởi tạo giá trị trong combobox toolStripComboBox1
             toolStripComboBox1.Items.Add("Tên người lập");
@@ -326,12 +340,24 @@ namespace StoreMgmtSystem
 
         private void btnPrevPageBill_Click(object sender, EventArgs e)
         {
-
+            CurrentReceiptPageIndex--;
+            txtPageBill.Text = CurrentReceiptPageIndex.ToString();
+            if (CurrentReceiptPageIndex != TotalReceiptPage)
+                btnNextPageBill.Enabled = true;
+            if (CurrentReceiptPageIndex == 1)
+                btnPrevPageBill.Enabled = false;
+            loadDataGridViewReceipt();
         }
 
         private void btnNextPageBill_Click(object sender, EventArgs e)
         {
-
+            CurrentReceiptPageIndex++;
+            txtPageBill.Text = CurrentReceiptPageIndex.ToString();
+            if (CurrentReceiptPageIndex != 1)
+                btnPrevPageBill.Enabled = true;
+            if (CurrentReceiptPageIndex == TotalInvoicePage)
+                btnNextPageBill.Enabled = false;
+            loadDataGridViewReceipt();
         }
 
         private void btnDelInvoice_Click(object sender, EventArgs e)
@@ -399,12 +425,24 @@ namespace StoreMgmtSystem
 
         private void btnPrevPageInvoice_Click(object sender, EventArgs e)
         {
-
+            CurrentInvPageIndex--;
+            txtPageInvoice.Text = CurrentInvPageIndex.ToString();
+            if (CurrentInvPageIndex != TotalInvoicePage)
+                btnNextPageInvoice.Enabled = true;
+            if (CurrentInvPageIndex == 1)
+                btnPrevPageInvoice.Enabled = false;
+            loadDataGridViewInvoice();
         }
 
         private void btnNextPageInvoice_Click(object sender, EventArgs e)
         {
-
+            CurrentInvPageIndex++;
+            txtPageInvoice.Text = CurrentInvPageIndex.ToString();
+            if (CurrentInvPageIndex != 1)
+                btnPrevPageInvoice.Enabled = true;
+            if (CurrentInvPageIndex == TotalInvoicePage)
+                btnNextPageInvoice.Enabled = false;
+            loadDataGridViewInvoice();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
