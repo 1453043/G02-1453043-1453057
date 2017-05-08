@@ -419,7 +419,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddReceiptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddReceiptForm";
+            this.Text = "Thêm hoá đơn bán hàng";
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
