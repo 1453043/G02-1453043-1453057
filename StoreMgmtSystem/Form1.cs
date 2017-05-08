@@ -137,7 +137,7 @@ namespace StoreMgmtSystem
             menuAccount.Text = rm.GetString("account", ci);
             mitemAccDetail.Text = rm.GetString("account_detail", ci);
             mitemSignout.Text = rm.GetString("sign_out", ci);
-            menuStat.Text = rm.GetString("stat", ci);
+            //menuStat.Text = rm.GetString("stat", ci);
             menuLang.Text = rm.GetString("lang", ci);
             menuHelp.Text = rm.GetString("help", ci);
             mitemAboutUs.Text = rm.GetString("about_us", ci);
