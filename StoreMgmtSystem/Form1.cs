@@ -483,5 +483,18 @@ namespace StoreMgmtSystem
                 btnPrevPageProduct.Enabled = false;
             loadDataGridViewProduct();
         }
+
+        private void mitemThongKeBan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mitemThongKeNhap_Click(object sender, EventArgs e)
+        {
+            using (DatePickerForm dateForm = new DatePickerForm())
+            {
+
+            }
+        }
     }
 }

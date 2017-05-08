@@ -62,15 +62,16 @@
             // txtAccount
             // 
             this.txtAccount.Location = new System.Drawing.Point(96, 16);
-            this.txtAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAccount.Margin = new System.Windows.Forms.Padding(4);
             this.txtAccount.Name = "txtAccount";
+            this.txtAccount.ReadOnly = true;
             this.txtAccount.Size = new System.Drawing.Size(219, 22);
             this.txtAccount.TabIndex = 1;
             // 
             // txtDate
             // 
             this.txtDate.Location = new System.Drawing.Point(96, 48);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(219, 22);
             this.txtDate.TabIndex = 1;
@@ -82,18 +83,18 @@
             this.dataGridViewCT.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCT.Location = new System.Drawing.Point(20, 92);
-            this.dataGridViewCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewCT.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewCT.MultiSelect = false;
             this.dataGridViewCT.Name = "dataGridViewCT";
             this.dataGridViewCT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewCT.Size = new System.Drawing.Size(729, 404);
             this.dataGridViewCT.TabIndex = 2;
-            this.dataGridViewCT.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCT_CellValueChanged);
+            this.dataGridViewCT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCT_CellDoubleClick);
             // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(649, 518);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 28);
             this.btnOK.TabIndex = 3;
@@ -134,7 +135,7 @@
             this.Controls.Add(this.txtAccount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "InvoiceDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết đơn hàng";

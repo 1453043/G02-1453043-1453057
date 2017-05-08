@@ -105,39 +105,48 @@ namespace StoreMgmtSystem
             // lấy id
             string id = dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString();
             string name = dataGridViewProduct.Rows[rowindex].Cells[1].Value.ToString();
-            int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString());
+            //int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString());
 
-            // kiểm tra xem item này đã có bên gridview bên phải chưa
-            // có rồi thì +1 số lượng
-            int rowFound = -1;
-            foreach (DataGridViewRow gridrow in dataGridViewForm.Rows)
+            using (AddProductToInvoiceConfirmForm confirmForm = new AddProductToInvoiceConfirmForm(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString()))
             {
-                if (gridrow.Cells[0].Value != null && gridrow.Cells[0].Value.ToString().Equals(id))
+                if(confirmForm.ShowDialog() == DialogResult.OK)
                 {
-                    rowFound = gridrow.Index;
-                    dataGridViewForm.Rows[dataGridViewForm.SelectedRows[0].Index].Selected = false;
-                    dataGridViewForm.Rows[rowFound].Selected = true;
-                    int val;
-                    int.TryParse(dataGridViewForm.Rows[rowFound].Cells[2].Value.ToString(), out val);
-                    if (val > 0)
+                    int soLuong = confirmForm.SoLuong;
+                    int gia = confirmForm.GiaGoc;
+                    // kiểm tra xem item này đã có bên gridview bên phải chưa
+                    // có rồi thì +số lượng
+                    int rowFound = -1;
+                    foreach (DataGridViewRow gridrow in dataGridViewForm.Rows)
                     {
-                        val++;
-                        dataGridViewForm.Rows[rowFound].Cells[2].Value = val.ToString();
+                        if (gridrow.Cells[0].Value != null && gridrow.Cells[0].Value.ToString().Equals(id))
+                        {
+                            rowFound = gridrow.Index;
+                            dataGridViewForm.Rows[dataGridViewForm.SelectedRows[0].Index].Selected = false;
+                            dataGridViewForm.Rows[rowFound].Selected = true;
+                            int val;
+                            int.TryParse(dataGridViewForm.Rows[rowFound].Cells[2].Value.ToString(), out val);
+                            if (val > 0)
+                            {
+                                val += soLuong;
+                                dataGridViewForm.Rows[rowFound].Cells[2].Value = val.ToString();
+                            }
+                            break;
+                        }
                     }
-                    break;
+                    if (rowFound == -1)
+                    {
+                        DataGridViewRow row = (DataGridViewRow)dataGridViewForm.RowTemplate.Clone();
+                        row.CreateCells(dataGridViewForm, id, name, soLuong.ToString(), gia);
+
+                        dataGridViewForm.Rows.Add(row);
+                    }
+
+                    // cộng vào tổng tiền hiện tại
+                    currentPrice += gia*soLuong;
+                    txtPrice.Text = currentPrice.ToString();
                 }
+                
             }
-            if (rowFound == -1)
-            {
-                DataGridViewRow row = (DataGridViewRow)dataGridViewForm.RowTemplate.Clone();
-                row.CreateCells(dataGridViewForm, id, name, "1", gia);
-
-                dataGridViewForm.Rows.Add(row);
-            }
-
-            // cộng vào tổng tiền hiện tại
-            currentPrice += gia;
-            txtPrice.Text = currentPrice.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -185,5 +194,6 @@ namespace StoreMgmtSystem
                 Close();
             }
         }
+        
     }
 }

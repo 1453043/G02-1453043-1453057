@@ -47,11 +47,10 @@ namespace StoreMgmtSystem
         {
             this.connect();
             bool bCheck = true;
-            string query = "update HoaDonNhapHang set [idNguoiLap]=@IDuser, [NgayLap]=@date, [TongGiaTien]=@tong" +
+            string query = "update HoaDonNhapHang set [NgayLap]=@date, [TongGiaTien]=@tong" +
                 " where [id] = @ID";
             this.cm = new SqlCommand(query, cnn);
             this.cm.Parameters.AddWithValue("ID", hd.ID.Trim());
-            this.cm.Parameters.AddWithValue("IDuser", hd.IDNguoiLap.Trim());
             this.cm.Parameters.AddWithValue("date", hd.NgayLap.ToString("yyyy-MM-dd"));
             this.cm.Parameters.AddWithValue("tong", hd.TongTien);
             try
@@ -63,7 +62,7 @@ namespace StoreMgmtSystem
         public DataTable Search()
         {
             SqlCommand cm = new SqlCommand();
-            cm.CommandText = "select * from HoaDonNhapHang";
+            cm.CommandText = "select HoaDonNhapHang.id,HoTen,NgayLap,TongGiaTien from HoaDonNhapHang join NguoiDung on idNguoiLap = NguoiDung.id";
             try
             {
                 this.connect();

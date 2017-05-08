@@ -96,21 +96,23 @@ namespace StoreMgmtSystem
             }
         }
 
-        private void dataGridViewCT_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewCT_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int changedCol = e.ColumnIndex;
-            int remainCol = 2;
-            if(changedCol == 2) // so luong bi thay doi
-                remainCol = 3;
+            int oldSoLuong = int.Parse(dataGridViewCT.Rows[e.RowIndex].Cells[1].Value.ToString());
+            int oldGiaGoc = int.Parse(dataGridViewCT.Rows[e.RowIndex].Cells[2].Value.ToString());
+            int oldTong = int.Parse(txtPrice.Text);
 
-            int a;
-            int.TryParse(dataGridViewCT.Rows[e.RowIndex].Cells[changedCol].Value.ToString(), out a);
-            int b;
-            int.TryParse(dataGridViewCT.Rows[e.RowIndex].Cells[remainCol].Value.ToString(), out b);
-            int result;
-            int.TryParse(txtPrice.Text, out result);
-            result += (a * b);
-            txtPrice.Text = result.ToString();
+            using (AddProductToInvoiceConfirmForm confirmForm = new AddProductToInvoiceConfirmForm(oldSoLuong.ToString(), oldGiaGoc.ToString()))
+            {
+                if(confirmForm.ShowDialog() == DialogResult.OK)
+                {
+                    oldTong = oldTong - (oldSoLuong* oldGiaGoc);
+                    oldTong += (confirmForm.SoLuong * confirmForm.GiaGoc);
+                    txtPrice.Text = oldTong.ToString();
+                    dataGridViewCT.Rows[e.RowIndex].Cells[1].Value = confirmForm.SoLuong;
+                    dataGridViewCT.Rows[e.RowIndex].Cells[2].Value = confirmForm.GiaGoc;
+                }
+            }
         }
     }
 }
