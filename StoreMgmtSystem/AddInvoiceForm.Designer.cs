@@ -31,6 +31,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.dataGridViewForm = new System.Windows.Forms.DataGridView();
+            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
@@ -50,10 +54,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnFind = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
-            this.idSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewForm)).BeginInit();
@@ -125,6 +125,33 @@
             this.dataGridViewForm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewForm.Size = new System.Drawing.Size(568, 492);
             this.dataGridViewForm.TabIndex = 0;
+            // 
+            // idSanPham
+            // 
+            this.idSanPham.HeaderText = "Mã sản phẩm";
+            this.idSanPham.Name = "idSanPham";
+            this.idSanPham.ReadOnly = true;
+            this.idSanPham.Width = 80;
+            // 
+            // TenSanPham
+            // 
+            this.TenSanPham.HeaderText = "Tên sản phẩm";
+            this.TenSanPham.Name = "TenSanPham";
+            this.TenSanPham.ReadOnly = true;
+            this.TenSanPham.Width = 150;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
+            // GiaTien
+            // 
+            this.GiaTien.HeaderText = "Giá đơn vị";
+            this.GiaTien.Name = "GiaTien";
+            this.GiaTien.ReadOnly = true;
             // 
             // tableLayoutPanel2
             // 
@@ -310,11 +337,12 @@
             this.cmbCategoryProduct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCategoryProduct.FormattingEnabled = true;
-            this.cmbCategoryProduct.Location = new System.Drawing.Point(4, 42);
+            this.cmbCategoryProduct.Location = new System.Drawing.Point(4, 41);
             this.cmbCategoryProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategoryProduct.Name = "cmbCategoryProduct";
             this.cmbCategoryProduct.Size = new System.Drawing.Size(244, 24);
             this.cmbCategoryProduct.TabIndex = 0;
+            this.cmbCategoryProduct.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryProduct_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -369,33 +397,6 @@
             this.btnAddProduct.Text = "Thêm mới";
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // idSanPham
-            // 
-            this.idSanPham.HeaderText = "Mã sản phẩm";
-            this.idSanPham.Name = "idSanPham";
-            this.idSanPham.ReadOnly = true;
-            this.idSanPham.Width = 80;
-            // 
-            // TenSanPham
-            // 
-            this.TenSanPham.HeaderText = "Tên sản phẩm";
-            this.TenSanPham.Name = "TenSanPham";
-            this.TenSanPham.ReadOnly = true;
-            this.TenSanPham.Width = 150;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // GiaTien
-            // 
-            this.GiaTien.HeaderText = "Giá đơn vị";
-            this.GiaTien.Name = "GiaTien";
-            this.GiaTien.ReadOnly = true;
             // 
             // AddInvoiceForm
             // 

@@ -55,6 +55,12 @@
     <Compile Include="AddAccountForm.Designer.cs">
       <DependentUpon>AddAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustomerForm.Designer.cs">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddInvoiceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="AddProductToInvoiceConfirmForm.Designer.cs">
       <DependentUpon>AddProductToInvoiceConfirmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReceiptForm.Designer.cs">
+      <DependentUpon>AddReceiptForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CTLCT_HoaDonBanHang.cs" />
     <Compile Include="CTLCT_HoaDonNhapHang.cs" />
@@ -110,6 +122,12 @@
     <Compile Include="DAONhaSanXuat.cs" />
     <Compile Include="DAOSanPham.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="FindCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindCustomerForm.Designer.cs">
+      <DependentUpon>FindCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,9 +169,18 @@
     <Compile Include="ReportViewer.Designer.cs">
       <DependentUpon>ReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReceiptDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptDetail.Designer.cs">
+      <DependentUpon>ReceiptDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="SanPham.cs" />
     <EmbeddedResource Include="AddAccountForm.resx">
       <DependentUpon>AddAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCustomerForm.resx">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddInvoiceForm.resx">
       <DependentUpon>AddInvoiceForm.cs</DependentUpon>
@@ -167,11 +194,17 @@
     <EmbeddedResource Include="DatePickerForm.resx">
       <DependentUpon>DatePickerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddReceiptForm.resx">
+      <DependentUpon>AddReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProduct.resx">
       <DependentUpon>EditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindCustomerForm.resx">
+      <DependentUpon>FindCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -202,6 +235,9 @@
     </Compile>
     <EmbeddedResource Include="ReportViewer.resx">
       <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiptDetail.resx">
+      <DependentUpon>ReceiptDetail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

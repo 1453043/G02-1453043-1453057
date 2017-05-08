@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace StoreMgmtSystem
 {
-    public partial class AddInvoiceForm : Form
+    public partial class AddReceiptForm : Form
     {
         private CTLSanPham _spData = new CTLSanPham();
-        private CTLHoaDonNhapHang _hdData = new CTLHoaDonNhapHang();
-        private CTLCT_HoaDonNhapHang _ct = new CTLCT_HoaDonNhapHang();
+        private CTLHoaDonBanHang _hdData = new CTLHoaDonBanHang();
+        private CTLCT_HoaDonBanHang _ct = new CTLCT_HoaDonBanHang();
         private string currentUserID;
         private int currentPrice;
+        private string currentGuestID;
 
-        public AddInvoiceForm(string username, string userid)
+        public AddReceiptForm(string username, string userid)
         {
             InitializeComponent();
 
@@ -76,7 +77,7 @@ namespace StoreMgmtSystem
                 if (dataGridView != null)
                 {
                     // dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    
+
                     //dataGridView.Columns[dataGridView.ColumnCount - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
             };
@@ -91,62 +92,46 @@ namespace StoreMgmtSystem
             }
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            AddProduct addProductForm = new AddProduct();
-            if (addProductForm.ShowDialog() == DialogResult.OK)
-                loadDataGridViewProduct();
-        }
-
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            // index row đang được chọn
+            //index row đang được chọn
             int rowindex = dataGridViewProduct.CurrentCell.RowIndex;
             // lấy id
             string id = dataGridViewProduct.Rows[rowindex].Cells[0].Value.ToString();
             string name = dataGridViewProduct.Rows[rowindex].Cells[1].Value.ToString();
-            //int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString());
+            int gia = int.Parse(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString());
 
-            using (AddProductToInvoiceConfirmForm confirmForm = new AddProductToInvoiceConfirmForm(dataGridViewProduct.Rows[rowindex].Cells[2].Value.ToString()))
+            // kiểm tra xem item này đã có bên gridview bên phải chưa
+            // có rồi thì +1 số lượng
+            int rowFound = -1;
+            foreach (DataGridViewRow gridrow in dataGridViewForm.Rows)
             {
-                if(confirmForm.ShowDialog() == DialogResult.OK)
+                if (gridrow.Cells[0].Value != null && gridrow.Cells[0].Value.ToString().Equals(id))
                 {
-                    int soLuong = confirmForm.SoLuong;
-                    int gia = confirmForm.GiaGoc;
-                    // kiểm tra xem item này đã có bên gridview bên phải chưa
-                    // có rồi thì +số lượng
-                    int rowFound = -1;
-                    foreach (DataGridViewRow gridrow in dataGridViewForm.Rows)
+                    rowFound = gridrow.Index;
+                    dataGridViewForm.Rows[dataGridViewForm.SelectedRows[0].Index].Selected = false;
+                    dataGridViewForm.Rows[rowFound].Selected = true;
+                    int val;
+                    int.TryParse(dataGridViewForm.Rows[rowFound].Cells[2].Value.ToString(), out val);
+                    if (val > 0)
                     {
-                        if (gridrow.Cells[0].Value != null && gridrow.Cells[0].Value.ToString().Equals(id))
-                        {
-                            rowFound = gridrow.Index;
-                            dataGridViewForm.Rows[dataGridViewForm.SelectedRows[0].Index].Selected = false;
-                            dataGridViewForm.Rows[rowFound].Selected = true;
-                            int val;
-                            int.TryParse(dataGridViewForm.Rows[rowFound].Cells[2].Value.ToString(), out val);
-                            if (val > 0)
-                            {
-                                val += soLuong;
-                                dataGridViewForm.Rows[rowFound].Cells[2].Value = val.ToString();
-                            }
-                            break;
-                        }
+                        val++;
+                        dataGridViewForm.Rows[rowFound].Cells[2].Value = val.ToString();
                     }
-                    if (rowFound == -1)
-                    {
-                        DataGridViewRow row = (DataGridViewRow)dataGridViewForm.RowTemplate.Clone();
-                        row.CreateCells(dataGridViewForm, id, name, soLuong.ToString(), gia);
-
-                        dataGridViewForm.Rows.Add(row);
-                    }
-
-                    // cộng vào tổng tiền hiện tại
-                    currentPrice += gia*soLuong;
-                    txtPrice.Text = currentPrice.ToString();
+                    break;
                 }
-                
             }
+            if (rowFound == -1)
+            {
+                DataGridViewRow row = (DataGridViewRow)dataGridViewForm.RowTemplate.Clone();
+                row.CreateCells(dataGridViewForm, id, name, "1", gia);
+
+                dataGridViewForm.Rows.Add(row);
+            }
+
+            // cộng vào tổng tiền hiện tại
+            currentPrice += gia;
+            txtPrice.Text = currentPrice.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -163,12 +148,13 @@ namespace StoreMgmtSystem
             string idHD = datenow.ToString("ddMMyyhhmmss");
 
             // save đơn hàng
-            _hdData.save(idHD, currentUserID, datenow, currentPrice);
+            currentGuestID = txtGuest.Text;
+            _hdData.save(idHD, currentUserID, currentGuestID, datenow, currentPrice);
 
             // save bảng data đơn hàng
             // tạo DataTable để lấy data trong grid view
             DataTable table = new DataTable();
-            table.Columns.Add(new DataColumn("idNhapHang", typeof(string)));
+            table.Columns.Add(new DataColumn("idBanHang", typeof(string)));
             table.Columns.Add(new DataColumn("idSanPham", typeof(string)));
             table.Columns.Add(new DataColumn("SoLuong", typeof(int)));
             table.Columns.Add(new DataColumn("GiaTien", typeof(int)));
@@ -193,6 +179,19 @@ namespace StoreMgmtSystem
                 DialogResult = DialogResult.OK;
                 Close();
             }
+        }
+
+        private void btnThemKhach_Click(object sender, EventArgs e)
+        {
+            AddCustomerForm addCusForm = new AddCustomerForm();
+            addCusForm.ShowDialog();
+        }
+
+        private void btnTimKhach_Click(object sender, EventArgs e)
+        {
+            FindCustomerForm findCusForm = new FindCustomerForm();
+            findCusForm.ShowDialog();
+            txtGuest.Text = findCusForm.currentID;
         }
     }
 }
